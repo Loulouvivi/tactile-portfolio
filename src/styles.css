@@ -179,66 +179,71 @@
   }
 }
 
-@utility paper {
-  position: relative;
-  isolation: isolate;
+/* One contained sheet of folded paper. Applied to a single section wrapper —
+   never the whole page, never tiled. Folds sit on the section's own
+   content boundaries so each panel holds one part of the content. */
+@utility paper-sheet {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
   background-color: var(--background);
 
-  /* Folded sheet: soft crease lines + broad tonal variation across the sheet.
-     Fixed attachment keeps the folds at sheet scale instead of tiling on scroll. */
+  /* creases + broad tonal variation across the panels */
   &::before {
     content: "";
-    position: fixed;
+    position: absolute;
     inset: 0;
-    z-index: -2;
-    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     background-image:
-      /* vertical creases */
+      /* vertical creases — one on the column gutter, two soft outer folds */
       linear-gradient(
         to right,
         transparent 0%,
-        transparent 32.2%,
-        color-mix(in oklab, var(--foreground) 3.5%, transparent) 33%,
-        color-mix(in oklab, var(--background) 92%, white) 33.6%,
-        transparent 34.4%,
-        transparent 65.4%,
-        color-mix(in oklab, var(--foreground) 3%, transparent) 66.2%,
-        color-mix(in oklab, var(--background) 94%, white) 66.8%,
-        transparent 67.6%,
+        transparent 20.4%,
+        color-mix(in oklab, var(--foreground) 2.4%, transparent) 21.3%,
+        color-mix(in oklab, var(--background) 94%, white) 21.9%,
+        transparent 22.9%,
+        transparent 49.1%,
+        color-mix(in oklab, var(--foreground) 4%, transparent) 50.1%,
+        color-mix(in oklab, var(--background) 91%, white) 50.8%,
+        transparent 51.8%,
+        transparent 78.2%,
+        color-mix(in oklab, var(--foreground) 2.8%, transparent) 79.1%,
+        color-mix(in oklab, var(--background) 93%, white) 79.8%,
+        transparent 80.8%,
         transparent 100%
       ),
-      /* horizontal creases */
+      /* horizontal creases — under the section heading and between card rows */
         linear-gradient(
           to bottom,
           transparent 0%,
-          transparent 23.6%,
-          color-mix(in oklab, var(--foreground) 3%, transparent) 24.5%,
-          color-mix(in oklab, var(--background) 93%, white) 25.1%,
-          transparent 26%,
-          transparent 49.2%,
-          color-mix(in oklab, var(--foreground) 4%, transparent) 50%,
-          color-mix(in oklab, var(--background) 92%, white) 50.7%,
-          transparent 51.6%,
-          transparent 74.4%,
-          color-mix(in oklab, var(--foreground) 2.6%, transparent) 75.2%,
-          color-mix(in oklab, var(--background) 94%, white) 75.8%,
-          transparent 76.7%,
+          transparent 13.4%,
+          color-mix(in oklab, var(--foreground) 3.2%, transparent) 14.3%,
+          color-mix(in oklab, var(--background) 92%, white) 14.9%,
+          transparent 15.9%,
+          transparent 53.6%,
+          color-mix(in oklab, var(--foreground) 3.8%, transparent) 54.6%,
+          color-mix(in oklab, var(--background) 91%, white) 55.3%,
+          transparent 56.4%,
           transparent 100%
         ),
-      /* uneven surface tone across the panels */
+      /* uneven surface tone, panel to panel */
         radial-gradient(
-          120% 90% at 18% 12%,
+          120% 80% at 14% 8%,
           color-mix(in oklab, white 55%, transparent) 0%,
-          transparent 60%
+          transparent 62%
         ),
       radial-gradient(
-        100% 80% at 82% 78%,
-        color-mix(in oklab, var(--foreground) 3.5%, transparent) 0%,
-        transparent 62%
+        90% 70% at 86% 72%,
+        color-mix(in oklab, var(--foreground) 3.2%, transparent) 0%,
+        transparent 64%
       ),
       radial-gradient(
-        90% 70% at 55% 45%,
-        color-mix(in oklab, var(--foreground) 2%, transparent) 0%,
+        80% 60% at 52% 40%,
+        color-mix(in oklab, var(--foreground) 1.8%, transparent) 0%,
         transparent 70%
       );
   }
@@ -246,11 +251,9 @@
   /* fine, non-directional paper grain */
   &::after {
     content: "";
-    position: fixed;
+    position: absolute;
     inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    opacity: 0.5;
+    opacity: 0.45;
     mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='320' height='320' filter='url(%23n)' opacity='0.13'/%3E%3C/svg%3E");
     background-size: 320px 320px;
