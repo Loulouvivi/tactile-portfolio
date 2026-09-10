@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Reveal } from "@/components/Reveal";
-import { ProjectCard, type Project } from "@/components/ProjectCard";
+import { ProjectImage, ProjectMeta, type Project } from "@/components/ProjectCard";
 import portrait from "@/assets/portrait.jpg";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
