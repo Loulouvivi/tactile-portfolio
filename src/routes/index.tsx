@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Reveal } from "@/components/Reveal";
-import { ProjectCard, type Project } from "@/components/ProjectCard";
+import { ProjectImage, ProjectMeta, type Project } from "@/components/ProjectCard";
 import portrait from "@/assets/portrait.jpg";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
@@ -76,6 +76,8 @@ const services = [
 ];
 
 function Index() {
+  const [p1, p2, p3, p4] = projects as [Project, Project, Project, Project];
+
   return (
     <div className="min-h-screen">
       <header className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-6 sm:flex sm:justify-between sm:px-8">
@@ -119,13 +121,13 @@ function Index() {
 
         <section id="work" className="mx-auto max-w-6xl px-5 pb-24 pt-8 sm:px-8 sm:pb-36">
           <div className="paper-board grid grid-cols-1 sm:grid-cols-12">
-            {/* heading panel */}
-            <div className="paper-panel px-5 pb-10 pt-8 sm:col-span-7 sm:px-8 sm:pb-14 sm:pt-12">
+            {/* — fold row 1: title, then bare paper — */}
+            <div className="paper-panel px-5 pb-10 pt-9 sm:col-span-8 sm:px-10 sm:pb-16 sm:pt-14">
               <Reveal>
                 <h2 className="font-display text-3xl tracking-tight sm:text-5xl">Selected work</h2>
               </Reveal>
             </div>
-            <div className="paper-panel flex items-end px-5 pb-8 pt-2 sm:col-span-5 sm:px-8 sm:pb-14 sm:pt-12">
+            <div className="paper-panel flex items-end px-5 pb-8 sm:col-span-4 sm:px-8 sm:pb-16">
               <Reveal delay={120}>
                 <span className="text-[0.7rem] uppercase tracking-[0.24em] text-muted-foreground">
                   Four of twelve
@@ -133,26 +135,50 @@ function Index() {
               </Reveal>
             </div>
 
-            {projects.map((p, i) => {
-              // asymmetric panel widths: 7/5, then 5/7 — folded sheet, not a grid
-              const spans = ["sm:col-span-7", "sm:col-span-5", "sm:col-span-5", "sm:col-span-7"];
-              const insets = [
-                "sm:px-10 sm:pb-16 sm:pt-12",
-                "sm:px-8 sm:pb-20 sm:pt-16",
-                "sm:px-8 sm:pb-14 sm:pt-16",
-                "sm:px-10 sm:pb-16 sm:pt-10",
-              ];
-              return (
-                <div
-                  key={p.title}
-                  className={`paper-panel px-5 pb-12 pt-10 ${spans[i]} ${insets[i]}`}
-                >
-                  <ProjectCard project={p} delay={(i % 2) * 120} />
-                </div>
-              );
-            })}
+            {/* — fold row 2: 01 image on a wide panel, caption on its own — */}
+            <div className="paper-panel px-5 pb-12 pt-12 sm:col-span-7 sm:px-12 sm:pb-20 sm:pt-16">
+              <ProjectImage project={p1} ratio="aspect-[4/5]" className="sm:w-[86%]" />
+            </div>
+            <div className="paper-panel flex items-end px-5 pb-12 sm:col-span-5 sm:px-9 sm:pb-24">
+              <ProjectMeta project={p1} delay={120} />
+            </div>
+
+            {/* — fold row 3: caption left, 02 image pushed to the outer fold — */}
+            <div className="paper-panel flex items-start px-5 pb-10 pt-12 sm:col-span-4 sm:px-9 sm:pb-24 sm:pt-24">
+              <ProjectMeta project={p2} />
+            </div>
+            <div className="paper-panel px-5 pb-12 pt-12 sm:col-span-8 sm:px-12 sm:pb-20 sm:pt-16">
+              <ProjectImage
+                project={p2}
+                delay={120}
+                ratio="aspect-[5/4]"
+                className="sm:ml-auto sm:w-[74%]"
+              />
+            </div>
+
+            {/* — fold row 4: small 03 image, an empty panel of paper, caption — */}
+            <div className="paper-panel px-5 pb-10 pt-12 sm:col-span-5 sm:px-10 sm:pb-24 sm:pt-20">
+              <ProjectImage project={p3} ratio="aspect-[3/4]" className="sm:w-[68%]" />
+            </div>
+            <div aria-hidden className="paper-panel hidden sm:col-span-3 sm:block" />
+            <div className="paper-panel flex items-end px-5 pb-12 sm:col-span-4 sm:px-8 sm:pb-28">
+              <ProjectMeta project={p3} delay={120} />
+            </div>
+
+            {/* — fold row 5: 04 image floating inside a large panel — */}
+            <div className="paper-panel px-5 pb-12 pt-12 sm:col-span-9 sm:px-16 sm:pb-24 sm:pt-16">
+              <ProjectImage
+                project={p4}
+                ratio="aspect-[16/11]"
+                className="sm:ml-[10%] sm:w-[78%]"
+              />
+            </div>
+            <div className="paper-panel flex items-end px-5 pb-14 sm:col-span-3 sm:px-7 sm:pb-28">
+              <ProjectMeta project={p4} delay={120} />
+            </div>
           </div>
         </section>
+
 
 
         <section id="studio" className="bg-secondary/60">
