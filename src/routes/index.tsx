@@ -77,7 +77,7 @@ const services = [
 
 function Index() {
   return (
-    <div className="paper min-h-screen">
+    <div className="min-h-screen">
       <header className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-6 sm:flex sm:justify-between sm:px-8">
         <a href="#top" className="min-w-0 truncate font-display text-xl tracking-tight">
           Studio Marlow
@@ -117,7 +117,11 @@ function Index() {
           </div>
         </section>
 
-        <section id="work" className="mx-auto max-w-6xl px-5 pb-24 sm:px-8 sm:pb-36">
+        <section
+          id="work"
+          className="relative isolate mx-auto max-w-6xl px-5 pb-24 pt-8 sm:px-8 sm:pb-36"
+        >
+          <div aria-hidden className="paper-sheet" />
           <Reveal>
             <div className="rule-line grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-4 pt-5">
               <h2 className="min-w-0 font-display text-3xl tracking-tight sm:text-5xl">
