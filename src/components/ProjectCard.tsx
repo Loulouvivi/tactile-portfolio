@@ -10,41 +10,66 @@ export type Project = {
   alt: string;
 };
 
-export function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number }) {
+/** A single photograph laid onto a panel of the folded sheet. */
+export function ProjectImage({
+  project,
+  delay = 0,
+  ratio = "aspect-[4/5]",
+  className = "",
+}: {
+  project: Project;
+  delay?: number;
+  ratio?: string;
+  className?: string;
+}) {
   return (
-    <Reveal delay={delay}>
-      <article className="group">
-        <a href="#work" className="block">
-          <div className="relative overflow-hidden bg-muted">
-            <img
-              src={project.image}
-              alt={project.alt}
-              loading="lazy"
-              width={1200}
-              height={1500}
-              className="aspect-[4/5] w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
-            />
-            <span className="absolute left-4 top-4 font-sans text-[0.65rem] uppercase tracking-[0.28em] text-primary-foreground mix-blend-difference">
-              {project.index}
-            </span>
-          </div>
+    <Reveal delay={delay} className={className}>
+      <a href="#work" className="group relative block">
+        <span className="absolute -top-6 left-0 z-10 font-sans text-[0.65rem] uppercase tracking-[0.28em] text-muted-foreground">
+          {project.index}
+        </span>
+        <div className="relative overflow-hidden bg-muted shadow-[0_18px_40px_-34px_rgba(0,0,0,0.5)]">
+          <img
+            src={project.image}
+            alt={project.alt}
+            loading="lazy"
+            width={1200}
+            height={1500}
+            className={`${ratio} w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]`}
+          />
+        </div>
+      </a>
+    </Reveal>
+  );
+}
 
-          <div className="rule-line mt-5 grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-4 pt-4">
-            <h3 className="min-w-0 font-display text-2xl leading-tight tracking-tight sm:text-3xl">
-              {project.title}
-            </h3>
-            <span className="shrink-0 text-xs tracking-[0.2em] text-muted-foreground">
-              {project.year}
-            </span>
-          </div>
-          <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
-            {project.blurb}
-          </p>
-          <span className="mt-3 inline-block text-[0.7rem] uppercase tracking-[0.24em] text-accent">
-            {project.discipline}
-          </span>
-        </a>
-      </article>
+/** The caption for a project, sitting on its own area of paper. */
+export function ProjectMeta({
+  project,
+  delay = 0,
+  className = "",
+}: {
+  project: Project;
+  delay?: number;
+  className?: string;
+}) {
+  return (
+    <Reveal delay={delay} className={className}>
+      <a href="#work" className="block max-w-xs">
+        <span className="text-[0.65rem] uppercase tracking-[0.28em] text-muted-foreground">
+          {project.index}
+        </span>
+        <h3 className="mt-3 font-display text-2xl leading-tight tracking-tight sm:text-3xl">
+          {project.title}
+        </h3>
+        <span className="mt-1 block text-xs tracking-[0.2em] text-muted-foreground">
+          {project.year}
+        </span>
+        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{project.blurb}</p>
+        <span className="mt-4 inline-block text-[0.7rem] uppercase tracking-[0.24em] text-accent">
+          {project.discipline}
+        </span>
+      </a>
     </Reveal>
   );
 }
