@@ -117,30 +117,43 @@ function Index() {
           </div>
         </section>
 
-        <section
-          id="work"
-          className="relative isolate mx-auto max-w-6xl px-5 pb-24 pt-8 sm:px-8 sm:pb-36"
-        >
-          <div aria-hidden className="paper-sheet" />
-          <Reveal>
-            <div className="rule-line grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-4 pt-5">
-              <h2 className="min-w-0 font-display text-3xl tracking-tight sm:text-5xl">
-                Selected work
-              </h2>
-              <span className="shrink-0 text-[0.7rem] uppercase tracking-[0.24em] text-muted-foreground">
-                Four of twelve
-              </span>
+        <section id="work" className="mx-auto max-w-6xl px-5 pb-24 pt-8 sm:px-8 sm:pb-36">
+          <div className="paper-board grid grid-cols-1 sm:grid-cols-12">
+            {/* heading panel */}
+            <div className="paper-panel px-5 pb-10 pt-8 sm:col-span-7 sm:px-8 sm:pb-14 sm:pt-12">
+              <Reveal>
+                <h2 className="font-display text-3xl tracking-tight sm:text-5xl">Selected work</h2>
+              </Reveal>
             </div>
-          </Reveal>
+            <div className="paper-panel flex items-end px-5 pb-8 pt-2 sm:col-span-5 sm:px-8 sm:pb-14 sm:pt-12">
+              <Reveal delay={120}>
+                <span className="text-[0.7rem] uppercase tracking-[0.24em] text-muted-foreground">
+                  Four of twelve
+                </span>
+              </Reveal>
+            </div>
 
-          <div className="mt-12 grid gap-14 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-24">
-            {projects.map((p, i) => (
-              <div key={p.title} className={i % 2 === 1 ? "sm:mt-24" : undefined}>
-                <ProjectCard project={p} delay={(i % 2) * 120} />
-              </div>
-            ))}
+            {projects.map((p, i) => {
+              // asymmetric panel widths: 7/5, then 5/7 — folded sheet, not a grid
+              const spans = ["sm:col-span-7", "sm:col-span-5", "sm:col-span-5", "sm:col-span-7"];
+              const insets = [
+                "sm:px-10 sm:pb-16 sm:pt-12",
+                "sm:px-8 sm:pb-20 sm:pt-16",
+                "sm:px-8 sm:pb-14 sm:pt-16",
+                "sm:px-10 sm:pb-16 sm:pt-10",
+              ];
+              return (
+                <div
+                  key={p.title}
+                  className={`paper-panel px-5 pb-12 pt-10 ${spans[i]} ${insets[i]}`}
+                >
+                  <ProjectCard project={p} delay={(i % 2) * 120} />
+                </div>
+              );
+            })}
           </div>
         </section>
+
 
         <section id="studio" className="bg-secondary/60">
           <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-32">
