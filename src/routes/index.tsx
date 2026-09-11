@@ -136,15 +136,15 @@ function Index() {
                 style={{ transform: "rotate(-0.2deg)" }}
               />
               <div
-                className="paper-crease-v bottom-[-4%] left-[38%] top-[-3%] w-16"
+                className="paper-crease-v bottom-[-4%] left-[44%] top-[-3%] w-16"
                 style={{ transform: "rotate(0.4deg)" }}
               />
               <div
-                className="paper-crease-v bottom-[52%] left-[71%] top-[-4%] w-12 opacity-75"
+                className="paper-crease-v bottom-[64%] left-[53%] top-[-4%] w-12 opacity-75"
                 style={{ transform: "rotate(-0.6deg)" }}
               />
               <div
-                className="paper-crease-v bottom-[-3%] left-[62%] top-[44%] w-14 opacity-65"
+                className="paper-crease-v bottom-[28%] left-[62%] top-[44%] w-14 opacity-65"
                 style={{ transform: "rotate(0.3deg)" }}
               />
             </div>
