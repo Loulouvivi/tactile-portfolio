@@ -180,9 +180,9 @@
 }
 
 /* ---------------------------------------------------------------
-   Folded paper board.
-   One sheet (.paper-board) divided into physical panels (.paper-panel).
-   Content sits INSIDE the panels; the creases run between them.
+   One raw sheet of paper, folded and laid flat.
+   .paper-board is the sheet; .paper-crease-* are individual creases
+   placed loosely across it. Content simply sits ON the sheet.
    --------------------------------------------------------------- */
 @utility paper-board {
   position: relative;
@@ -190,17 +190,18 @@
   background-color: color-mix(in oklab, var(--background) 96%, white);
   /* organic sheet edge: never a perfect rectangle */
   clip-path: polygon(
-    0.25% 0.4%,
-    99.5% 0%,
-    100% 99.3%,
-    60% 100%,
-    0.6% 99.6%
+    0.3% 0.5%,
+    99.4% 0%,
+    100% 62%,
+    99.6% 99.2%,
+    57% 100%,
+    0.5% 99.5%
   );
   box-shadow:
     0 1px 0 color-mix(in oklab, white 70%, transparent) inset,
-    0 24px 60px -40px color-mix(in oklab, var(--foreground) 30%, transparent);
+    0 30px 70px -46px color-mix(in oklab, var(--foreground) 30%, transparent);
 
-  /* broad tonal drift across the whole sheet */
+  /* broad, uneven tonal drift across the whole sheet */
   &::before {
     content: "";
     position: absolute;
@@ -209,18 +210,23 @@
     pointer-events: none;
     background-image:
       radial-gradient(
-        130% 70% at 12% 4%,
-        color-mix(in oklab, white 60%, transparent) 0%,
-        transparent 60%
+        120% 60% at 14% 3%,
+        color-mix(in oklab, white 62%, transparent) 0%,
+        transparent 58%
       ),
       radial-gradient(
-        100% 60% at 88% 46%,
-        color-mix(in oklab, var(--foreground) 3.4%, transparent) 0%,
+        90% 46% at 86% 28%,
+        color-mix(in oklab, var(--foreground) 3.2%, transparent) 0%,
+        transparent 64%
+      ),
+      radial-gradient(
+        70% 40% at 24% 58%,
+        color-mix(in oklab, white 45%, transparent) 0%,
         transparent 66%
       ),
       radial-gradient(
-        90% 55% at 40% 92%,
-        color-mix(in oklab, var(--foreground) 2.6%, transparent) 0%,
+        95% 50% at 62% 94%,
+        color-mix(in oklab, var(--foreground) 2.8%, transparent) 0%,
         transparent 70%
       );
   }
@@ -239,53 +245,39 @@
   }
 }
 
-/* An individual folded panel of the sheet. */
-@utility paper-panel {
-  position: relative;
-  isolation: isolate;
-
-  /* the crease running along this panel's edges: a soft shadow that
-     falls away from the fold, met by a lifted highlight on the far side */
-  &::before {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    z-index: -1;
-    pointer-events: none;
-    background-image:
-      linear-gradient(
-        to right,
-        color-mix(in oklab, var(--foreground) 4.5%, transparent) 0px,
-        color-mix(in oklab, var(--foreground) 1.6%, transparent) 6px,
-        transparent 26px,
-        transparent calc(100% - 30px),
-        color-mix(in oklab, var(--foreground) 1.8%, transparent) calc(100% - 7px),
-        color-mix(in oklab, var(--foreground) 5%, transparent) 100%
-      ),
-      linear-gradient(
-        to bottom,
-        color-mix(in oklab, var(--foreground) 3.8%, transparent) 0px,
-        color-mix(in oklab, var(--foreground) 1.4%, transparent) 7px,
-        transparent 30px,
-        transparent calc(100% - 34px),
-        color-mix(in oklab, var(--foreground) 1.6%, transparent) calc(100% - 8px),
-        color-mix(in oklab, var(--foreground) 4.2%, transparent) 100%
-      );
-    box-shadow:
-      1px 0 0 color-mix(in oklab, white 78%, transparent) inset,
-      -1px 0 0 color-mix(in oklab, white 70%, transparent) inset,
-      0 1px 0 color-mix(in oklab, white 74%, transparent) inset,
-      0 -1px 0 color-mix(in oklab, white 66%, transparent) inset;
-  }
-
-  /* slight tonal difference panel to panel — no two folds catch the light alike */
-  &:nth-child(2n)::before {
-    filter: brightness(0.995);
-  }
-  &:nth-child(3n)::before {
-    filter: brightness(1.006);
-  }
+/* A single horizontal crease: a soft valley shadow met by a lifted edge.
+   Height is set per-instance; the gradient scales with it. */
+@utility paper-crease-h {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    color-mix(in oklab, white 55%, transparent) 34%,
+    color-mix(in oklab, var(--foreground) 5.5%, transparent) 50%,
+    color-mix(in oklab, var(--foreground) 2%, transparent) 62%,
+    transparent 100%
+  );
+  filter: blur(0.4px);
 }
+
+/* A single vertical crease. */
+@utility paper-crease-v {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    color-mix(in oklab, white 52%, transparent) 33%,
+    color-mix(in oklab, var(--foreground) 5%, transparent) 50%,
+    color-mix(in oklab, var(--foreground) 1.8%, transparent) 63%,
+    transparent 100%
+  );
+  filter: blur(0.4px);
+}
+
 
 
 @utility rule-line {
