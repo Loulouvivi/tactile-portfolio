@@ -120,64 +120,93 @@ function Index() {
         </section>
 
         <section id="work" className="mx-auto max-w-6xl px-5 pb-24 pt-8 sm:px-8 sm:pb-36">
-          <div className="paper-board grid grid-cols-1 sm:grid-cols-12">
-            {/* — fold row 1: title, then bare paper — */}
-            <div className="paper-panel px-5 pb-10 pt-9 sm:col-span-8 sm:px-10 sm:pb-16 sm:pt-14">
-              <Reveal>
+          <div className="paper-board relative px-5 py-14 sm:px-12 sm:py-24">
+            {/* — the creases: irregular, soft, laid across the whole sheet — */}
+            <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+              <div
+                className="paper-crease-h left-[-4%] right-[-6%] top-[17%] h-14"
+                style={{ transform: "rotate(-0.35deg)" }}
+              />
+              <div
+                className="paper-crease-h left-[-8%] right-[-3%] top-[46%] h-20 opacity-80"
+                style={{ transform: "rotate(0.5deg)" }}
+              />
+              <div
+                className="paper-crease-h left-[-5%] right-[-5%] top-[73%] h-16 opacity-70"
+                style={{ transform: "rotate(-0.2deg)" }}
+              />
+              <div
+                className="paper-crease-v bottom-[-4%] left-[38%] top-[-3%] w-16"
+                style={{ transform: "rotate(0.4deg)" }}
+              />
+              <div
+                className="paper-crease-v bottom-[52%] left-[71%] top-[-4%] w-12 opacity-75"
+                style={{ transform: "rotate(-0.6deg)" }}
+              />
+              <div
+                className="paper-crease-v bottom-[-3%] left-[62%] top-[44%] w-14 opacity-65"
+                style={{ transform: "rotate(0.3deg)" }}
+              />
+            </div>
+
+            {/* — pieces arranged loosely on the sheet — */}
+            <div className="relative grid grid-cols-1 gap-y-16 sm:grid-cols-12 sm:gap-y-0">
+              <Reveal className="sm:col-span-6 sm:col-start-1">
                 <h2 className="font-display text-3xl tracking-tight sm:text-5xl">Selected work</h2>
               </Reveal>
-            </div>
-            <div className="paper-panel flex items-end px-5 pb-8 sm:col-span-4 sm:px-8 sm:pb-16">
-              <Reveal delay={120}>
+              <Reveal delay={120} className="sm:col-span-2 sm:col-start-11 sm:mt-4">
                 <span className="text-[0.7rem] uppercase tracking-[0.24em] text-muted-foreground">
                   Four of twelve
                 </span>
               </Reveal>
-            </div>
 
-            {/* — fold row 2: 01 image on a wide panel, caption on its own — */}
-            <div className="paper-panel px-5 pb-12 pt-12 sm:col-span-7 sm:px-12 sm:pb-20 sm:pt-16">
-              <ProjectImage project={p1} ratio="aspect-[4/5]" className="sm:w-[86%]" />
-            </div>
-            <div className="paper-panel flex items-end px-5 pb-12 sm:col-span-5 sm:px-9 sm:pb-24">
-              <ProjectMeta project={p1} delay={120} />
-            </div>
+              <ProjectImage
+                project={p1}
+                ratio="aspect-[4/5]"
+                className="sm:col-span-4 sm:col-start-2 sm:row-start-2 sm:mt-24"
+              />
+              <ProjectMeta
+                project={p1}
+                delay={120}
+                className="sm:col-span-3 sm:col-start-8 sm:row-start-2 sm:mt-56"
+              />
 
-            {/* — fold row 3: caption left, 02 image pushed to the outer fold — */}
-            <div className="paper-panel flex items-start px-5 pb-10 pt-12 sm:col-span-4 sm:px-9 sm:pb-24 sm:pt-24">
-              <ProjectMeta project={p2} />
-            </div>
-            <div className="paper-panel px-5 pb-12 pt-12 sm:col-span-8 sm:px-12 sm:pb-20 sm:pt-16">
               <ProjectImage
                 project={p2}
-                delay={120}
                 ratio="aspect-[5/4]"
-                className="sm:ml-auto sm:w-[74%]"
+                className="sm:col-span-5 sm:col-start-7 sm:row-start-3 sm:mt-28"
               />
-            </div>
+              <ProjectMeta
+                project={p2}
+                delay={120}
+                className="sm:col-span-3 sm:col-start-2 sm:row-start-3 sm:mt-40"
+              />
 
-            {/* — fold row 4: small 03 image, an empty panel of paper, caption — */}
-            <div className="paper-panel px-5 pb-10 pt-12 sm:col-span-5 sm:px-10 sm:pb-24 sm:pt-20">
-              <ProjectImage project={p3} ratio="aspect-[3/4]" className="sm:w-[68%]" />
-            </div>
-            <div aria-hidden className="paper-panel hidden sm:col-span-3 sm:block" />
-            <div className="paper-panel flex items-end px-5 pb-12 sm:col-span-4 sm:px-8 sm:pb-28">
-              <ProjectMeta project={p3} delay={120} />
-            </div>
+              <ProjectImage
+                project={p3}
+                ratio="aspect-[3/4]"
+                className="sm:col-span-3 sm:col-start-3 sm:row-start-4 sm:mt-36"
+              />
+              <ProjectMeta
+                project={p3}
+                delay={120}
+                className="sm:col-span-3 sm:col-start-7 sm:row-start-4 sm:mt-64"
+              />
 
-            {/* — fold row 5: 04 image floating inside a large panel — */}
-            <div className="paper-panel px-5 pb-12 pt-12 sm:col-span-9 sm:px-16 sm:pb-24 sm:pt-16">
               <ProjectImage
                 project={p4}
                 ratio="aspect-[16/11]"
-                className="sm:ml-[10%] sm:w-[78%]"
+                className="sm:col-span-6 sm:col-start-6 sm:row-start-5 sm:mt-32"
               />
-            </div>
-            <div className="paper-panel flex items-end px-5 pb-14 sm:col-span-3 sm:px-7 sm:pb-28">
-              <ProjectMeta project={p4} delay={120} />
+              <ProjectMeta
+                project={p4}
+                delay={120}
+                className="sm:col-span-3 sm:col-start-2 sm:row-start-5 sm:mt-44"
+              />
             </div>
           </div>
         </section>
+
 
 
 
