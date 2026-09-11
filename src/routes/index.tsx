@@ -121,40 +121,52 @@ function Index() {
 
         <section id="work" className="mx-auto max-w-6xl px-5 pb-24 pt-8 sm:px-8 sm:pb-36">
           <div className="paper-board relative px-5 py-14 sm:px-12 sm:py-24">
-            {/* — the creases: irregular, soft, laid across the whole sheet — */}
+            {/* — the creases: soft, uneven, fading in and out across the sheet — */}
             <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
               <div
-                className="paper-crease-h left-[-4%] right-[-6%] top-[17%] h-14"
-                style={{ transform: "rotate(-0.35deg)" }}
-              />
-              <div
-                className="paper-crease-h left-[-8%] right-[-3%] top-[46%] h-20 opacity-80"
-                style={{ transform: "rotate(0.5deg)" }}
-              />
-              <div
-                className="paper-crease-h left-[-5%] right-[-5%] top-[73%] h-16 opacity-70"
-                style={{ transform: "rotate(-0.2deg)" }}
-              />
-              <div
-                className="paper-crease-v bottom-[-4%] left-[44%] top-[-3%] w-16"
-                style={{ transform: "rotate(0.4deg)" }}
-              />
-              <div
-                className="paper-crease-v bottom-[64%] left-[53%] top-[-4%] w-12 opacity-75"
+                className="paper-crease-h left-[-6%] right-[-9%] top-[14%] h-24"
                 style={{ transform: "rotate(-0.6deg)" }}
               />
               <div
-                className="paper-crease-v bottom-[28%] left-[62%] top-[44%] w-14 opacity-65"
-                style={{ transform: "rotate(0.3deg)" }}
+                className="paper-crease-h left-[18%] right-[-4%] top-[33%] h-16 opacity-55"
+                style={{ transform: "rotate(0.7deg)" }}
+              />
+              <div
+                className="paper-crease-h left-[-9%] right-[-5%] top-[52%] h-28 opacity-75"
+                style={{ transform: "rotate(0.45deg)" }}
+              />
+              <div
+                className="paper-crease-h left-[-7%] right-[36%] top-[68%] h-16 opacity-50"
+                style={{ transform: "rotate(-0.5deg)" }}
+              />
+              <div
+                className="paper-crease-h left-[-4%] right-[-7%] top-[84%] h-20 opacity-65"
+                style={{ transform: "rotate(-0.25deg)" }}
+              />
+              <div
+                className="paper-crease-v bottom-[-5%] left-[41%] top-[-4%] w-24 opacity-80"
+                style={{ transform: "rotate(0.55deg)" }}
+              />
+              <div
+                className="paper-crease-v bottom-[58%] left-[58%] top-[-5%] w-16 opacity-55"
+                style={{ transform: "rotate(-0.8deg)" }}
+              />
+              <div
+                className="paper-crease-v bottom-[12%] left-[71%] top-[38%] w-20 opacity-45"
+                style={{ transform: "rotate(0.4deg)" }}
+              />
+              <div
+                className="paper-crease-v bottom-[36%] left-[19%] top-[46%] w-16 opacity-40"
+                style={{ transform: "rotate(-0.35deg)" }}
               />
             </div>
 
             {/* — pieces arranged loosely on the sheet — */}
             <div className="relative grid grid-cols-1 gap-y-16 sm:grid-cols-12 sm:gap-y-0">
-              <Reveal className="sm:col-span-6 sm:col-start-1">
+              <Reveal className="sm:col-span-6 sm:col-start-1 sm:[rotate:-0.4deg]">
                 <h2 className="font-display text-3xl tracking-tight sm:text-5xl">Selected work</h2>
               </Reveal>
-              <Reveal delay={120} className="sm:col-span-2 sm:col-start-11 sm:mt-4">
+              <Reveal delay={120} className="sm:col-span-2 sm:col-start-11 sm:mt-6">
                 <span className="text-[0.7rem] uppercase tracking-[0.24em] text-muted-foreground">
                   Four of twelve
                 </span>
@@ -163,47 +175,48 @@ function Index() {
               <ProjectImage
                 project={p1}
                 ratio="aspect-[4/5]"
-                className="sm:col-span-4 sm:col-start-2 sm:row-start-2 sm:mt-24"
+                className="sm:col-span-4 sm:col-start-2 sm:row-start-2 sm:mt-28 sm:[rotate:-0.9deg]"
               />
               <ProjectMeta
                 project={p1}
                 delay={120}
-                className="sm:col-span-3 sm:col-start-8 sm:row-start-2 sm:mt-56"
+                className="sm:col-span-3 sm:col-start-8 sm:row-start-2 sm:mt-64 sm:[rotate:0.5deg]"
               />
 
               <ProjectImage
                 project={p2}
                 ratio="aspect-[5/4]"
-                className="sm:col-span-5 sm:col-start-7 sm:row-start-3 sm:mt-28"
+                className="sm:col-span-5 sm:col-start-7 sm:row-start-3 sm:mt-36 sm:[rotate:0.8deg]"
               />
               <ProjectMeta
                 project={p2}
                 delay={120}
-                className="sm:col-span-3 sm:col-start-2 sm:row-start-3 sm:mt-40"
+                className="sm:col-span-3 sm:col-start-2 sm:row-start-3 sm:mt-52 sm:[rotate:-0.4deg]"
               />
 
               <ProjectImage
                 project={p3}
                 ratio="aspect-[3/4]"
-                className="sm:col-span-3 sm:col-start-3 sm:row-start-4 sm:mt-36"
+                className="sm:col-span-3 sm:col-start-3 sm:row-start-4 sm:mt-44 sm:[rotate:1deg]"
               />
               <ProjectMeta
                 project={p3}
                 delay={120}
-                className="sm:col-span-3 sm:col-start-7 sm:row-start-4 sm:mt-64"
+                className="sm:col-span-3 sm:col-start-8 sm:row-start-4 sm:mt-72 sm:[rotate:-0.6deg]"
               />
 
               <ProjectImage
                 project={p4}
                 ratio="aspect-[16/11]"
-                className="sm:col-span-6 sm:col-start-6 sm:row-start-5 sm:mt-32"
+                className="sm:col-span-6 sm:col-start-5 sm:row-start-5 sm:mt-40 sm:[rotate:-0.7deg]"
               />
               <ProjectMeta
                 project={p4}
                 delay={120}
-                className="sm:col-span-3 sm:col-start-2 sm:row-start-5 sm:mt-44"
+                className="sm:col-span-3 sm:col-start-1 sm:row-start-5 sm:mt-56 sm:[rotate:0.45deg]"
               />
             </div>
+
           </div>
         </section>
 
