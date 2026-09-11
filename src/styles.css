@@ -246,7 +246,7 @@
 }
 
 /* A single horizontal crease: a soft valley shadow met by a lifted edge.
-   Height is set per-instance; the gradient scales with it. */
+   Ends fade out so no crease reads as a hard divider. */
 @utility paper-crease-h {
   position: absolute;
   z-index: -1;
@@ -254,12 +254,22 @@
   background-image: linear-gradient(
     to bottom,
     transparent 0%,
-    color-mix(in oklab, white 55%, transparent) 34%,
-    color-mix(in oklab, var(--foreground) 5.5%, transparent) 50%,
-    color-mix(in oklab, var(--foreground) 2%, transparent) 62%,
+    color-mix(in oklab, white 48%, transparent) 36%,
+    color-mix(in oklab, var(--foreground) 4.2%, transparent) 50%,
+    color-mix(in oklab, var(--foreground) 1.6%, transparent) 63%,
     transparent 100%
   );
-  filter: blur(0.4px);
+  filter: blur(2.5px);
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.35) 9%,
+    rgba(0, 0, 0, 1) 27%,
+    rgba(0, 0, 0, 0.55) 46%,
+    rgba(0, 0, 0, 0.95) 68%,
+    rgba(0, 0, 0, 0.3) 88%,
+    transparent 100%
+  );
 }
 
 /* A single vertical crease. */
@@ -270,13 +280,23 @@
   background-image: linear-gradient(
     to right,
     transparent 0%,
-    color-mix(in oklab, white 52%, transparent) 33%,
-    color-mix(in oklab, var(--foreground) 5%, transparent) 50%,
-    color-mix(in oklab, var(--foreground) 1.8%, transparent) 63%,
+    color-mix(in oklab, white 45%, transparent) 35%,
+    color-mix(in oklab, var(--foreground) 3.8%, transparent) 50%,
+    color-mix(in oklab, var(--foreground) 1.4%, transparent) 63%,
     transparent 100%
   );
-  filter: blur(0.4px);
+  filter: blur(2.5px);
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.4) 12%,
+    rgba(0, 0, 0, 1) 34%,
+    rgba(0, 0, 0, 0.5) 55%,
+    rgba(0, 0, 0, 0.9) 74%,
+    transparent 100%
+  );
 }
+
 
 
 
