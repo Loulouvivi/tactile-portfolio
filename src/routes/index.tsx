@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import { ProjectImage, ProjectMeta, type Project } from "@/components/ProjectCard";
 import portrait from "@/assets/portrait.jpg";
-import foldedPaper from "@/assets/folded-paper-background.jpg";
+import foldedPaper from "@/assets/folded-paper-background.png";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
