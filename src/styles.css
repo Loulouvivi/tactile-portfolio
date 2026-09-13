@@ -162,7 +162,7 @@
 }
 
 @theme inline {
-  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
   --color-ink-deep: var(--ink-deep);
   --animate-rise: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -204,7 +204,13 @@
 .hero-nav {
   display: flex;
   gap: 1.25rem;
+  font-family: var(--font-display);
   letter-spacing: 0.22em;
+}
+
+.font-display em {
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+  font-weight: 400;
 }
 
 .hero-artboard {
