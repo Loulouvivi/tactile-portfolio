@@ -120,7 +120,7 @@ function Index() {
           </div>
         </section>
 
-        <section id="work" className="mx-auto max-w-6xl px-5 pb-24 pt-8 sm:px-8 sm:pb-36">
+        <section id="work" className="pb-24 pt-8 sm:pb-36">
           <div className="paper-board relative px-5 py-14 sm:p-0">
             <img
               src={foldedPaper}
