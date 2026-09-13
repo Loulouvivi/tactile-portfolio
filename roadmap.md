@@ -5,4 +5,4 @@
 - [x] Validate desktop and mobile readability, association, and full paper coverage.
 - [x] Break the remaining row-and-column rhythm in Selected Work with fully independent placement.
 - [x] Reduce Project 04 to a peer element and introduce restrained, natural overlaps.
-- [ ] Validate the revised composition on desktop and mobile without changing the paper or surrounding site.
+- [x] Validate the revised composition on desktop and mobile without changing the paper or surrounding site.
