@@ -205,16 +205,16 @@
   padding-inline: 0.5rem;
 }
 
-.collage-heading { width: 78%; margin-left: 3%; }
-.collage-count { align-self: flex-end; margin-right: 11%; margin-top: -2.25rem; }
-.collage-p1-image { width: 57%; margin-left: 6%; rotate: -1.35deg; }
-.collage-p1-meta { align-self: flex-end; width: 71%; margin-right: 2%; margin-top: -2.75rem; rotate: 0.45deg; }
-.collage-p2-image { align-self: flex-end; width: 91%; margin-right: -9%; margin-top: 2.5rem; rotate: 0.8deg; }
-.collage-p2-meta { width: 67%; margin-left: 3%; margin-top: -1rem; rotate: -0.5deg; }
-.collage-p3-image { width: 48%; margin-left: 34%; margin-top: 3.5rem; rotate: -1.1deg; }
-.collage-p3-meta { width: 76%; margin-left: -1%; margin-top: -2rem; rotate: 0.55deg; }
-.collage-p4-image { align-self: flex-end; width: 72%; margin-right: 4%; margin-top: 4rem; rotate: 0.65deg; }
-.collage-p4-meta { width: 66%; margin-left: 8%; margin-top: -1.25rem; rotate: -0.45deg; }
+.collage-heading { width: 78%; margin-left: 2%; }
+.collage-count { align-self: flex-end; margin-right: 6%; margin-top: -2.25rem; }
+.collage-p1-image { width: 52%; margin-left: 7%; rotate: -1.7deg; }
+.collage-p1-meta { align-self: flex-end; width: 63%; margin-right: 1%; margin-top: -2rem; rotate: 0.35deg; }
+.collage-p2-image { align-self: flex-end; width: 89%; margin-right: -8%; margin-top: 4.5rem; rotate: 1.05deg; }
+.collage-p2-meta { width: 69%; margin-left: 12%; margin-top: -1.25rem; rotate: -0.7deg; }
+.collage-p3-image { width: 43%; margin-left: 45%; margin-top: 5.5rem; rotate: -1.45deg; }
+.collage-p3-meta { width: 59%; margin-left: 4%; margin-top: -1.5rem; rotate: 0.6deg; }
+.collage-p4-image { width: 68%; margin-left: 2%; margin-top: 6rem; rotate: 0.8deg; }
+.collage-p4-meta { align-self: flex-end; width: 78%; margin-right: -1%; margin-top: -1.75rem; rotate: -0.45deg; }
 
 @media (min-width: 40rem) {
   .work-collage {
@@ -227,16 +227,16 @@
     position: absolute;
   }
 
-  .collage-heading { left: 37%; top: 3.8%; width: 31%; margin: 0; rotate: -0.45deg; }
-  .collage-count { left: 7%; top: 8.8%; width: 13%; margin: 0; }
-  .collage-p1-image { left: 7%; top: 18%; width: 21%; margin: 0; rotate: -1.4deg; }
-  .collage-p1-meta { left: 30%; top: 14.5%; width: 18%; margin: 0; rotate: 0.45deg; }
-  .collage-p2-image { left: 59%; top: 9.5%; width: 36%; margin: 0; rotate: 0.85deg; }
-  .collage-p2-meta { left: 66%; top: 29%; width: 21%; margin: 0; rotate: -0.55deg; }
-  .collage-p3-image { left: 48%; top: 48%; width: 16%; margin: 0; rotate: -1.15deg; z-index: 2; }
-  .collage-p3-meta { left: 66%; top: 44.5%; width: 19%; margin: 0; rotate: 0.6deg; }
-  .collage-p4-image { left: 9%; top: 67%; width: 29%; margin: 0; rotate: 0.7deg; }
-  .collage-p4-meta { left: 36%; top: 72.5%; width: 20%; margin: 0; rotate: -0.5deg; }
+  .collage-heading { left: 7%; top: 3.6%; width: 31%; margin: 0; rotate: -0.5deg; }
+  .collage-count { left: 78%; top: 14%; width: 13%; margin: 0; rotate: 0.3deg; }
+  .collage-p1-image { left: 8%; top: 14.5%; width: 18%; margin: 0; rotate: -1.75deg; }
+  .collage-p1-meta { left: 29%; top: 9.5%; width: 17%; margin: 0; rotate: 0.55deg; }
+  .collage-p2-image { left: 48%; top: 27%; width: 45%; margin: 0; rotate: 1.05deg; }
+  .collage-p2-meta { left: 28%; top: 41%; width: 18%; margin: 0; rotate: -0.7deg; }
+  .collage-p3-image { left: 76%; top: 57%; width: 13%; margin: 0; rotate: -1.55deg; z-index: 2; }
+  .collage-p3-meta { left: 55%; top: 53%; width: 17%; margin: 0; rotate: 0.65deg; }
+  .collage-p4-image { left: 13%; top: 71%; width: 27%; margin: 0; rotate: 0.85deg; }
+  .collage-p4-meta { left: 42%; top: 79%; width: 20%; margin: 0; rotate: -0.55deg; }
 }
 
 
