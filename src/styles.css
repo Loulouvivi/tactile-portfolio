@@ -379,7 +379,11 @@
     font-size: 0.64rem;
   }
   .hero-copy-secondary {
-    display: none;
+    right: 4%;
+    bottom: 2.8%;
+    width: 37%;
+    font-size: 0.52rem;
+    line-height: 1.45;
   }
 }
 
