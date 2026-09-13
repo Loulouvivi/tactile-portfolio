@@ -209,12 +209,12 @@
 .collage-count { align-self: flex-end; margin-right: 6%; margin-top: -2.25rem; }
 .collage-p1-image { width: 52%; margin-left: 7%; rotate: -1.7deg; }
 .collage-p1-meta { align-self: flex-end; width: 63%; margin-right: 1%; margin-top: -2rem; rotate: 0.35deg; }
-.collage-p2-image { align-self: flex-end; width: 89%; margin-right: -8%; margin-top: 4.5rem; rotate: 1.05deg; }
-.collage-p2-meta { width: 69%; margin-left: 12%; margin-top: -1.25rem; rotate: -0.7deg; }
-.collage-p3-image { width: 43%; margin-left: 45%; margin-top: 5.5rem; rotate: -1.45deg; }
+.collage-p2-image { align-self: flex-end; width: 80%; margin-right: -6%; margin-top: 4.5rem; rotate: 1.05deg; }
+.collage-p2-meta { width: 66%; margin-left: 12%; margin-top: -1.25rem; rotate: -0.7deg; }
+.collage-p3-image { width: 47%; margin-left: 44%; margin-top: 5.5rem; rotate: -1.45deg; }
 .collage-p3-meta { width: 59%; margin-left: 4%; margin-top: -1.5rem; rotate: 0.6deg; }
 .collage-p4-image { width: 68%; margin-left: 2%; margin-top: 6rem; rotate: 0.8deg; }
-.collage-p4-meta { align-self: flex-end; width: 78%; margin-right: -1%; margin-top: -1.75rem; rotate: -0.45deg; }
+.collage-p4-meta { align-self: flex-end; width: 78%; margin-right: -1%; margin-top: -1.75rem; margin-bottom: 2.5rem; rotate: -0.45deg; }
 
 @media (min-width: 40rem) {
   .work-collage {
@@ -231,12 +231,12 @@
   .collage-count { left: 78%; top: 14%; width: 13%; margin: 0; rotate: 0.3deg; }
   .collage-p1-image { left: 8%; top: 14.5%; width: 18%; margin: 0; rotate: -1.75deg; }
   .collage-p1-meta { left: 29%; top: 9.5%; width: 17%; margin: 0; rotate: 0.55deg; }
-  .collage-p2-image { left: 48%; top: 27%; width: 45%; margin: 0; rotate: 1.05deg; }
+  .collage-p2-image { left: 49%; top: 28.5%; width: 41%; margin: 0; rotate: 1.05deg; }
   .collage-p2-meta { left: 28%; top: 41%; width: 18%; margin: 0; rotate: -0.7deg; }
-  .collage-p3-image { left: 76%; top: 57%; width: 13%; margin: 0; rotate: -1.55deg; z-index: 2; }
+  .collage-p3-image { left: 74.5%; top: 55.5%; width: 16%; margin: 0; rotate: -1.55deg; z-index: 2; }
   .collage-p3-meta { left: 55%; top: 53%; width: 17%; margin: 0; rotate: 0.65deg; }
-  .collage-p4-image { left: 13%; top: 71%; width: 27%; margin: 0; rotate: 0.85deg; }
-  .collage-p4-meta { left: 42%; top: 79%; width: 20%; margin: 0; rotate: -0.55deg; }
+  .collage-p4-image { left: 13%; top: 69.5%; width: 27%; margin: 0; rotate: 0.85deg; }
+  .collage-p4-meta { left: 42%; top: 77.5%; width: 20%; margin: 0; rotate: -0.55deg; }
 }
 
 
