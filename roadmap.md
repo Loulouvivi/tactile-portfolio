@@ -21,4 +21,4 @@
 - [x] Verify typography loading, hierarchy, and fit across desktop and mobile.
 - [x] Replace Space Grotesk with Instrument Sans as the primary display face.
 - [x] Restore the established typography proportions while preserving every composition.
-- [ ] Verify the hero and one-line desktop “Selected work” across desktop and mobile.
+- [x] Verify the hero and one-line desktop “Selected work” across desktop and mobile.
