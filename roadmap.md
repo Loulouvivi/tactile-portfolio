@@ -12,3 +12,5 @@
 - [x] Add one existing project photograph, restrained metadata, and a 1.5–2 second entrance sequence.
 - [x] Verify the new hero on desktop and mobile while confirming Selected Work is unchanged.
 - [x] Ensure the hero cannot resolve into a left-text/right-image or other conventional grid composition.
+- [ ] Join the hero and Selected Work onto one uninterrupted photographed paper sheet.
+- [ ] Verify the transition at desktop and mobile sizes without altering either composition.
