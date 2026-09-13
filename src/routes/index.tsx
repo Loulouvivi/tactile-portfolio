@@ -99,8 +99,10 @@ function Index() {
       </header>
 
       <main id="top">
-        <section className="hero-artboard" aria-labelledby="hero-title">
-          <img src={foldedPaper} alt="" aria-hidden="true" className="hero-paper" />
+        <div className="homepage-paper-sheet">
+          <img src={foldedPaper} alt="" aria-hidden="true" className="homepage-paper-texture" />
+
+          <section className="hero-artboard" aria-labelledby="hero-title">
 
           <p className="hero-note hero-note-place">Multimedia designer — Copenhagen</p>
           <p className="hero-note hero-note-edition">Selected work / 2026</p>
@@ -133,17 +135,10 @@ function Index() {
             Currently taking on two projects for winter 2026. Previously with Kontrapunkt and the
             Danish Design Museum.
           </p>
-        </section>
+          </section>
 
-        <section id="work" className="pb-24 pt-8 sm:pb-36">
-          <div className="paper-board relative px-5 py-14 sm:p-0">
-            <img
-              src={foldedPaper}
-              alt=""
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-            />
-
+          <section id="work" className="pb-24 sm:pb-36">
+            <div className="relative px-5 py-14 sm:p-0">
             <div className="work-collage relative flex flex-col gap-16 sm:block sm:aspect-[1400/1920]">
               <Reveal className="collage-heading">
                 <h2 className="font-display text-3xl tracking-tight sm:text-5xl">Selected work</h2>
@@ -198,8 +193,9 @@ function Index() {
                 className="collage-p4-meta"
               />
             </div>
-          </div>
-        </section>
+            </div>
+          </section>
+        </div>
 
 
 
