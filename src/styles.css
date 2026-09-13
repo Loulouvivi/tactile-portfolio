@@ -162,7 +162,7 @@
 }
 
 @theme inline {
-  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
   --color-ink-deep: var(--ink-deep);
   --animate-rise: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -204,7 +204,13 @@
 .hero-nav {
   display: flex;
   gap: 1.25rem;
+  font-family: var(--font-display);
   letter-spacing: 0.22em;
+}
+
+.font-display em {
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+  font-weight: 400;
 }
 
 .hero-artboard {
@@ -368,7 +374,13 @@
   .hero-note-index { left: 8%; bottom: 3.5%; width: 10rem; }
   .hero-note-vertical { right: 2%; top: 47%; }
   .hero-word-design { left: 5%; top: 21%; font-size: clamp(4.3rem, 23vw, 6.2rem); }
-  .hero-word-that { left: 24%; top: 34%; font-size: clamp(3.5rem, 19vw, 5rem); }
+  .hero-word-that {
+    left: 24%;
+    top: 34%;
+    font-size: clamp(3.5rem, 19vw, 5rem);
+    transform-origin: left center;
+    scale: 0.94 1;
+  }
   .hero-word-can { left: 15%; top: 47%; font-size: clamp(3.4rem, 18vw, 4.8rem); }
   .hero-word-feel { left: 36%; top: 52%; font-size: clamp(5rem, 27vw, 7rem); }
   .hero-print {
