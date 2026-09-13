@@ -6,9 +6,10 @@ Redesign only the homepage header and opening composition as a full-viewport phy
 ## Composition
 - Use the existing folded-paper photograph as the single continuous surface behind the full opening viewport.
 - Keep “Studio Marlow” and Work / Studio / Contact understated near the paper edges.
-- Recompose “Design that you can feel” into a large, asymmetric four-line serif arrangement, retaining the plum italic treatment on “feel”.
-- Place one existing project photograph off-axis as a lightly printed physical object with only a restrained edge and shadow.
-- Distribute a few tiny publication-style notes independently, including one vertical note, while keeping both existing supporting statements.
+- Treat the headline, photograph, navigation, supporting copy, and editorial notes as independently positioned objects on one artboard, with no shared column structure or reducible left-text/right-image split.
+- Recompose “Design that you can feel” into a large, asymmetric serif arrangement that crosses conventional page zones rather than forming a left-side text block, retaining the plum italic treatment on “feel”.
+- Place one existing project photograph at an unexpected coordinate that creates tension with the typography rather than sitting beside or beneath it as a standard hero image; treat it as a lightly printed physical object with only a restrained edge and shadow.
+- Distribute a few tiny publication-style notes independently, including one vertical note, while keeping both existing supporting statements. Their positions should be discovered across the paper rather than aligned into a shared axis.
 - Preserve generous negative space and avoid cards, grids, panels, equal spacing, and extra decoration.
 
 ## Motion
