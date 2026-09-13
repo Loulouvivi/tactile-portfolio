@@ -15,4 +15,4 @@
 - [x] Join the hero and Selected Work onto one uninterrupted photographed paper sheet.
 - [x] Verify the transition at desktop and mobile sizes without altering either composition.
 - [x] Extend the single photographed paper sheet through Studio, Contact, and the footer.
-- [ ] Verify the entire desktop and mobile scroll has no paper seams, resets, or exposed page background.
+- [x] Verify the entire desktop and mobile scroll has no paper seams, resets, or exposed page background.
