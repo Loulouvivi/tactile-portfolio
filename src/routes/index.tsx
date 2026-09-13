@@ -81,11 +81,11 @@ function Index() {
 
   return (
     <div className="min-h-screen">
-      <header className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-6 sm:flex sm:justify-between sm:px-8">
-        <a href="#top" className="min-w-0 truncate font-display text-xl tracking-tight">
+      <header className="hero-header">
+        <a href="#top" className="hero-brand font-display text-xl">
           Studio Marlow
         </a>
-        <nav className="flex shrink-0 items-center gap-5 text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground">
+        <nav className="hero-nav text-[0.7rem] uppercase text-muted-foreground" aria-label="Primary navigation">
           <a href="#work" className="transition-colors hover:text-foreground">
             Work
           </a>
@@ -99,25 +99,40 @@ function Index() {
       </header>
 
       <main id="top">
-        <section className="mx-auto max-w-6xl px-5 pb-20 pt-10 sm:px-8 sm:pb-32 sm:pt-20">
-          <p className="animate-rise text-[0.7rem] uppercase tracking-[0.3em] text-muted-foreground">
-            Multimedia designer — Copenhagen
-          </p>
-          <h1 className="animate-rise mt-8 font-display text-[clamp(3rem,13vw,10rem)] leading-[0.86] tracking-[-0.03em]">
-            Design that
-            <br />
-            you can <em className="italic text-accent">feel</em>
+        <section className="hero-artboard" aria-labelledby="hero-title">
+          <img src={foldedPaper} alt="" aria-hidden="true" className="hero-paper" />
+
+          <p className="hero-note hero-note-place">Multimedia designer — Copenhagen</p>
+          <p className="hero-note hero-note-edition">Selected work / 2026</p>
+          <p className="hero-note hero-note-index">01 — Digital / Brand / Experience</p>
+          <p className="hero-note hero-note-vertical">Studio Marlow — independent practice</p>
+
+          <h1 id="hero-title" className="hero-title font-display">
+            <span className="hero-word hero-word-design">Design</span>
+            <span className="hero-word hero-word-that">that you</span>
+            <span className="hero-word hero-word-can">can</span>
+            <em className="hero-word hero-word-feel text-accent">feel</em>
           </h1>
-          <div className="rule-line mt-12 grid gap-8 pt-6 sm:grid-cols-[1.1fr_1fr] sm:gap-16">
-            <p className="max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
-              I work across identity, motion, print and space — building slow, material-minded
-              systems for cultural institutions and independent makers.
-            </p>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              Currently taking on two projects for winter 2026. Previously with Kontrapunkt and the
-              Danish Design Museum.
-            </p>
-          </div>
+
+          <figure className="hero-print">
+            <img
+              src={project1}
+              alt="Risograph printed posters in ochre and black layered on warm paper"
+              width={1200}
+              height={1500}
+              className="h-full w-full object-cover"
+            />
+            <figcaption className="hero-print-caption">Riso Almanac — Print / Editorial</figcaption>
+          </figure>
+
+          <p className="hero-copy hero-copy-primary">
+            I work across identity, motion, print and space — building slow, material-minded systems
+            for cultural institutions and independent makers.
+          </p>
+          <p className="hero-copy hero-copy-secondary">
+            Currently taking on two projects for winter 2026. Previously with Kontrapunkt and the
+            Danish Design Museum.
+          </p>
         </section>
 
         <section id="work" className="pb-24 pt-8 sm:pb-36">
