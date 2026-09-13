@@ -19,6 +19,6 @@
 - [x] Test a contemporary grotesk as the primary display type without changing the portfolio composition.
 - [x] Preserve an expressive editorial italic for “feel” and “solid” rather than forcing a weak grotesk italic.
 - [x] Verify typography loading, hierarchy, and fit across desktop and mobile.
-- [ ] Replace Space Grotesk with Instrument Sans as the primary display face.
-- [ ] Restore the established typography proportions while preserving every composition.
+- [x] Replace Space Grotesk with Instrument Sans as the primary display face.
+- [x] Restore the established typography proportions while preserving every composition.
 - [ ] Verify the hero and one-line desktop “Selected work” across desktop and mobile.

@@ -162,7 +162,7 @@
 }
 
 @theme inline {
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
   --color-ink-deep: var(--ink-deep);
   --animate-rise: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -378,8 +378,6 @@
     left: 24%;
     top: 34%;
     font-size: clamp(3.5rem, 19vw, 5rem);
-    transform-origin: left center;
-    scale: 0.94 1;
   }
   .hero-word-can { left: 15%; top: 47%; font-size: clamp(3.4rem, 18vw, 4.8rem); }
   .hero-word-feel { left: 36%; top: 52%; font-size: clamp(5rem, 27vw, 7rem); }
@@ -454,6 +452,7 @@
   }
 
   .collage-heading { left: 7%; top: 3.6%; width: 31%; margin: 0; rotate: -0.5deg; }
+  .collage-heading h2 { white-space: nowrap; }
   .collage-count { left: 78%; top: 14%; width: 13%; margin: 0; rotate: 0.3deg; }
   .collage-p1-image { left: 8%; top: 14.5%; width: 18%; margin: 0; rotate: -1.75deg; }
   .collage-p1-meta { left: 29%; top: 9.5%; width: 17%; margin: 0; rotate: 0.55deg; }
