@@ -8,3 +8,6 @@
 - [x] Validate the revised composition on desktop and mobile without changing the paper or surrounding site.
 - [x] Recompose Selected Work from the chosen tactile direction without adding decorative styling.
 - [x] Verify the final desktop scatter and irregular mobile flow.
+- [ ] Recompose only the homepage header and hero as a full-viewport editorial paper artboard.
+- [ ] Add one existing project photograph, restrained metadata, and a 1.5–2 second entrance sequence.
+- [ ] Verify the new hero on desktop and mobile while confirming Selected Work is unchanged.
