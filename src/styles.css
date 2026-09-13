@@ -286,8 +286,8 @@
 }
 
 .hero-word-can {
-  left: 14%;
-  top: 57%;
+  left: 29.5%;
+  top: 58%;
   font-size: clamp(4rem, 9vw, 8rem);
   animation-delay: 0.92s;
 }
@@ -369,7 +369,7 @@
   .hero-note-vertical { right: 2%; top: 47%; }
   .hero-word-design { left: 5%; top: 21%; font-size: clamp(4.3rem, 23vw, 6.2rem); }
   .hero-word-that { left: 24%; top: 34%; font-size: clamp(3.5rem, 19vw, 5rem); }
-  .hero-word-can { left: 7%; top: 46%; font-size: clamp(3.4rem, 18vw, 4.8rem); }
+  .hero-word-can { left: 9%; top: 47%; font-size: clamp(3.4rem, 18vw, 4.8rem); }
   .hero-word-feel { left: 36%; top: 52%; font-size: clamp(5rem, 27vw, 7rem); }
   .hero-print {
     top: 62%;
