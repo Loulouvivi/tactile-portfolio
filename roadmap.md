@@ -16,6 +16,6 @@
 - [x] Verify the transition at desktop and mobile sizes without altering either composition.
 - [x] Extend the single photographed paper sheet through Studio, Contact, and the footer.
 - [x] Verify the entire desktop and mobile scroll has no paper seams, resets, or exposed page background.
-- [ ] Test a contemporary grotesk as the primary display type without changing the portfolio composition.
-- [ ] Preserve an expressive editorial italic for “feel” and “solid” rather than forcing a weak grotesk italic.
-- [ ] Verify typography loading, hierarchy, and fit across desktop and mobile.
+- [x] Test a contemporary grotesk as the primary display type without changing the portfolio composition.
+- [x] Preserve an expressive editorial italic for “feel” and “solid” rather than forcing a weak grotesk italic.
+- [x] Verify typography loading, hierarchy, and fit across desktop and mobile.
