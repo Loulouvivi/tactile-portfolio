@@ -98,9 +98,10 @@ function Index() {
         </nav>
       </header>
 
-      <main id="top">
-        <div className="homepage-paper-sheet">
-          <img src={foldedPaper} alt="" aria-hidden="true" className="homepage-paper-texture" />
+      <div className="homepage-paper-sheet">
+        <img src={foldedPaper} alt="" aria-hidden="true" className="homepage-paper-texture" />
+
+        <main id="top">
 
           <section className="hero-artboard" aria-labelledby="hero-title">
 
@@ -195,12 +196,7 @@ function Index() {
             </div>
             </div>
           </section>
-        </div>
-
-
-
-
-        <section id="studio" className="bg-secondary/60">
+        <section id="studio">
           <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-32">
             <div className="grid gap-12 sm:grid-cols-[1fr_1.1fr] sm:gap-20">
               <Reveal>
@@ -255,14 +251,15 @@ function Index() {
             </a>
           </Reveal>
         </section>
-      </main>
+        </main>
 
-      <footer className="mx-auto max-w-6xl px-5 pb-10 sm:px-8">
-        <div className="rule-line grid grid-cols-[minmax(0,1fr)_auto] gap-4 pt-5 text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground">
-          <span className="min-w-0 truncate">Studio Marlow — Copenhagen</span>
-          <span className="shrink-0">© 2026</span>
-        </div>
-      </footer>
+        <footer className="mx-auto max-w-6xl px-5 pb-10 sm:px-8">
+          <div className="rule-line grid grid-cols-[minmax(0,1fr)_auto] gap-4 pt-5 text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground">
+            <span className="min-w-0 truncate">Studio Marlow — Copenhagen</span>
+            <span className="shrink-0">© 2026</span>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }
