@@ -515,7 +515,8 @@
 }
 
 .studio-statement-object {
-  margin: 6.5rem 0 0 8%;
+  width: 86%;
+  margin: 5.75rem 0 0 6%;
 }
 
 .studio-statement {
@@ -526,13 +527,18 @@
 
 .studio-entry {
   max-width: 34rem;
-  margin-top: 7.5rem;
+  margin-top: 6.75rem;
   padding-top: 1rem;
   border-top: 1px solid color-mix(in oklab, var(--foreground) 15%, transparent);
 }
 
+.studio-entry-process {
+  width: 93%;
+  margin-left: 2%;
+}
+
 .studio-entry-process .studio-entry-line {
-  margin-left: 9%;
+  margin-left: 14%;
 }
 
 .studio-entry-materials .studio-entry-head {
@@ -540,7 +546,7 @@
 }
 
 .studio-entry-materials .studio-copy {
-  margin-left: 12%;
+  margin-left: 16%;
 }
 
 .studio-entry-head {
@@ -570,8 +576,11 @@
 }
 
 .studio-image-object {
-  width: 64%;
-  margin: 6rem 0 0 26%;
+  position: relative;
+  z-index: 2;
+  width: 58%;
+  margin: 4.25rem 0 -1.5rem 33%;
+  rotate: 0.45deg;
 }
 
 .studio-print {
@@ -583,6 +592,11 @@
 
 .studio-index {
   margin-top: 2.4rem;
+}
+
+.studio-entry-disciplines {
+  width: 89%;
+  margin-left: 5%;
 }
 
 .studio-discipline {
@@ -616,6 +630,18 @@
   line-height: 1.5;
 }
 
+.studio-discipline:nth-child(2) {
+  padding-left: 5%;
+}
+
+.studio-discipline:nth-child(3) {
+  padding-right: 7%;
+}
+
+.studio-discipline:nth-child(4) {
+  padding-left: 9%;
+}
+
 @media (min-width: 40rem) {
   .studio-sequence {
     max-width: 66rem;
@@ -631,7 +657,8 @@
   }
 
   .studio-statement-object {
-    margin: 10rem 0 0 31%;
+    width: 52%;
+    margin: 8.5rem 0 0 27%;
   }
 
   .studio-statement {
@@ -639,23 +666,22 @@
   }
 
   .studio-entry {
-    margin-top: 10rem;
+    margin-top: 8.75rem;
   }
 
   .studio-entry-process {
-    margin-left: 5%;
+    width: 52%;
+    margin-left: 3%;
   }
 
   .studio-entry-process .studio-entry-line {
-    margin-left: 17%;
+    margin-left: 22%;
   }
 
   .studio-image-object {
-    position: relative;
-    z-index: 2;
-    width: 25%;
-    margin: -5.5rem 0 -2rem 61%;
-    rotate: 0.7deg;
+    width: 27%;
+    margin: -6.75rem 0 -3.5rem 57%;
+    rotate: 0.9deg;
   }
 
   .studio-image-object .studio-print {
@@ -663,17 +689,20 @@
   }
 
   .studio-entry-materials {
-    margin-top: 8rem;
-    margin-left: 41%;
+    width: 47%;
+    margin-top: 6.25rem;
+    margin-left: 47%;
   }
 
   .studio-entry-materials .studio-copy {
-    margin-left: 18%;
+    margin-left: 22%;
   }
 
   .studio-entry-disciplines {
+    width: 43%;
     max-width: 29rem;
-    margin-left: 22%;
+    margin-top: 11.5rem;
+    margin-left: 15%;
   }
 }
 
