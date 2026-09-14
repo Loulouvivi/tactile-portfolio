@@ -196,10 +196,10 @@ function Index() {
             </div>
             </div>
           </section>
-        <section id="studio">
-          <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-32">
-            <div className="grid gap-12 sm:grid-cols-[1fr_1.1fr] sm:gap-20">
-              <Reveal>
+        <section id="studio" className="studio-section" aria-labelledby="studio-title">
+          <div className="studio-artboard">
+            <Reveal className="studio-image-object">
+              <figure className="studio-print">
                 <img
                   src={portrait}
                   alt="The designer seated at a paper-covered studio desk in daylight"
@@ -208,28 +208,42 @@ function Index() {
                   height={1250}
                   className="aspect-[4/5] w-full object-cover"
                 />
-              </Reveal>
-              <Reveal delay={120}>
-                <h2 className="font-display text-3xl leading-tight tracking-tight sm:text-5xl">
-                  Paper first, pixels second.
-                </h2>
-                <p className="mt-6 max-w-lg leading-relaxed text-muted-foreground">
-                  Every project begins on a table — sketches, proofs, samples, things to hold. The
-                  screen work follows once the physical logic is right, which keeps the digital side
-                  quiet, sturdy and easy to live with.
-                </p>
-                <dl className="mt-10 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2">
-                  {services.map((s) => (
-                    <div key={s.label} className="bg-background p-5">
-                      <dt className="text-[0.7rem] uppercase tracking-[0.24em] text-accent">
-                        {s.label}
-                      </dt>
-                      <dd className="mt-2 text-sm text-muted-foreground">{s.detail}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </Reveal>
-            </div>
+              </figure>
+            </Reveal>
+
+            <Reveal delay={80} className="studio-heading-object">
+              <h2 id="studio-title" className="font-display studio-heading">
+                Paper first,
+                <br />
+                pixels second.
+              </h2>
+            </Reveal>
+
+            <Reveal delay={140} className="studio-copy-object">
+              <p className="studio-copy text-muted-foreground">
+                Every project begins on a table — sketches, proofs, samples, things to hold. The
+                screen work follows once the physical logic is right, which keeps the digital side
+                quiet, sturdy and easy to live with.
+              </p>
+            </Reveal>
+
+            <dl className="studio-index">
+              {services.map((service, index) => (
+                <Reveal
+                  key={service.label}
+                  delay={180 + index * 60}
+                  className={`studio-discipline studio-discipline-${index + 1}`}
+                >
+                  <div>
+                    <span className="studio-discipline-number" aria-hidden="true">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <dt>{service.label}</dt>
+                    <dd>{service.detail}</dd>
+                  </div>
+                </Reveal>
+              ))}
+            </dl>
           </div>
         </section>
 
