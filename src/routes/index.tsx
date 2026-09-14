@@ -197,8 +197,39 @@ function Index() {
             </div>
           </section>
         <section id="studio" className="studio-section" aria-labelledby="studio-title">
-          <div className="studio-artboard">
-            <Reveal className="studio-image-object">
+          <div className="studio-sequence">
+            <Reveal className="studio-lead">
+              <p className="studio-eyebrow">
+                <span aria-hidden="true">00</span> Studio — a working practice
+              </p>
+              <p className="studio-copy text-muted-foreground">
+                Every project begins on a table — sketches, proofs, samples, things to hold. The
+                screen work follows once the physical logic is right, which keeps the digital side
+                quiet, sturdy and easy to live with.
+              </p>
+            </Reveal>
+
+            <Reveal delay={60} className="studio-statement-object">
+              <h2 id="studio-title" className="font-display studio-statement">
+                Paper first,
+                <br />
+                pixels second.
+              </h2>
+            </Reveal>
+
+            <Reveal delay={100} className="studio-entry studio-entry-process">
+              <p className="studio-entry-head">
+                Process
+                <span aria-hidden="true">01</span>
+              </p>
+              <p className="font-display studio-entry-line">Slow looking, quick hands.</p>
+              <p className="studio-copy text-muted-foreground">
+                Everything passes across the table first — sketches, proofs, corrections — before
+                it earns the screen.
+              </p>
+            </Reveal>
+
+            <Reveal delay={140} className="studio-image-object">
               <figure className="studio-print">
                 <img
                   src={portrait}
@@ -211,39 +242,35 @@ function Index() {
               </figure>
             </Reveal>
 
-            <Reveal delay={80} className="studio-heading-object">
-              <h2 id="studio-title" className="font-display studio-heading">
-                Paper first,
-                <br />
-                pixels second.
-              </h2>
-            </Reveal>
-
-            <Reveal delay={140} className="studio-copy-object">
+            <Reveal delay={160} className="studio-entry studio-entry-materials">
+              <p className="studio-entry-head">
+                Materials
+                <span aria-hidden="true">02</span>
+              </p>
+              <p className="font-display studio-entry-line">Ink, stock, daylight.</p>
               <p className="studio-copy text-muted-foreground">
-                Every project begins on a table — sketches, proofs, samples, things to hold. The
-                screen work follows once the physical logic is right, which keeps the digital side
-                quiet, sturdy and easy to live with.
+                Paper is chosen the way others choose words — by weight, by grain, by how it ages
+                in the hand.
               </p>
             </Reveal>
 
-            <dl className="studio-index">
-              {services.map((service, index) => (
-                <Reveal
-                  key={service.label}
-                  delay={180 + index * 60}
-                  className={`studio-discipline studio-discipline-${index + 1}`}
-                >
-                  <div>
+            <Reveal delay={200} className="studio-entry studio-entry-disciplines">
+              <p className="studio-entry-head">
+                Disciplines
+                <span aria-hidden="true">03</span>
+              </p>
+              <dl className="studio-index">
+                {services.map((service, index) => (
+                  <div key={service.label} className="studio-discipline">
                     <span className="studio-discipline-number" aria-hidden="true">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <dt>{service.label}</dt>
                     <dd>{service.detail}</dd>
                   </div>
-                </Reveal>
-              ))}
-            </dl>
+                ))}
+              </dl>
+            </Reveal>
           </div>
         </section>
 
