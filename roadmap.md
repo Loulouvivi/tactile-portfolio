@@ -22,3 +22,5 @@
 - [x] Replace Space Grotesk with Instrument Sans as the primary display face.
 - [x] Restore the established typography proportions while preserving every composition.
 - [x] Verify the hero and one-line desktop “Selected work” across desktop and mobile.
+- [x] Replace Aktiv Grotesk with the Adobe kit’s La Mericana Light for display typography.
+- [ ] Verify La Mericana rendering and unchanged composition across desktop and mobile.
