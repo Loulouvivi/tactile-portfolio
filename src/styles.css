@@ -528,7 +528,19 @@
   max-width: 34rem;
   margin-top: 7.5rem;
   padding-top: 1rem;
-  border-top: 1px solid color-mix(in oklab, var(--foreground) 24%, transparent);
+  border-top: 1px solid color-mix(in oklab, var(--foreground) 15%, transparent);
+}
+
+.studio-entry-process .studio-entry-line {
+  margin-left: 9%;
+}
+
+.studio-entry-materials .studio-entry-head {
+  flex-direction: row-reverse;
+}
+
+.studio-entry-materials .studio-copy {
+  margin-left: 12%;
 }
 
 .studio-entry-head {
@@ -558,8 +570,8 @@
 }
 
 .studio-image-object {
-  width: 72%;
-  margin: 8rem 0 0 16%;
+  width: 64%;
+  margin: 6rem 0 0 26%;
 }
 
 .studio-print {
