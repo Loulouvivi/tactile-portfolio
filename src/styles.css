@@ -208,6 +208,10 @@
   letter-spacing: 0.22em;
 }
 
+.font-display {
+  font-weight: 300;
+}
+
 .font-display em {
   font-family: inherit;
   font-weight: 300;
