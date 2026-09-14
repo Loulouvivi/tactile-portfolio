@@ -24,3 +24,5 @@
 - [x] Verify the hero and one-line desktop “Selected work” across desktop and mobile.
 - [x] Replace Aktiv Grotesk with the Adobe kit’s La Mericana Light for display typography.
 - [x] Verify La Mericana rendering and unchanged composition across desktop and mobile.
+- [x] Pin La Mericana to Light 300 and reduce the hero headline scale ~12% without moving any element.
+- [x] Verify the refined hero on desktop and mobile.
