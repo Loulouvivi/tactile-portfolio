@@ -26,3 +26,5 @@
 - [x] Verify La Mericana rendering and unchanged composition across desktop and mobile.
 - [x] Pin La Mericana to Light 300 and reduce the hero headline scale ~12% without moving any element.
 - [x] Verify the refined hero on desktop and mobile.
+- [ ] Recompose only the Studio section as a modern atelier arrangement on the continuous paper.
+- [ ] Verify the Studio composition, paper continuity, and unchanged surrounding sections on desktop and mobile.

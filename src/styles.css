@@ -468,6 +468,148 @@
   .collage-p4-meta { left: 42%; top: 77.5%; width: 20%; margin: 0; rotate: -0.55deg; }
 }
 
+/* Studio notes arranged as working material on the same photographed sheet. */
+.studio-section {
+  position: relative;
+  z-index: 1;
+}
+
+.studio-artboard {
+  position: relative;
+  min-height: 61rem;
+  padding: 6rem 1.25rem 7rem;
+}
+
+.studio-image-object {
+  width: 78%;
+  margin-left: 4%;
+}
+
+.studio-print {
+  padding: 0.2rem;
+  background: color-mix(in oklab, var(--card) 88%, transparent);
+  box-shadow: 0 15px 28px -25px color-mix(in oklab, var(--foreground) 65%, transparent);
+  rotate: -1.15deg;
+}
+
+.studio-heading-object {
+  width: 94%;
+  margin: 4.5rem 0 0 2%;
+}
+
+.studio-heading {
+  font-size: clamp(3.35rem, 17vw, 5.25rem);
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.studio-copy-object {
+  width: 76%;
+  margin: 3rem 0 0 18%;
+}
+
+.studio-copy {
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+.studio-index {
+  position: relative;
+  min-height: 29rem;
+  margin-top: 5.5rem;
+}
+
+.studio-discipline {
+  position: absolute;
+  width: 44%;
+}
+
+.studio-discipline-number {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: var(--muted-foreground);
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+}
+
+.studio-discipline dt {
+  color: var(--accent);
+  font-size: 0.66rem;
+  line-height: 1.3;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.studio-discipline dd {
+  margin-top: 0.55rem;
+  color: var(--muted-foreground);
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+.studio-discipline-1 { left: 3%; top: 0; }
+.studio-discipline-2 { left: 49%; top: 5.5rem; }
+.studio-discipline-3 { left: 12%; top: 15.5rem; }
+.studio-discipline-4 { left: 57%; top: 21rem; }
+
+@media (min-width: 40rem) {
+  .studio-artboard {
+    min-height: 66rem;
+    max-width: 90rem;
+    margin-inline: auto;
+    padding: 0;
+  }
+
+  .studio-artboard > .reveal,
+  .studio-index {
+    position: absolute;
+  }
+
+  .studio-image-object {
+    left: 7.5%;
+    top: 12%;
+    width: 28%;
+    margin: 0;
+  }
+
+  .studio-heading-object {
+    left: 43%;
+    top: 14%;
+    width: 49%;
+    margin: 0;
+  }
+
+  .studio-heading {
+    font-size: clamp(4.75rem, 7.3vw, 7.5rem);
+  }
+
+  .studio-copy-object {
+    left: 54%;
+    top: 47%;
+    width: 29%;
+    margin: 0;
+  }
+
+  .studio-copy {
+    font-size: 0.82rem;
+  }
+
+  .studio-index {
+    inset: 0;
+    min-height: 0;
+    margin: 0;
+  }
+
+  .studio-discipline {
+    width: 15%;
+  }
+
+  .studio-discipline-1 { left: 10%; top: 69%; }
+  .studio-discipline-2 { left: 33%; top: 78%; }
+  .studio-discipline-3 { left: 58%; top: 68%; }
+  .studio-discipline-4 { left: 79%; top: 80%; width: 13%; }
+}
+
 
 
 @utility rule-line {
