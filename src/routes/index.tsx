@@ -193,7 +193,7 @@ function Index() {
 
               <ProjectImage
                 project={p4}
-                ratio="aspect-[16/11]"
+                ratio="aspect-[1265/1795]"
                 className="collage-p4-image"
               />
               <ProjectMeta
