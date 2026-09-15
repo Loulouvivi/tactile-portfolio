@@ -433,6 +433,20 @@
   padding-inline: 0.5rem;
 }
 
+.project-motion-fallback {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-motion {
+    display: none;
+  }
+
+  .project-motion-fallback {
+    display: block;
+  }
+}
+
 .collage-heading { width: 78%; margin-left: 2%; }
 .collage-count { align-self: flex-end; margin-right: 6%; margin-top: -2.25rem; }
 .collage-p1-image { width: 52%; margin-left: 7%; rotate: -1.7deg; }

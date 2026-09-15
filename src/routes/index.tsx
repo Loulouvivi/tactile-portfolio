@@ -8,6 +8,8 @@ import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
+import arcVideoAsset from "@/assets/arc-studio-stopmotion.mp4.asset.json";
+import arcPosterAsset from "@/assets/arc-studio-poster.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,21 +35,23 @@ export const Route = createFileRoute("/")({
 const projects: Project[] = [
   {
     index: "01",
-    title: "ARC Studio",
-    discipline: "Branding · Visual Identity · UX/UI",
-    year: "",
-    blurb: "",
-    image: project1,
-    alt: "Risograph printed posters in ochre and black layered on warm paper",
-  },
-  {
-    index: "02",
     title: "Amoode",
     discipline: "Fashion · E-commerce · Digital Experience",
     year: "",
     blurb: "",
     image: project2,
     alt: "Abstract ribbons of deep blue and sand in a grainy motion frame",
+  },
+  {
+    index: "02",
+    title: "ARC Studio",
+    discipline: "Branding · Visual Identity · UX/UI",
+    year: "",
+    blurb: "",
+    image: arcPosterAsset.url,
+    video: arcVideoAsset.url,
+    poster: arcPosterAsset.url,
+    alt: "ARC Studio branding and visual identity stop-motion sequence",
   },
   {
     index: "03",
