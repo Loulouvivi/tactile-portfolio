@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 import { Reveal } from "./Reveal";
 
 export type Project = {
@@ -8,7 +10,80 @@ export type Project = {
   blurb: string;
   image: string;
   alt: string;
+  video?: string;
+  videoWebm?: string;
+  poster?: string;
 };
+
+function ProjectVisual({ project, ratio }: { project: Project; ratio: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (!project.video) return;
+
+    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updatePlayback = () => {
+      const video = videoRef.current;
+      if (!video) return;
+
+      if (motionPreference.matches) {
+        video.pause();
+        video.currentTime = 0;
+      } else {
+        void video.play().catch(() => undefined);
+      }
+    };
+
+    updatePlayback();
+    motionPreference.addEventListener("change", updatePlayback);
+    return () => motionPreference.removeEventListener("change", updatePlayback);
+  }, [project.video]);
+
+  if (project.video && project.poster) {
+    return (
+      <>
+        <video
+          ref={videoRef}
+          poster={project.poster}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          onCanPlay={(event) => {
+            if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+              void event.currentTarget.play().catch(() => undefined);
+            }
+          }}
+          aria-label={project.alt}
+          className={`project-motion ${ratio} w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]`}
+        >
+          {project.videoWebm ? <source src={project.videoWebm} type="video/webm" /> : null}
+          <source src={project.video} type="video/mp4" />
+        </video>
+        <img
+          src={project.poster}
+          alt={project.alt}
+          loading="lazy"
+          width={1440}
+          height={1080}
+          className={`project-motion-fallback ${ratio} w-full object-cover`}
+        />
+      </>
+    );
+  }
+
+  return (
+    <img
+      src={project.image}
+      alt={project.alt}
+      loading="lazy"
+      width={1200}
+      height={1500}
+      className={`${ratio} w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]`}
+    />
+  );
+}
 
 /** A single photograph laid onto a panel of the folded sheet. */
 export function ProjectImage({
@@ -29,14 +104,7 @@ export function ProjectImage({
           {project.index}
         </span>
         <div className="relative overflow-hidden bg-muted shadow-[0_18px_40px_-34px_rgba(0,0,0,0.5)]">
-          <img
-            src={project.image}
-            alt={project.alt}
-            loading="lazy"
-            width={1200}
-            height={1500}
-            className={`${ratio} w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]`}
-          />
+          <ProjectVisual project={project} ratio={ratio} />
         </div>
       </a>
     </Reveal>

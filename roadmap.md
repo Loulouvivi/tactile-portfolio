@@ -28,3 +28,5 @@
 - [x] Verify the refined hero on desktop and mobile.
 - [x] Recompose only the Studio section as a modern atelier arrangement on the continuous paper.
 - [x] Verify the Studio composition, paper continuity, and unchanged surrounding sections on desktop and mobile.
+- [x] Swap Amoode and ARC Studio while preserving their existing Selected Work territories.
+- [x] Add ARC's stop-motion film with autoplay, muted looping, inline playback, poster fallback, and reduced-motion handling.
