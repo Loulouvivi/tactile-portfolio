@@ -6,7 +6,7 @@ import portrait from "@/assets/portrait.jpg";
 import foldedPaper from "@/assets/folded-paper-background.png";
 import project1 from "@/assets/project-1.jpg";
 import amoodeMixMatchAsset from "@/assets/amoode-mixmatch.png.asset.json";
-import project3 from "@/assets/project-3.jpg";
+import luluviviPosterAsset from "@/assets/luluvivi-a2-poster.png.asset.json";
 import project4 from "@/assets/project-4.jpg";
 import arcVideoAsset from "@/assets/arc-studio-stopmotion-web.mp4.asset.json";
 import arcVideoWebmAsset from "@/assets/arc-studio-stopmotion.webm.asset.json";
@@ -62,8 +62,8 @@ const projects: Project[] = [
     discipline: "Vintage Fashion · Curation · Branding",
     year: "",
     blurb: "",
-    image: project3,
-    alt: "Blind embossed monogram on cream textured stationery",
+    image: luluviviPosterAsset.url,
+    alt: "LULUVIVI A2 poster — model holding an oversized garment with layered LULUVIVI typography",
   },
   {
     index: "04",
@@ -181,7 +181,7 @@ function Index() {
 
               <ProjectImage
                 project={p3}
-                ratio="aspect-[3/4]"
+                ratio="aspect-[1358/1920]"
                 className="collage-p3-image"
               />
               <ProjectMeta
