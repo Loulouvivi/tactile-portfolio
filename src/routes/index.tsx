@@ -5,7 +5,7 @@ import { ProjectImage, ProjectMeta, type Project } from "@/components/ProjectCar
 import portrait from "@/assets/portrait.jpg";
 import foldedPaper from "@/assets/folded-paper-background.png";
 import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
+import amoodeLaptopAsset from "@/assets/amoode-laptop.png.asset.json";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
 import arcVideoAsset from "@/assets/arc-studio-stopmotion-web.mp4.asset.json";
@@ -40,8 +40,8 @@ const projects: Project[] = [
     discipline: "Fashion · E-commerce · Digital Experience",
     year: "",
     blurb: "",
-    image: project2,
-    alt: "Abstract ribbons of deep blue and sand in a grainy motion frame",
+    image: amoodeLaptopAsset.url,
+    alt: "The Amoode webshop shown on a laptop screen",
   },
   {
     index: "02",
@@ -158,7 +158,7 @@ function Index() {
 
               <ProjectImage
                 project={p1}
-                ratio="aspect-[4/5]"
+                ratio="aspect-[33/20]"
                 className="collage-p1-image"
               />
               <ProjectMeta
