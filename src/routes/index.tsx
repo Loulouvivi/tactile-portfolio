@@ -7,7 +7,7 @@ import foldedPaper from "@/assets/folded-paper-background.png";
 import project1 from "@/assets/project-1.jpg";
 import amoodeMixMatchAsset from "@/assets/amoode-mixmatch.png.asset.json";
 import luluviviPosterAsset from "@/assets/luluvivi-a2-poster.png.asset.json";
-import project4 from "@/assets/project-4.jpg";
+import glossierPosterAsset from "@/assets/glossier-glyptoteket-poster.png.asset.json";
 import arcVideoAsset from "@/assets/arc-studio-stopmotion-web.mp4.asset.json";
 import arcVideoWebmAsset from "@/assets/arc-studio-stopmotion.webm.asset.json";
 import arcPosterAsset from "@/assets/arc-studio-poster.jpg.asset.json";
@@ -71,8 +71,9 @@ const projects: Project[] = [
     discipline: "Campaign Concept · Beauty · Art & Culture",
     year: "",
     blurb: "",
-    image: project4,
-    alt: "Large typographic wall installation lit by raking daylight in a concrete gallery",
+    image: glossierPosterAsset.url,
+    alt: "Glossier × Glyptoteket campaign poster — classical statue holding Glossier products on a mauve ground",
+    transparent: true,
   },
 ];
 
