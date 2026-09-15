@@ -455,7 +455,7 @@
 .collage-p2-meta { width: 66%; margin-left: 12%; margin-top: -2.5rem; rotate: -0.7deg; }
 .collage-p3-image { width: 62.5%; margin-left: 33%; margin-top: 5.5rem; rotate: -1.45deg; }
 .collage-p3-meta { width: 59%; margin-left: 4%; margin-top: -1.5rem; rotate: 0.6deg; }
-.collage-p4-image { width: 68%; margin-left: 2%; margin-top: 6rem; rotate: 0.8deg; }
+.collage-p4-image { width: 54%; margin-left: 2%; margin-top: 6rem; rotate: 0.8deg; }
 .collage-p4-meta { align-self: flex-end; width: 78%; margin-right: -1%; margin-top: -1.75rem; margin-bottom: 2.5rem; rotate: -0.45deg; }
 
 @media (min-width: 40rem) {
