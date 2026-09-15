@@ -33,37 +33,37 @@ export const Route = createFileRoute("/")({
 const projects: Project[] = [
   {
     index: "01",
-    title: "Riso Almanac",
-    discipline: "Print / Editorial",
-    year: "2026",
-    blurb: "A quarterly risograph almanac of essays on making, printed in two inks on recycled stock.",
+    title: "ARC Studio",
+    discipline: "Branding · Visual Identity · UX/UI",
+    year: "",
+    blurb: "",
     image: project1,
     alt: "Risograph printed posters in ochre and black layered on warm paper",
   },
   {
     index: "02",
-    title: "Nocturne Sessions",
-    discipline: "Motion / Sound",
-    year: "2025",
-    blurb: "Title sequence and generative visuals for a late-night concert series broadcast live.",
+    title: "Amoode",
+    discipline: "Fashion · E-commerce · Digital Experience",
+    year: "",
+    blurb: "",
     image: project2,
     alt: "Abstract ribbons of deep blue and sand in a grainy motion frame",
   },
   {
     index: "03",
-    title: "Maison Évole",
-    discipline: "Identity / Craft",
-    year: "2025",
-    blurb: "A blind-embossed identity for a paper mill, built around one drawn monogram and no colour.",
+    title: "LULUVIVI",
+    discipline: "Vintage Fashion · Curation · Branding",
+    year: "",
+    blurb: "",
     image: project3,
     alt: "Blind embossed monogram on cream textured stationery",
   },
   {
     index: "04",
-    title: "Room for Language",
-    discipline: "Spatial / Type",
-    year: "2024",
-    blurb: "A wall-scale typographic installation for a museum wing on the history of reading.",
+    title: "Glossier × Glyptoteket",
+    discipline: "Campaign Concept · Beauty · Art & Culture",
+    year: "",
+    blurb: "",
     image: project4,
     alt: "Large typographic wall installation lit by raking daylight in a concrete gallery",
   },
@@ -146,7 +146,7 @@ function Index() {
               </Reveal>
               <Reveal delay={120} className="collage-count">
                 <span className="text-[0.7rem] uppercase tracking-[0.24em] text-muted-foreground">
-                  Four of twelve
+                  Selected / 04
                 </span>
               </Reveal>
 
