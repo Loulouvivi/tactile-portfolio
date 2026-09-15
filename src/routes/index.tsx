@@ -274,23 +274,31 @@ function Index() {
           </div>
         </section>
 
-        <section id="contact" className="mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-36">
-          <Reveal>
-            <p className="text-[0.7rem] uppercase tracking-[0.3em] text-muted-foreground">
-              Say hello
-            </p>
-            <h2 className="mt-6 font-display text-[clamp(2.5rem,9vw,7rem)] leading-[0.9] tracking-[-0.03em]">
-              Let's make
-              <br />
-              something <em className="italic text-accent">solid</em>
-            </h2>
-            <a
-              href="mailto:hello@studiomarlow.dk"
-              className="mt-10 inline-block border-b border-foreground pb-1 text-lg transition-colors hover:border-accent hover:text-accent"
-            >
-              hello@studiomarlow.dk
-            </a>
-          </Reveal>
+        <section id="contact" className="contact-section" aria-labelledby="contact-title">
+          <div className="contact-sequence">
+            <Reveal className="contact-marker">
+              <p className="contact-eyebrow">
+                <span aria-hidden="true">04</span> Contact — the last page
+              </p>
+            </Reveal>
+
+            <Reveal delay={80} className="contact-statement-object">
+              <h2 id="contact-title" className="font-display contact-statement">
+                Let's make
+                <br />
+                something <em className="italic text-accent">solid</em>
+              </h2>
+            </Reveal>
+
+            <Reveal delay={140} className="contact-email-object">
+              <p className="contact-note">
+                Currently taking on two projects for winter 2026.
+              </p>
+              <a href="mailto:hello@studiomarlow.dk" className="contact-email font-display">
+                hello@studiomarlow.dk
+              </a>
+            </Reveal>
+          </div>
         </section>
         </main>
 
