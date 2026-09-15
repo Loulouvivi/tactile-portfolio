@@ -520,7 +520,7 @@
 }
 
 .studio-statement {
-  font-size: clamp(2rem, 9vw, 3.2rem);
+  font-size: clamp(1.55rem, 7vw, 2.5rem);
   line-height: 1;
   letter-spacing: 0;
 }
@@ -565,7 +565,7 @@
 
 .studio-entry-line {
   margin-top: 2.4rem;
-  font-size: clamp(1.5rem, 5.5vw, 2.3rem);
+  font-size: clamp(1.15rem, 4.3vw, 1.8rem);
   line-height: 1.05;
   letter-spacing: 0;
 }
@@ -662,7 +662,7 @@
   }
 
   .studio-statement {
-    font-size: clamp(2.6rem, 4.4vw, 4rem);
+    font-size: clamp(2rem, 3.4vw, 3.1rem);
   }
 
   .studio-entry {
