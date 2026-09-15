@@ -50,6 +50,11 @@ function ProjectVisual({ project, ratio }: { project: Project; ratio: string }) 
           loop
           playsInline
           preload="metadata"
+          onCanPlay={(event) => {
+            if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+              void event.currentTarget.play().catch(() => undefined);
+            }
+          }}
           aria-label={project.alt}
           className={`project-motion ${ratio} w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]`}
         />
