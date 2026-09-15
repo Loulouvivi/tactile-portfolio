@@ -63,7 +63,7 @@ const projects: Project[] = [
     year: "",
     blurb: "",
     image: luluviviPosterAsset.url,
-    alt: "LULUVIVI A2 poster — folded editorial sheet with red studies",
+    alt: "LULUVIVI A2 poster — model holding an oversized garment with layered LULUVIVI typography",
   },
   {
     index: "04",
