@@ -13,6 +13,7 @@ export type Project = {
   video?: string;
   videoWebm?: string;
   poster?: string;
+  transparent?: boolean;
 };
 
 function ProjectVisual({ project, ratio }: { project: Project; ratio: string }) {
@@ -73,6 +74,17 @@ function ProjectVisual({ project, ratio }: { project: Project; ratio: string }) 
     );
   }
 
+  if (project.transparent) {
+    return (
+      <img
+        src={project.image}
+        alt={project.alt}
+        loading="lazy"
+        className="w-full h-auto object-contain transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+      />
+    );
+  }
+
   return (
     <img
       src={project.image}
@@ -103,7 +115,13 @@ export function ProjectImage({
         <span className="absolute -top-6 left-0 z-10 font-sans text-[0.65rem] uppercase tracking-[0.28em] text-muted-foreground">
           {project.index}
         </span>
-        <div className="relative overflow-hidden bg-muted shadow-[0_18px_40px_-34px_rgba(0,0,0,0.5)]">
+        <div
+          className={
+            project.transparent
+              ? "relative"
+              : "relative overflow-hidden bg-muted shadow-[0_18px_40px_-34px_rgba(0,0,0,0.5)]"
+          }
+        >
           <ProjectVisual project={project} ratio={ratio} />
         </div>
       </a>
