@@ -62,10 +62,14 @@ export function ProjectMeta({
         <h3 className="mt-3 font-display text-2xl leading-tight tracking-tight sm:text-3xl">
           {project.title}
         </h3>
-        <span className="mt-1 block text-xs tracking-[0.2em] text-muted-foreground">
-          {project.year}
-        </span>
-        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{project.blurb}</p>
+        {project.year ? (
+          <span className="mt-1 block text-xs tracking-[0.2em] text-muted-foreground">
+            {project.year}
+          </span>
+        ) : null}
+        {project.blurb ? (
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{project.blurb}</p>
+        ) : null}
         <span className="mt-4 inline-block text-[0.7rem] uppercase tracking-[0.24em] text-accent">
           {project.discipline}
         </span>
