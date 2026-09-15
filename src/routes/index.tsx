@@ -12,13 +12,13 @@ import project4 from "@/assets/project-4.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Studio Marlow — Multimedia Designer" },
+      { title: "Louise Riedmann — Multimedia Designer" },
       {
         name: "description",
         content:
           "Portfolio of a multimedia designer working across identity, motion, print and spatial work for cultural and independent brands.",
       },
-      { property: "og:title", content: "Studio Marlow — Multimedia Designer" },
+      { property: "og:title", content: "Louise Riedmann — Multimedia Designer" },
       {
         property: "og:description",
         content: "Identity, motion, print and spatial work for cultural and independent brands.",
@@ -83,7 +83,7 @@ function Index() {
     <div className="min-h-screen">
       <header className="hero-header">
         <a href="#top" className="hero-brand font-display text-xl">
-          Studio Marlow
+          Louise Riedmann
         </a>
         <nav className="hero-nav text-[0.7rem] uppercase text-muted-foreground" aria-label="Primary navigation">
           <a href="#work" className="transition-colors hover:text-foreground">
@@ -108,7 +108,7 @@ function Index() {
           <p className="hero-note hero-note-place">Multimedia designer — Copenhagen</p>
           <p className="hero-note hero-note-edition">Selected work / 2026</p>
           <p className="hero-note hero-note-index">Visual identity · Graphic design · Art direction · Digital</p>
-          <p className="hero-note hero-note-vertical">Studio Marlow — independent practice</p>
+          <p className="hero-note hero-note-vertical">Louise Riedmann — independent practice</p>
 
           <h1 id="hero-title" className="hero-title font-display">
             <span className="hero-word hero-word-design">Design</span>
@@ -294,8 +294,8 @@ function Index() {
               <p className="contact-note">
                 Currently taking on two projects for winter 2026.
               </p>
-              <a href="mailto:hello@studiomarlow.dk" className="contact-email font-display">
-                hello@studiomarlow.dk
+              <a href="mailto:hello@louiseriedmann.dk" className="contact-email font-display">
+                hello@louiseriedmann.dk
               </a>
             </Reveal>
           </div>
@@ -304,7 +304,7 @@ function Index() {
 
         <footer className="mx-auto max-w-6xl px-5 pb-10 sm:px-8">
           <div className="rule-line grid grid-cols-[minmax(0,1fr)_auto] gap-4 pt-5 text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground">
-            <span className="min-w-0 truncate">Studio Marlow — Copenhagen</span>
+            <span className="min-w-0 truncate">Louise Riedmann — Copenhagen</span>
             <span className="shrink-0">© 2026</span>
           </div>
         </footer>
