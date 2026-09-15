@@ -107,14 +107,14 @@ function Index() {
 
           <p className="hero-note hero-note-place">Multimedia designer — Copenhagen</p>
           <p className="hero-note hero-note-edition">Selected work / 2026</p>
-          <p className="hero-note hero-note-index">01 — Digital / Brand / Experience</p>
+          <p className="hero-note hero-note-index">Visual identity · Graphic design · Art direction · Digital</p>
           <p className="hero-note hero-note-vertical">Studio Marlow — independent practice</p>
 
           <h1 id="hero-title" className="hero-title font-display">
             <span className="hero-word hero-word-design">Design</span>
-            <span className="hero-word hero-word-that">that you</span>
-            <span className="hero-word hero-word-can">can</span>
-            <em className="hero-word hero-word-feel text-accent">feel</em>
+            <span className="hero-word hero-word-that">with a</span>
+            <span className="hero-word hero-word-can">point of</span>
+            <em className="hero-word hero-word-feel text-accent">view.</em>
           </h1>
 
           <figure className="hero-print">
@@ -129,12 +129,12 @@ function Index() {
           </figure>
 
           <p className="hero-copy hero-copy-primary">
-            I work across identity, motion, print and space — building slow, material-minded systems
-            for cultural institutions and independent makers.
+            I'm drawn to the stories hidden in the details — a piece of clothing, a brand, an
+            image, even the things most people overlook.
           </p>
           <p className="hero-copy hero-copy-secondary">
-            Currently taking on two projects for winter 2026. Previously with Kontrapunkt and the
-            Danish Design Museum.
+            I create concepts and visual worlds through design, styling, colour, typography and
+            atmosphere, bringing together concept, aesthetics and storytelling.
           </p>
           </section>
 
