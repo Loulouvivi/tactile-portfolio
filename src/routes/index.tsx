@@ -9,6 +9,7 @@ import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
 import arcVideoAsset from "@/assets/arc-studio-stopmotion-web.mp4.asset.json";
+import arcVideoWebmAsset from "@/assets/arc-studio-stopmotion.webm.asset.json";
 import arcPosterAsset from "@/assets/arc-studio-poster.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -50,6 +51,7 @@ const projects: Project[] = [
     blurb: "",
     image: arcPosterAsset.url,
     video: arcVideoAsset.url,
+    videoWebm: arcVideoWebmAsset.url,
     poster: arcPosterAsset.url,
     alt: "ARC Studio branding and visual identity stop-motion sequence",
   },

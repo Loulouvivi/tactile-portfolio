@@ -11,6 +11,7 @@ export type Project = {
   image: string;
   alt: string;
   video?: string;
+  videoWebm?: string;
   poster?: string;
 };
 
@@ -43,7 +44,6 @@ function ProjectVisual({ project, ratio }: { project: Project; ratio: string }) 
       <>
         <video
           ref={videoRef}
-          src={project.video}
           poster={project.poster}
           autoPlay
           muted
@@ -57,7 +57,10 @@ function ProjectVisual({ project, ratio }: { project: Project; ratio: string }) 
           }}
           aria-label={project.alt}
           className={`project-motion ${ratio} w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]`}
-        />
+        >
+          {project.videoWebm ? <source src={project.videoWebm} type="video/webm" /> : null}
+          <source src={project.video} type="video/mp4" />
+        </video>
         <img
           src={project.poster}
           alt={project.alt}
