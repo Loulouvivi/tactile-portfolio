@@ -1,32 +1,8 @@
 # Roadmap
 
-- [x] Revise the Selected Work plan for independent, irregular placement on one continuous paper sheet.
-- [x] After approval, implement only the spatial composition changes.
-- [x] Validate desktop and mobile readability, association, and full paper coverage.
-- [x] Break the remaining row-and-column rhythm in Selected Work with fully independent placement.
-- [x] Reduce Project 04 to a peer element and introduce restrained, natural overlaps.
-- [x] Validate the revised composition on desktop and mobile without changing the paper or surrounding site.
-- [x] Recompose Selected Work from the chosen tactile direction without adding decorative styling.
-- [x] Verify the final desktop scatter and irregular mobile flow.
-- [x] Recompose only the homepage header and hero as a full-viewport editorial paper artboard.
-- [x] Add one existing project photograph, restrained metadata, and a 1.5–2 second entrance sequence.
-- [x] Verify the new hero on desktop and mobile while confirming Selected Work is unchanged.
-- [x] Ensure the hero cannot resolve into a left-text/right-image or other conventional grid composition.
-- [x] Join the hero and Selected Work onto one uninterrupted photographed paper sheet.
-- [x] Verify the transition at desktop and mobile sizes without altering either composition.
-- [x] Extend the single photographed paper sheet through Studio, Contact, and the footer.
-- [x] Verify the entire desktop and mobile scroll has no paper seams, resets, or exposed page background.
-- [x] Test a contemporary grotesk as the primary display type without changing the portfolio composition.
-- [x] Preserve an expressive editorial italic for “feel” and “solid” rather than forcing a weak grotesk italic.
-- [x] Verify typography loading, hierarchy, and fit across desktop and mobile.
-- [x] Replace Space Grotesk with Instrument Sans as the primary display face.
-- [x] Restore the established typography proportions while preserving every composition.
-- [x] Verify the hero and one-line desktop “Selected work” across desktop and mobile.
-- [x] Replace Aktiv Grotesk with the Adobe kit’s La Mericana Light for display typography.
-- [x] Verify La Mericana rendering and unchanged composition across desktop and mobile.
-- [x] Pin La Mericana to Light 300 and reduce the hero headline scale ~12% without moving any element.
-- [x] Verify the refined hero on desktop and mobile.
-- [x] Recompose only the Studio section as a modern atelier arrangement on the continuous paper.
-- [x] Verify the Studio composition, paper continuity, and unchanged surrounding sections on desktop and mobile.
-- [x] Swap Amoode and ARC Studio while preserving their existing Selected Work territories.
-- [x] Add ARC's stop-motion film with autoplay, muted looping, inline playback, poster fallback, and reduced-motion handling.
+- [ ] Recompose only the hero as Louise Riedmann's own independent editorial publication language.
+  - Preserve the existing continuous paper texture, folds, palette, content, typography identities, and later sections.
+  - Treat the selected reference as composition inspiration only; do not copy its typography, words, imagery, or exact layout.
+  - Use existing creative assets at varied scales with small annotations, restrained asymmetry, and generous negative space.
+  - Avoid grids, cards, panels, excessive decoration, scrapbook styling, and generic portfolio patterns.
+- [ ] Verify desktop 1280×1800, viewport 873×642, mobile 390×844, build status, and console output.
