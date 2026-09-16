@@ -736,10 +736,10 @@
 
 .about-sequence {
   position: relative;
-  min-height: 58rem;
+  min-height: 38rem;
   max-width: 44rem;
   margin-inline: auto;
-  padding: 7rem 1.25rem 5rem;
+  padding: 4.75rem 1.25rem 4rem;
 }
 
 .about-marker {
@@ -763,7 +763,7 @@
 
 .about-introduction-object {
   width: 82%;
-  margin: 5.5rem 0 0 7%;
+  margin: 3.75rem 0 0 7%;
 }
 
 .about-introduction {
@@ -776,7 +776,7 @@
   position: relative;
   z-index: 2;
   width: 48%;
-  margin: 6.5rem 0 0 44%;
+  margin: 3.5rem 0 0 44%;
   rotate: 0.7deg;
 }
 
@@ -796,7 +796,7 @@
 
 .about-meta {
   width: max-content;
-  margin: -1.25rem 0 0 7%;
+  margin: -1.5rem 0 0 47%;
   color: var(--muted-foreground);
   font-size: 0.6rem;
   letter-spacing: 0.2em;
@@ -806,7 +806,7 @@
 .about-running-line {
   position: absolute;
   right: 1.25rem;
-  bottom: 4.5rem;
+  bottom: 3.25rem;
   left: 1.25rem;
   padding-top: 0.8rem;
   border-top: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
@@ -819,9 +819,9 @@
 
 @media (min-width: 40rem) {
   .about-sequence {
-    min-height: 70rem;
+    min-height: 44rem;
     max-width: 66rem;
-    padding: 10rem 2rem 6rem;
+    padding: 7rem 2rem 4.5rem;
   }
 
   .about-marker {
@@ -830,7 +830,7 @@
 
   .about-introduction-object {
     width: 51%;
-    margin: 9.5rem 0 0 9%;
+    margin: 6rem 0 0 9%;
   }
 
   .about-introduction {
@@ -839,7 +839,7 @@
 
   .about-portrait-object {
     position: absolute;
-    top: 17rem;
+    top: 11rem;
     right: 7%;
     width: 24%;
     margin: 0;
@@ -847,14 +847,14 @@
 
   .about-meta {
     position: absolute;
-    top: 39rem;
+    top: 30.5rem;
     right: 34%;
     margin: 0;
   }
 
   .about-running-line {
     right: 2rem;
-    bottom: 5.5rem;
+    bottom: 3.75rem;
     left: 2rem;
     font-size: 0.54rem;
   }
