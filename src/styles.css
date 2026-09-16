@@ -394,9 +394,9 @@
 }
 
 .hero-copy-secondary {
-  right: 28%;
+  right: 26%;
   bottom: 10.5%;
-  width: min(16rem, 19vw);
+  width: min(16rem, 18vw);
   font-size: 0.76rem;
   animation-delay: 1.62s;
 }
