@@ -113,7 +113,7 @@ function Index() {
           <section className="hero-artboard" aria-labelledby="hero-title">
 
           <p className="hero-note hero-note-place">Multimedia designer — Copenhagen</p>
-          <p className="hero-note hero-note-edition">Portfolio selection / 2026</p>
+          <p className="hero-note hero-note-edition">Selected work / 2026</p>
           <p className="hero-note hero-note-index">Visual identity · Graphic design · Art direction · Digital</p>
           <p className="hero-note hero-note-vertical">Archive index — 01 / 04</p>
 
