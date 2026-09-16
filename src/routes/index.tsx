@@ -309,10 +309,9 @@ function Index() {
                   className="about-portrait-image"
                 />
               </figure>
-            </div>
-
-            <div className="about-meta">
-              <p>Copenhagen / 2026</p>
+              <div className="about-meta">
+                <p>Copenhagen / 2026</p>
+              </div>
             </div>
 
             <div className="about-running-line">
