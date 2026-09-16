@@ -767,8 +767,8 @@
 }
 
 .about-introduction {
-  font-size: clamp(1.65rem, 7vw, 2.55rem);
-  line-height: 1.08;
+  font-size: clamp(1.3rem, 5.4vw, 2rem);
+  line-height: 1.12;
   letter-spacing: 0;
 }
 
@@ -795,18 +795,18 @@
 }
 
 .about-meta {
-  width: max-content;
-  margin: 0.4rem 0 0 47%;
+  margin: 0.55rem 0 0;
   color: var(--muted-foreground);
   font-size: 0.6rem;
   letter-spacing: 0.2em;
+  text-align: right;
   text-transform: uppercase;
 }
 
 .about-running-line {
   position: absolute;
   right: 1.25rem;
-  bottom: 3.25rem;
+  bottom: 2rem;
   left: 1.25rem;
   padding-top: 0.8rem;
   border-top: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
@@ -834,7 +834,7 @@
   }
 
   .about-introduction {
-    font-size: clamp(2.15rem, 3.6vw, 3.35rem);
+    font-size: clamp(1.7rem, 2.9vw, 2.6rem);
   }
 
   .about-portrait-object {
@@ -845,16 +845,9 @@
     margin: 0;
   }
 
-  .about-meta {
-    position: absolute;
-    top: 30.5rem;
-    right: 34%;
-    margin: 0;
-  }
-
   .about-running-line {
     right: 2rem;
-    bottom: 3.75rem;
+    bottom: 2.5rem;
     left: 2rem;
     font-size: 0.54rem;
   }
