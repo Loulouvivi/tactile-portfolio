@@ -2,10 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { Reveal } from "@/components/Reveal";
 import { ProjectImage, ProjectMeta, type Project } from "@/components/ProjectCard";
-import portrait from "@/assets/portrait.jpg";
-import printStudy from "@/assets/project-1.jpg";
-import textileStudy from "@/assets/project-2.jpg";
-import spatialStudy from "@/assets/project-4.jpg";
+import risoPrint from "@/assets/project-1.jpg";
 import foldedPaper from "@/assets/folded-paper-background.png";
 import amoodeMixMatchAsset from "@/assets/amoode-mixmatch.png.asset.json";
 import luluviviPosterAsset from "@/assets/luluvivi-a2-poster.png.asset.json";
@@ -116,9 +113,7 @@ function Index() {
           <section className="hero-artboard" aria-labelledby="hero-title">
 
           <p className="hero-note hero-note-place">Multimedia designer — Copenhagen</p>
-          <p className="hero-note hero-note-edition">Visual notes / 2026</p>
           <p className="hero-note hero-note-index">Visual identity · Graphic design · Art direction · Digital</p>
-          <p className="hero-note hero-note-vertical">Personal archive — 01 / 03</p>
 
           <h1 id="hero-title" className="hero-title font-display">
             <span className="hero-word hero-word-design">Design with</span>
@@ -126,31 +121,15 @@ function Index() {
             <em className="hero-word hero-word-feel text-accent">view.</em>
           </h1>
 
-          <figure className="hero-proof hero-proof-main">
+          <figure className="hero-print">
             <img
-              src={portrait}
-              alt="Louise Riedmann at her studio table"
-              className="hero-proof-image"
+              src={risoPrint}
+              alt="Risograph printed posters in ochre and black layered on warm paper"
+              width={1200}
+              height={1500}
+              className="hero-print-image"
             />
-            <figcaption className="hero-proof-caption">
-              <span>At the studio table</span>
-              <span>Copenhagen / 2026</span>
-            </figcaption>
-          </figure>
-
-          <figure className="hero-proof hero-proof-amoode">
-            <img src={textileStudy} alt="Folded translucent textile study" className="hero-proof-image" />
-            <figcaption className="hero-proof-caption">Material note / 01</figcaption>
-          </figure>
-
-          <figure className="hero-proof hero-proof-luluvivi">
-            <img src={printStudy} alt="Layered printed matter study" className="hero-proof-image" />
-            <figcaption className="hero-proof-caption">Print note / 02</figcaption>
-          </figure>
-
-          <figure className="hero-proof hero-proof-glossier">
-            <img src={spatialStudy} alt="Typography projected across a gallery wall" className="hero-proof-image" />
-            <figcaption className="hero-proof-caption">Spatial note / 03</figcaption>
+            <figcaption className="hero-print-caption">Riso Almanac — Print / Editorial</figcaption>
           </figure>
 
           <p className="hero-copy hero-copy-primary">
