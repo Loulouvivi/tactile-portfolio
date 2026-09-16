@@ -285,20 +285,20 @@ function Index() {
 
         <section id="about" className="about-section" aria-labelledby="about-title">
           <div className="about-sequence">
-            <Reveal className="about-marker">
+            <div className="about-marker">
               <p id="about-title" className="about-eyebrow">
                 <span aria-hidden="true">04</span> About
               </p>
-            </Reveal>
+            </div>
 
-            <Reveal delay={80} className="about-introduction-object">
+            <div className="about-introduction-object">
               <p className="about-introduction font-display">
                 Louise Riedmann is a multimedia designer based in Copenhagen, working across
                 fashion, visual identity, graphic design and art direction.
               </p>
-            </Reveal>
+            </div>
 
-            <Reveal delay={140} className="about-portrait-object">
+            <div className="about-portrait-object">
               <figure className="about-portrait">
                 <img
                   src={photoboothPortraitAsset.url}
@@ -309,18 +309,18 @@ function Index() {
                   className="about-portrait-image"
                 />
               </figure>
-            </Reveal>
+            </div>
 
-            <Reveal delay={180} className="about-meta">
+            <div className="about-meta">
               <p>Copenhagen / 2026</p>
-            </Reveal>
+            </div>
 
-            <Reveal delay={220} className="about-running-line">
+            <div className="about-running-line">
               <p>
                 Louise Riedmann — Copenhagen — Multimedia Design — Fashion — Image — Graphic
                 Design — Art Direction
               </p>
-            </Reveal>
+            </div>
           </div>
         </section>
 
