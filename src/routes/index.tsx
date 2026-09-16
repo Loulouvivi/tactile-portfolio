@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import { ProjectImage, ProjectMeta, type Project } from "@/components/ProjectCard";
 import risoPrint from "@/assets/project-1.jpg";
+import portrait from "@/assets/portrait.jpg";
 import foldedPaper from "@/assets/folded-paper-background.png";
 import amoodeMixMatchAsset from "@/assets/amoode-mixmatch.png.asset.json";
 import luluviviPosterAsset from "@/assets/luluvivi-a2-poster.png.asset.json";
