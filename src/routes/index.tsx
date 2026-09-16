@@ -3,6 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import { ProjectImage, ProjectMeta, type Project } from "@/components/ProjectCard";
 import portrait from "@/assets/portrait.jpg";
+import printStudy from "@/assets/project-1.jpg";
+import textileStudy from "@/assets/project-2.jpg";
+import spatialStudy from "@/assets/project-4.jpg";
 import foldedPaper from "@/assets/folded-paper-background.png";
 import amoodeMixMatchAsset from "@/assets/amoode-mixmatch.png.asset.json";
 import luluviviPosterAsset from "@/assets/luluvivi-a2-poster.png.asset.json";
@@ -113,9 +116,9 @@ function Index() {
           <section className="hero-artboard" aria-labelledby="hero-title">
 
           <p className="hero-note hero-note-place">Multimedia designer — Copenhagen</p>
-          <p className="hero-note hero-note-edition">Selected work / 2026</p>
+          <p className="hero-note hero-note-edition">Visual notes / 2026</p>
           <p className="hero-note hero-note-index">Visual identity · Graphic design · Art direction · Digital</p>
-          <p className="hero-note hero-note-vertical">Archive index — 01 / 04</p>
+          <p className="hero-note hero-note-vertical">Personal archive — 01 / 03</p>
 
           <h1 id="hero-title" className="hero-title font-display">
             <span className="hero-word hero-word-design">Design with</span>
@@ -125,29 +128,29 @@ function Index() {
 
           <figure className="hero-proof hero-proof-main">
             <img
-              src={arcPosterAsset.url}
-              alt="ARC Studio branding and visual identity still"
+              src={portrait}
+              alt="Louise Riedmann at her studio table"
               className="hero-proof-image"
             />
             <figcaption className="hero-proof-caption">
-              <span>ARC Studio</span>
-              <span>Archive 02 / 04</span>
+              <span>At the studio table</span>
+              <span>Copenhagen / 2026</span>
             </figcaption>
           </figure>
 
           <figure className="hero-proof hero-proof-amoode">
-            <img src={amoodeMixMatchAsset.url} alt="Amoode garment study" className="hero-proof-image" />
-            <figcaption className="hero-proof-caption">Amoode / 01</figcaption>
+            <img src={textileStudy} alt="Folded translucent textile study" className="hero-proof-image" />
+            <figcaption className="hero-proof-caption">Material note / 01</figcaption>
           </figure>
 
           <figure className="hero-proof hero-proof-luluvivi">
-            <img src={luluviviPosterAsset.url} alt="Detail from the LULUVIVI poster" className="hero-proof-image" />
-            <figcaption className="hero-proof-caption">LULUVIVI / 03</figcaption>
+            <img src={printStudy} alt="Layered printed matter study" className="hero-proof-image" />
+            <figcaption className="hero-proof-caption">Print note / 02</figcaption>
           </figure>
 
           <figure className="hero-proof hero-proof-glossier">
-            <img src={glossierPosterAsset.url} alt="Detail from the Glossier × Glyptoteket campaign" className="hero-proof-image" />
-            <figcaption className="hero-proof-caption">G×G / 04 — 2026</figcaption>
+            <img src={spatialStudy} alt="Typography projected across a gallery wall" className="hero-proof-image" />
+            <figcaption className="hero-proof-caption">Spatial note / 03</figcaption>
           </figure>
 
           <p className="hero-copy hero-copy-primary">
