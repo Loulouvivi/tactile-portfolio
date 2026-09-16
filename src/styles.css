@@ -418,7 +418,7 @@
 
   .hero-brand { font-size: 1.05rem; }
   .hero-nav { gap: 0.8rem; font-size: 0.62rem; }
-  .hero-artboard { min-height: max(53rem, 100svh); }
+  .hero-artboard { min-height: max(60rem, 100svh); }
   .hero-paper { object-position: 47% center; }
   .hero-note { font-size: 0.56rem; }
   .hero-note-place { left: 6%; top: 12%; width: 9rem; }
@@ -444,32 +444,34 @@
   }
   .hero-proof-amoode {
     left: 7%;
-    top: 58%;
+    top: 56%;
     width: 16vw;
   }
   .hero-proof-luluvivi {
-    left: 39%;
-    top: 68%;
+    left: 41%;
+    top: 55%;
     width: 10vw;
   }
   .hero-proof-glossier {
     right: 8%;
-    bottom: 7%;
+    top: 63%;
+    bottom: auto;
     width: 13vw;
   }
   .hero-proof-caption {
     display: block;
     font-size: 0.48rem;
   }
+  .hero-proof-caption span { display: block; }
   .hero-copy-primary {
     left: 6%;
-    bottom: 17%;
+    bottom: 19%;
     width: 43%;
     font-size: 0.74rem;
   }
   .hero-copy-secondary {
     right: 25%;
-    bottom: 6.5%;
+    bottom: 7%;
     width: 48%;
     font-size: 0.6rem;
     line-height: 1.45;
