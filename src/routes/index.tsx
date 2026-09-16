@@ -4,7 +4,6 @@ import { Reveal } from "@/components/Reveal";
 import { ProjectImage, ProjectMeta, type Project } from "@/components/ProjectCard";
 import portrait from "@/assets/portrait.jpg";
 import foldedPaper from "@/assets/folded-paper-background.png";
-import project1 from "@/assets/project-1.jpg";
 import amoodeMixMatchAsset from "@/assets/amoode-mixmatch.png.asset.json";
 import luluviviPosterAsset from "@/assets/luluvivi-a2-poster.png.asset.json";
 import glossierPosterAsset from "@/assets/glossier-glyptoteket-poster.png.asset.json";
@@ -114,26 +113,41 @@ function Index() {
           <section className="hero-artboard" aria-labelledby="hero-title">
 
           <p className="hero-note hero-note-place">Multimedia designer — Copenhagen</p>
-          <p className="hero-note hero-note-edition">Selected work / 2026</p>
+          <p className="hero-note hero-note-edition">Portfolio selection / 2026</p>
           <p className="hero-note hero-note-index">Visual identity · Graphic design · Art direction · Digital</p>
-          <p className="hero-note hero-note-vertical">Louise Riedmann — independent practice</p>
+          <p className="hero-note hero-note-vertical">Archive index — 01 / 04</p>
 
           <h1 id="hero-title" className="hero-title font-display">
-            <span className="hero-word hero-word-design">Design</span>
-            <span className="hero-word hero-word-that">with a</span>
-            <span className="hero-word hero-word-can">point of</span>
+            <span className="hero-word hero-word-design">Design with</span>
+            <span className="hero-word hero-word-that">a point of</span>
             <em className="hero-word hero-word-feel text-accent">view.</em>
           </h1>
 
-          <figure className="hero-print">
+          <figure className="hero-proof hero-proof-main">
             <img
-              src={project1}
-              alt="Risograph printed posters in ochre and black layered on warm paper"
-              width={1200}
-              height={1500}
-              className="h-full w-full object-cover"
+              src={arcPosterAsset.url}
+              alt="ARC Studio branding and visual identity still"
+              className="hero-proof-image"
             />
-            <figcaption className="hero-print-caption">Riso Almanac — Print / Editorial</figcaption>
+            <figcaption className="hero-proof-caption">
+              <span>ARC Studio</span>
+              <span>Archive 02 / 04</span>
+            </figcaption>
+          </figure>
+
+          <figure className="hero-proof hero-proof-amoode">
+            <img src={amoodeMixMatchAsset.url} alt="Amoode garment study" className="hero-proof-image" />
+            <figcaption className="hero-proof-caption">Amoode / 01</figcaption>
+          </figure>
+
+          <figure className="hero-proof hero-proof-luluvivi">
+            <img src={luluviviPosterAsset.url} alt="Detail from the LULUVIVI poster" className="hero-proof-image" />
+            <figcaption className="hero-proof-caption">LULUVIVI / 03</figcaption>
+          </figure>
+
+          <figure className="hero-proof hero-proof-glossier">
+            <img src={glossierPosterAsset.url} alt="Detail from the Glossier × Glyptoteket campaign" className="hero-proof-image" />
+            <figcaption className="hero-proof-caption">G×G / 04 — 2026</figcaption>
           </figure>
 
           <p className="hero-copy hero-copy-primary">
@@ -143,6 +157,9 @@ function Index() {
           <p className="hero-copy hero-copy-secondary">
             I create concepts and visual worlds through design, styling, colour, typography and
             atmosphere, bringing together concept, aesthetics and storytelling.
+          </p>
+          <p className="hero-folio" aria-label="Portfolio folio 01">
+            Folio 01
           </p>
           </section>
 
