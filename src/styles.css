@@ -242,7 +242,7 @@
 
 .hero-note,
 .hero-copy,
-.hero-proof,
+.hero-print,
 .hero-folio,
 .hero-word {
   position: absolute;
@@ -260,14 +260,7 @@
 }
 
 .hero-note-place { left: 6.5%; top: 16%; animation-delay: 0.38s; }
-.hero-note-edition { right: 7%; top: 15%; animation-delay: 0.48s; }
 .hero-note-index { left: 42%; bottom: 7%; animation-delay: 0.58s; }
-.hero-note-vertical {
-  right: 2.1%;
-  top: 48%;
-  writing-mode: vertical-rl;
-  animation-delay: 0.68s;
-}
 
 .hero-title {
   position: absolute;
