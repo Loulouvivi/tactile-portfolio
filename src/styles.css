@@ -380,9 +380,7 @@
   .hero-paper { object-position: 47% center; }
   .hero-note { font-size: 0.56rem; }
   .hero-note-place { left: 6%; top: 12%; width: 9rem; }
-  .hero-note-edition { right: 5%; top: 16.5%; }
   .hero-note-index { left: 6%; bottom: 3.5%; width: 12rem; }
-  .hero-note-vertical { right: 2%; top: 54%; }
   .hero-title { left: 6%; top: 24%; width: 83%; }
   .hero-word-design { font-size: clamp(3.15rem, 15.8vw, 4.4rem); }
   .hero-word-that {
@@ -393,34 +391,13 @@
     margin-left: 44%;
     font-size: clamp(3.8rem, 19vw, 5.25rem);
   }
-  .hero-proof-main {
-    top: 49%;
+  .hero-print {
+    top: 62%;
     right: 7%;
-    width: 39vw;
-    min-width: 9rem;
-    max-width: 11rem;
+    width: 28vw;
+    min-width: 6.5rem;
+    max-width: 8rem;
   }
-  .hero-proof-amoode {
-    left: 7%;
-    top: 56%;
-    width: 16vw;
-  }
-  .hero-proof-luluvivi {
-    left: 41%;
-    top: 55%;
-    width: 10vw;
-  }
-  .hero-proof-glossier {
-    right: 8%;
-    top: 63%;
-    bottom: auto;
-    width: 13vw;
-  }
-  .hero-proof-caption {
-    display: block;
-    font-size: 0.48rem;
-  }
-  .hero-proof-caption span { display: block; }
   .hero-copy-primary {
     left: 6%;
     bottom: 19%;
