@@ -112,7 +112,7 @@ export function ProjectImage({
   return (
     <Reveal delay={delay} className={className}>
       <a href="#work" className="group relative block">
-        <span className="absolute -top-6 left-0 z-10 font-sans text-[0.65rem] uppercase tracking-[0.28em] text-muted-foreground">
+        <span className="absolute -top-6 left-0 z-10 font-sans text-[0.72rem] uppercase tracking-[0.28em] text-muted-foreground">
           {project.index}
         </span>
         <div
@@ -142,7 +142,7 @@ export function ProjectMeta({
   return (
     <Reveal delay={delay} className={className}>
       <a href="#work" className="block max-w-xs">
-        <span className="text-[0.65rem] uppercase tracking-[0.28em] text-muted-foreground">
+        <span className="text-[0.72rem] uppercase tracking-[0.28em] text-muted-foreground">
           {project.index}
         </span>
         <h3 className="mt-3 font-display text-2xl leading-tight tracking-tight sm:text-3xl">
@@ -156,7 +156,7 @@ export function ProjectMeta({
         {project.blurb ? (
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{project.blurb}</p>
         ) : null}
-        <span className="mt-4 inline-block text-[0.7rem] uppercase tracking-[0.24em] text-accent">
+        <span className="mt-4 inline-block text-[0.8rem] uppercase tracking-[0.24em] text-accent">
           {project.discipline}
         </span>
       </a>

@@ -93,7 +93,7 @@ function Index() {
         <a href="#top" className="hero-brand font-display text-xl">
           Louise Riedmann
         </a>
-        <nav className="hero-nav text-[0.7rem] uppercase text-muted-foreground" aria-label="Primary navigation">
+        <nav className="hero-nav text-[0.76rem] uppercase text-muted-foreground" aria-label="Primary navigation">
           <a href="#work" className="transition-colors hover:text-foreground">
             Work
           </a>
@@ -153,7 +153,7 @@ function Index() {
                 <h2 className="font-display text-3xl tracking-tight sm:text-5xl">Selected work</h2>
               </Reveal>
               <Reveal delay={120} className="collage-count">
-                <span className="text-[0.7rem] uppercase tracking-[0.24em] text-muted-foreground">
+                <span className="text-[0.78rem] uppercase tracking-[0.24em] text-muted-foreground">
                   Selected / 04
                 </span>
               </Reveal>
@@ -311,7 +311,7 @@ function Index() {
         </main>
 
         <footer className="mx-auto max-w-6xl px-5 pb-10 sm:px-8">
-          <div className="rule-line grid grid-cols-[minmax(0,1fr)_auto] gap-4 pt-5 text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground">
+          <div className="rule-line grid grid-cols-[minmax(0,1fr)_auto] gap-4 pt-5 text-[0.76rem] uppercase tracking-[0.22em] text-muted-foreground">
             <span className="min-w-0 truncate">Louise Riedmann — Copenhagen</span>
             <span className="shrink-0">© 2026</span>
           </div>
