@@ -11,6 +11,7 @@ import glossierPosterAsset from "@/assets/glossier-glyptoteket-poster.png.asset.
 import arcVideoAsset from "@/assets/arc-studio-stopmotion-web.mp4.asset.json";
 import arcVideoWebmAsset from "@/assets/arc-studio-stopmotion.webm.asset.json";
 import arcPosterAsset from "@/assets/arc-studio-poster.jpg.asset.json";
+import photoboothPortraitAsset from "@/assets/louise-riedmann-photobooth.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -278,6 +279,47 @@ function Index() {
                   </div>
                 ))}
               </dl>
+            </Reveal>
+          </div>
+        </section>
+
+        <section id="about" className="about-section" aria-labelledby="about-title">
+          <div className="about-sequence">
+            <Reveal className="about-marker">
+              <p id="about-title" className="about-eyebrow">
+                <span aria-hidden="true">04</span> About
+              </p>
+            </Reveal>
+
+            <Reveal delay={80} className="about-introduction-object">
+              <p className="about-introduction font-display">
+                Louise Riedmann is a multimedia designer based in Copenhagen, working across
+                fashion, visual identity, graphic design and art direction.
+              </p>
+            </Reveal>
+
+            <Reveal delay={140} className="about-portrait-object">
+              <figure className="about-portrait">
+                <img
+                  src={photoboothPortraitAsset.url}
+                  alt="Black-and-white photobooth portrait of Louise Riedmann"
+                  loading="lazy"
+                  width={768}
+                  height={1024}
+                  className="about-portrait-image"
+                />
+              </figure>
+            </Reveal>
+
+            <Reveal delay={180} className="about-meta">
+              <p>Copenhagen / 2026</p>
+            </Reveal>
+
+            <Reveal delay={220} className="about-running-line">
+              <p>
+                Louise Riedmann — Copenhagen — Multimedia Design — Fashion — Image — Graphic
+                Design — Art Direction
+              </p>
             </Reveal>
           </div>
         </section>
