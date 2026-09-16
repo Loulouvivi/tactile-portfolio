@@ -312,7 +312,7 @@
 
 .hero-print {
   z-index: 2;
-  top: 12.5%;
+  top: 15%;
   right: 13.5%;
   width: clamp(10rem, 17vw, 15rem);
   aspect-ratio: 4 / 5;
