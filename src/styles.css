@@ -739,7 +739,7 @@
   min-height: 38rem;
   max-width: 44rem;
   margin-inline: auto;
-  padding: 4.75rem 1.25rem 4rem;
+  padding: 4rem 1.25rem 6.75rem;
 }
 
 .about-marker {
@@ -763,7 +763,7 @@
 
 .about-introduction-object {
   width: 82%;
-  margin: 3.75rem 0 0 7%;
+  margin: 3.25rem 0 0 7%;
 }
 
 .about-introduction {
@@ -776,7 +776,7 @@
   position: relative;
   z-index: 2;
   width: 48%;
-  margin: 3.5rem 0 0 44%;
+  margin: 3rem 0 0 44%;
   rotate: 0.7deg;
 }
 
@@ -796,7 +796,7 @@
 
 .about-meta {
   width: max-content;
-  margin: -1.5rem 0 0 47%;
+  margin: 0.4rem 0 0 47%;
   color: var(--muted-foreground);
   font-size: 0.6rem;
   letter-spacing: 0.2em;
