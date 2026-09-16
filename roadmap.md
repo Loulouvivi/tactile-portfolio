@@ -6,3 +6,8 @@
   - Use existing creative assets at varied scales with small annotations, restrained asymmetry, and generous negative space.
   - Avoid grids, cards, panels, excessive decoration, scrapbook styling, and generic portfolio patterns.
 - [x] Verify desktop 1280×1800, viewport 873×642, mobile 390×844, build status, and console output.
+
+- [x] Remove all case-study previews from the Hero while preserving its editorial composition.
+  - Use only suitable existing non-project imagery; otherwise preserve intentional empty paper.
+  - Keep Selected Work content, order, imagery, and layout unchanged.
+- [x] Verify Hero and Selected Work at all required viewports, build status, and console output.
