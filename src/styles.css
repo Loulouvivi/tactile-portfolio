@@ -312,8 +312,8 @@
 
 .hero-print {
   z-index: 2;
-  top: 17%;
-  right: 17%;
+  top: 12.5%;
+  right: 13.5%;
   width: clamp(10rem, 17vw, 15rem);
   aspect-ratio: 4 / 5;
   padding: 0.22rem;
