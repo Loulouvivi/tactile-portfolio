@@ -12,7 +12,7 @@
   - Keep Selected Work content, order, imagery, and layout unchanged.
 - [x] Verify Hero and Selected Work at all required viewports, build status, and console output.
 
-- [ ] Add a simplified About section directly between Studio and Contact.
+- [x] Add a simplified About section directly between Studio and Contact.
   - Use the exact supplied introduction, “04 — ABOUT”, “COPENHAGEN / 2026”, and the exact understated bottom line.
   - Use the uploaded `photobooth.png` as the section’s only image, treated as a physical photograph on the paper.
   - Preserve the continuous paper, current typography and palette; do not modify Hero, Selected Work, Studio, or Contact.
