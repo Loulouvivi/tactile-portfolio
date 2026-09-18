@@ -5,13 +5,13 @@ import { ProjectImage, ProjectMeta, type Project } from "@/components/ProjectCar
 import risoPrint from "@/assets/project-1.jpg";
 import portrait from "@/assets/portrait.jpg";
 import foldedPaper from "@/assets/folded-paper-background.png";
-import amoodeMixMatchAsset from "@/assets/amoode-mixmatch.png.asset.json";
-import luluviviPosterAsset from "@/assets/luluvivi-a2-poster.png.asset.json";
-import glossierPosterAsset from "@/assets/glossier-glyptoteket-poster.png.asset.json";
-import arcVideoAsset from "@/assets/arc-studio-stopmotion-web.mp4.asset.json";
-import arcVideoWebmAsset from "@/assets/arc-studio-stopmotion.webm.asset.json";
+import amoodeMixmatchAsset from "@/assets/mix-match.png";
+import luluviviPosterAsset from "@/assets/LV poster A2 final (1).png";
+import glossierPosterAsset from "@/assets/glossier-glyptoteket.png";
+import arcVideoWebmAsset from "@/assets/arc-studio-stopmotion-web.mp4.asset.json";
+import arcVideoAsset from "@/assets/ARC_Studio_stopmotion_compressed.mp4";
 import arcPosterAsset from "@/assets/arc-studio-poster.jpg.asset.json";
-import photoboothPortraitAsset from "@/assets/louise-riedmann-photobooth.png.asset.json";
+import photoboothPortraitAsset from "@/assets/louise-photobooth.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -41,7 +41,7 @@ const projects: Project[] = [
     discipline: "Fashion · E-commerce · Digital Experience",
     year: "",
     blurb: "",
-    image: amoodeMixMatchAsset.url,
+    image: amoodeMixmatchAsset,
     transparent: true,
     alt: "Amoode mix and match garment composition",
   },
@@ -52,7 +52,7 @@ const projects: Project[] = [
     year: "",
     blurb: "",
     image: arcPosterAsset.url,
-    video: arcVideoAsset.url,
+    video: arcVideoAsset,
     videoWebm: arcVideoWebmAsset.url,
     poster: arcPosterAsset.url,
     alt: "ARC Studio branding and visual identity stop-motion sequence",
@@ -63,7 +63,7 @@ const projects: Project[] = [
     discipline: "Vintage Fashion · Curation · Branding",
     year: "",
     blurb: "",
-    image: luluviviPosterAsset.url,
+    image: luluviviPosterAsset,
     alt: "LULUVIVI A2 poster — model holding an oversized garment with layered LULUVIVI typography",
   },
   {
@@ -72,8 +72,7 @@ const projects: Project[] = [
     discipline: "Campaign Concept · Beauty · Art & Culture",
     year: "",
     blurb: "",
-    image: glossierPosterAsset.url,
-    alt: "Glossier × Glyptoteket campaign poster — classical statue holding Glossier products on a mauve ground",
+    image: glossierPosterAsset,    alt: "Glossier × Glyptoteket campaign poster — classical statue holding Glossier products on a mauve ground",
     transparent: true,
   },
 ];
@@ -301,7 +300,7 @@ function Index() {
             <div className="about-portrait-object">
               <figure className="about-portrait">
                 <img
-                  src={photoboothPortraitAsset.url}
+                  src={photoboothPortraitAsset}
                   alt="Black-and-white photobooth portrait of Louise Riedmann"
                   loading="lazy"
                   width={768}
