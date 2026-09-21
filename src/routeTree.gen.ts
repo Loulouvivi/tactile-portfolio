@@ -10,33 +10,89 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WorkAmoodeRouteImport } from './routes/work/amoode'
+import { Route as WorkArcStudioRouteImport } from './routes/work/arc-studio'
+import { Route as WorkGlossierGlyptoteketRouteImport } from './routes/work/glossier-glyptoteket'
+import { Route as WorkLuluviviRouteImport } from './routes/work/luluvivi'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkAmoodeRoute = WorkAmoodeRouteImport.update({
+  id: '/work/amoode',
+  path: '/work/amoode',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkArcStudioRoute = WorkArcStudioRouteImport.update({
+  id: '/work/arc-studio',
+  path: '/work/arc-studio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkGlossierGlyptoteketRoute = WorkGlossierGlyptoteketRouteImport.update({
+  id: '/work/glossier-glyptoteket',
+  path: '/work/glossier-glyptoteket',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkLuluviviRoute = WorkLuluviviRouteImport.update({
+  id: '/work/luluvivi',
+  path: '/work/luluvivi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/work/amoode': typeof WorkAmoodeRoute
+  '/work/arc-studio': typeof WorkArcStudioRoute
+  '/work/glossier-glyptoteket': typeof WorkGlossierGlyptoteketRoute
+  '/work/luluvivi': typeof WorkLuluviviRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/work/amoode': typeof WorkAmoodeRoute
+  '/work/arc-studio': typeof WorkArcStudioRoute
+  '/work/glossier-glyptoteket': typeof WorkGlossierGlyptoteketRoute
+  '/work/luluvivi': typeof WorkLuluviviRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/work/amoode': typeof WorkAmoodeRoute
+  '/work/arc-studio': typeof WorkArcStudioRoute
+  '/work/glossier-glyptoteket': typeof WorkGlossierGlyptoteketRoute
+  '/work/luluvivi': typeof WorkLuluviviRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/work/amoode'
+    | '/work/arc-studio'
+    | '/work/glossier-glyptoteket'
+    | '/work/luluvivi'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/work/amoode'
+    | '/work/arc-studio'
+    | '/work/glossier-glyptoteket'
+    | '/work/luluvivi'
+  id:
+    | '__root__'
+    | '/'
+    | '/work/amoode'
+    | '/work/arc-studio'
+    | '/work/glossier-glyptoteket'
+    | '/work/luluvivi'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  WorkAmoodeRoute: typeof WorkAmoodeRoute
+  WorkArcStudioRoute: typeof WorkArcStudioRoute
+  WorkGlossierGlyptoteketRoute: typeof WorkGlossierGlyptoteketRoute
+  WorkLuluviviRoute: typeof WorkLuluviviRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +104,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work/amoode': {
+      id: '/work/amoode'
+      path: '/work/amoode'
+      fullPath: '/work/amoode'
+      preLoaderRoute: typeof WorkAmoodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/arc-studio': {
+      id: '/work/arc-studio'
+      path: '/work/arc-studio'
+      fullPath: '/work/arc-studio'
+      preLoaderRoute: typeof WorkArcStudioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/glossier-glyptoteket': {
+      id: '/work/glossier-glyptoteket'
+      path: '/work/glossier-glyptoteket'
+      fullPath: '/work/glossier-glyptoteket'
+      preLoaderRoute: typeof WorkGlossierGlyptoteketRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/luluvivi': {
+      id: '/work/luluvivi'
+      path: '/work/luluvivi'
+      fullPath: '/work/luluvivi'
+      preLoaderRoute: typeof WorkLuluviviRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  WorkAmoodeRoute: WorkAmoodeRoute,
+  WorkArcStudioRoute: WorkArcStudioRoute,
+  WorkGlossierGlyptoteketRoute: WorkGlossierGlyptoteketRoute,
+  WorkLuluviviRoute: WorkLuluviviRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

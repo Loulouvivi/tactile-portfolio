@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Link } from "@tanstack/react-router";
 
 import { Reveal } from "./Reveal";
 
@@ -10,6 +11,7 @@ export type Project = {
   blurb: string;
   image: string;
   alt: string;
+  slug?: string;
   video?: string;
   videoWebm?: string;
   poster?: string;
@@ -109,9 +111,15 @@ export function ProjectImage({
   ratio?: string;
   className?: string;
 }) {
+  const Wrapper: any = project.slug ? Link : "a";
+
   return (
     <Reveal delay={delay} className={className}>
-      <a href="#work" className="group relative block">
+      <Wrapper
+        to={project.slug ? `/work/${project.slug}` : undefined}
+        href={project.slug ? undefined : "#work"}
+        className="group relative block"
+      >
         <span className="absolute -top-6 left-0 z-10 font-sans text-[0.72rem] uppercase tracking-[0.28em] text-muted-foreground">
           {project.index}
         </span>
@@ -124,7 +132,7 @@ export function ProjectImage({
         >
           <ProjectVisual project={project} ratio={ratio} />
         </div>
-      </a>
+      </Wrapper>
     </Reveal>
   );
 }
@@ -139,9 +147,11 @@ export function ProjectMeta({
   delay?: number;
   className?: string;
 }) {
+  const Wrapper: any = project.slug ? Link : "a";
+
   return (
     <Reveal delay={delay} className={className}>
-      <a href="#work" className="block max-w-xs">
+      <Wrapper to={project.slug ? `/work/${project.slug}` : undefined} href={project.slug ? undefined : "#work"} className="block max-w-xs">
         <span className="text-[0.72rem] uppercase tracking-[0.28em] text-muted-foreground">
           {project.index}
         </span>
@@ -159,7 +169,7 @@ export function ProjectMeta({
         <span className="mt-4 inline-block text-[0.8rem] uppercase tracking-[0.24em] text-accent">
           {project.discipline}
         </span>
-      </a>
+      </Wrapper>
     </Reveal>
   );
 }

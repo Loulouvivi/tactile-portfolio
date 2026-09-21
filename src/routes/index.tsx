@@ -42,6 +42,7 @@ const projects: Project[] = [
     year: "",
     blurb: "",
     image: amoodeMixmatchAsset,
+    slug: "amoode",
     transparent: true,
     alt: "Amoode mix and match garment composition",
   },
@@ -55,6 +56,7 @@ const projects: Project[] = [
     video: arcVideoAsset,
     videoWebm: arcVideoWebmAsset.url,
     poster: arcPosterAsset.url,
+    slug: "arc-studio",
     alt: "ARC Studio branding and visual identity stop-motion sequence",
   },
   {
@@ -64,6 +66,7 @@ const projects: Project[] = [
     year: "",
     blurb: "",
     image: luluviviPosterAsset,
+    slug: "luluvivi",
     alt: "LULUVIVI A2 poster — model holding an oversized garment with layered LULUVIVI typography",
   },
   {
@@ -74,6 +77,7 @@ const projects: Project[] = [
     blurb: "",
     image: glossierPosterAsset,    alt: "Glossier × Glyptoteket campaign poster — classical statue holding Glossier products on a mauve ground",
     transparent: true,
+    slug: "glossier-glyptoteket",
   },
 ];
 
