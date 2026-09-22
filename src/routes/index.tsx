@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import { ProjectImage, ProjectMeta, type Project } from "@/components/ProjectCard";
 import risoPrint from "@/assets/project-1.jpg";
+import processBts from "@/assets/IMG_7170_web.mp4?url";
 import portrait from "@/assets/portrait.jpg";
 import foldedPaper from "@/assets/folded-paper-background.png";
 import amoodeMixmatchAsset from "@/assets/mix-match.png";
@@ -127,14 +128,19 @@ function Index() {
           </h1>
 
           <figure className="hero-print">
-            <img
-              src={risoPrint}
-              alt="Risograph printed posters in ochre and black layered on warm paper"
+            <video
+              src={processBts}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label="Process behind the scenes"
               width={1200}
               height={1500}
               className="hero-print-image"
             />
-            <figcaption className="hero-print-caption">Riso Almanac — Print / Editorial</figcaption>
+            <figcaption className="hero-print-caption">Process — BTS</figcaption>
           </figure>
 
           <p className="hero-copy hero-copy-primary">
