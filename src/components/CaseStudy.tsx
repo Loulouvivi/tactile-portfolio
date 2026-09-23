@@ -2,7 +2,15 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, type ReactNode } from "react";
 import type { Project } from "./ProjectCard";
 
-export function CaseStudy({ project, children }: { project: Project; children?: ReactNode }) {
+export function CaseStudy({
+  project,
+  children,
+  titleContent,
+}: {
+  project: Project;
+  children?: ReactNode;
+  titleContent?: ReactNode;
+}) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
@@ -36,7 +44,9 @@ export function CaseStudy({ project, children }: { project: Project; children?: 
           </nav>
 
           <header className="mb-12">
-            <h1 className="font-display text-6xl leading-none tracking-[-0.06em] sm:text-7xl">{project.title}</h1>
+            <h1 className="font-display leading-none tracking-[-0.06em]">
+              {titleContent ?? <span className="text-6xl sm:text-7xl">{project.title}</span>}
+            </h1>
             <p className="mt-4 text-[11px] uppercase tracking-[0.28em] text-accent">{project.discipline}</p>
           </header>
 
