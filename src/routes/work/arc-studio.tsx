@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CaseStudy } from "@/components/CaseStudy";
 import arcLogoAsset from "@/assets/ARC studio logo green clear - chosen.png";
 import arcWebVideoAsset from "@/assets/ARC-studio-web-compressed.mp4";
+import arcStopmotionAsset from "@/assets/ARC_Studio_stopmotion_compressed.mp4";
 import arcScreenshotAsset from "@/assets/arc screenshot.png";
 import arcBoardAsset from "@/assets/board.png";
 import arcBrownSymbolAsset from "@/assets/brown arc symbol.png";
@@ -21,8 +22,8 @@ const project = {
   slug: "arc-studio",
 } as const;
 
-const sectionLabel = "text-[11px] uppercase tracking-[0.28em] text-muted-foreground";
-const bodyCopy = "text-sm leading-[1.75] text-muted-foreground";
+const label = "text-[10px] uppercase tracking-[0.24em] text-muted-foreground";
+const copy = "text-sm leading-[1.7] text-muted-foreground";
 const caption = "mt-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground";
 
 function ArcImage({
@@ -31,21 +32,21 @@ function ArcImage({
   captionText,
   className = "",
   contain = false,
-  loading = "lazy",
+  eager = false,
 }: {
   src: string;
   alt: string;
   captionText?: string;
   className?: string;
   contain?: boolean;
-  loading?: "lazy" | "eager";
+  eager?: boolean;
 }) {
   return (
     <figure>
       <img
         src={src}
         alt={alt}
-        loading={loading}
+        loading={eager ? "eager" : "lazy"}
         className={`block h-auto w-full ${contain ? "object-contain" : "object-cover"} ${className}`}
       />
       {captionText ? <figcaption className={caption}>{captionText}</figcaption> : null}
@@ -53,10 +54,16 @@ function ArcImage({
   );
 }
 
-function ArcWebVideo({ className = "" }: { className?: string }) {
+function ArcVideo({
+  src = arcWebVideoAsset,
+  className = "",
+}: {
+  src?: string;
+  className?: string;
+}) {
   return (
     <video
-      src={arcWebVideoAsset}
+      src={src}
       autoPlay
       loop
       muted
@@ -78,21 +85,25 @@ export const Route = createFileRoute("/work/arc-studio")({
   }),
   component: function ArcStudio() {
     return (
-      <CaseStudy project={project}>
-        <div className="space-y-20 sm:space-y-32">
-          <section className="grid gap-12 pt-2 sm:grid-cols-[0.7fr_1.3fr] sm:items-end">
-            <div className="order-2 sm:order-1 sm:pb-10">
-              <p className={sectionLabel}>01 — Intro / Hero</p>
-              <p className="mt-7 font-display text-2xl leading-tight sm:text-3xl">
+      <CaseStudy project={project} hideHeader allowSticky>
+        <div className="grid gap-14 lg:grid-cols-[minmax(0,0.35fr)_minmax(0,0.65fr)] lg:gap-16">
+          <aside className="self-start lg:sticky lg:top-8">
+            <div className="border-b border-foreground/15 pb-8">
+              <p className={label}>02 / ARC Studio</p>
+              <h1 className="mt-7 font-display text-6xl leading-[0.85] tracking-[-0.06em] sm:text-7xl">
+                ARC <span className="text-[0.72em]">studio</span>
+              </h1>
+              <p className="mt-7 max-w-[25ch] text-[11px] uppercase leading-[1.8] tracking-[0.18em] text-muted-foreground">
+                Branding · Visual identity · UX/UI · Web design
+              </p>
+              <p className="mt-6 font-display text-xl leading-tight">
                 Original design with intent.
               </p>
-              <p className="mt-6 max-w-[28ch] text-[11px] uppercase leading-[1.9] tracking-[0.18em] text-muted-foreground">
-                Brand strategy · Visual identity · UX/UI · Web design
-              </p>
-              <p className="mt-8 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-                2026 · Group project
-              </p>
-              <div className="mt-10 border-t border-foreground/15 pt-4 text-[11px] uppercase leading-[1.8] tracking-[0.16em] text-muted-foreground">
+            </div>
+
+            <div className="pt-6 text-[11px] uppercase leading-[1.8] tracking-[0.16em] text-muted-foreground">
+              <p>2026 · Group project</p>
+              <div className="mt-8 border-t border-foreground/15 pt-4">
                 <p className="text-foreground">My contribution</p>
                 <p className="mt-3">
                   Logo &amp; visual identity
@@ -103,149 +114,135 @@ export const Route = createFileRoute("/work/arc-studio")({
                 </p>
               </div>
             </div>
-            <ArcImage
-              src={arcLogoAsset}
-              alt="ARC Studio logo and identity composition"
-              captionText="ARC Studio — opening visual"
-              contain
-              loading="eager"
-              className="order-1 bg-white sm:order-2"
-            />
-          </section>
+          </aside>
 
-          <section className="relative grid gap-10 border-t border-foreground/15 pt-8 md:grid-cols-[0.85fr_1.15fr] md:items-center">
-            <div>
-              <p className={sectionLabel}>02 — The idea</p>
-              <h2 className="mt-6 font-display text-5xl leading-[0.9] sm:text-7xl">
-                Strategy × aesthetics.
-              </h2>
-              <p className={`mt-8 max-w-[43ch] ${bodyCopy}`}>
-                ARC Studio was developed as a design studio for aesthetically oriented brands within
-                culture, fashion and creative industries. The ambition was to bring strategic design
-                and expressive creative practice together in one coherent experience.
+          <div className="min-w-0 space-y-24 sm:space-y-32">
+            <section className="space-y-5">
+              <p className={label}>01 — Opening visual</p>
+              <ArcImage
+                src={arcScreenshotAsset}
+                alt="ARC Studio shoes image"
+                captionText="Behind the scenes / visual reference"
+                eager
+                contain
+                className="aspect-[1.25/1] sm:aspect-[1.4/1]"
+              />
+              <p className={`max-w-[42ch] ${copy}`}>
+                A studio for aesthetically oriented brands within culture, fashion and creative
+                industries. The visual story begins with the material world around the work.
               </p>
-              <p className="mt-8 font-display text-2xl leading-tight">
-                Strategic aesthetics for contemporary brands.
-              </p>
-            </div>
-            <div className="relative flex justify-end">
+            </section>
+
+            <section className="grid gap-8 sm:grid-cols-[0.7fr_1.3fr] sm:items-center">
+              <div>
+                <p className={label}>02 — The idea</p>
+                <h2 className="mt-5 font-display text-4xl leading-[0.9] sm:text-6xl">
+                  Strategy × aesthetics.
+                </h2>
+                <p className={`mt-6 ${copy}`}>
+                  ARC brings strategic design and expressive creative practice together in one
+                  coherent experience.
+                </p>
+                <p className="mt-6 font-display text-xl leading-tight">
+                  Strategic aesthetics for contemporary brands.
+                </p>
+              </div>
               <img
                 src={arcBrownSymbolAsset}
                 alt="ARC symbol"
                 loading="lazy"
-                className="w-[70%] max-w-[440px] object-contain"
+                className="mx-auto w-[70%] object-contain sm:w-full"
               />
-              <span className="absolute bottom-4 left-0 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                The ARC / a bridge between intention and expression
-              </span>
-            </div>
-          </section>
+            </section>
 
-          <section className="grid gap-10 md:grid-cols-[1.25fr_0.75fr] md:items-start">
-            <ArcImage
-              src={arcFlowersAsset}
-              alt="ARC Studio visual research and tactile references"
-              captionText="Visual research / a language for brands with something to say"
-            />
-            <div className="md:pt-14">
-              <p className={sectionLabel}>03 — The audience</p>
-              <h2 className="mt-6 font-display text-4xl leading-none sm:text-5xl">
-                For brands with something to say.
-              </h2>
-              <p className={`mt-7 ${bodyCopy}`}>
-                ARC was designed for smaller, owner-led brands within culture, fashion and the
-                creative industries, where visual identity plays an important role in how they are
-                perceived.
-              </p>
-              <div className="mt-8 border-l border-foreground/20 pl-5">
-                <p className="font-display text-2xl">Sof</p>
-                <p className="mt-2 text-xs uppercase leading-[1.8] tracking-[0.12em] text-muted-foreground">
-                  Creative decision-maker · aesthetically driven · values artistic quality · chooses
-                  collaborators through trust and fit.
+            <section className="space-y-7">
+              <div className="flex items-end justify-between gap-5">
+                <div>
+                  <p className={label}>03 — The audience</p>
+                  <h2 className="mt-5 font-display text-4xl leading-none sm:text-5xl">
+                    For brands with something to say.
+                  </h2>
+                </div>
+              </div>
+              <ArcImage
+                src={arcFlowersAsset}
+                alt="ARC Studio visual research and tactile references"
+                captionText="Visual research / a language for brands with something to say"
+              />
+              <div className="max-w-[45ch] border-l border-foreground/20 pl-5">
+                <p className="font-display text-2xl">SOF</p>
+                <p className="mt-2 text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                  Target audience persona
+                  <br />
+                  Creative decision-maker
+                </p>
+                <p className={`mt-2 ${copy}`}>
+                  Aesthetically driven, values artistic quality, and chooses collaborators through
+                  trust, aesthetic understanding and personal fit.
                 </p>
               </div>
-              <p className="mt-8 font-display text-xl leading-tight">
-                The website needed to communicate more than services. It needed to communicate how
-                ARC thinks.
-              </p>
-            </div>
-          </section>
+            </section>
 
-          <section>
-            <div className="mb-8 grid gap-8 sm:grid-cols-[0.75fr_1.25fr] sm:items-end">
+            <section className="space-y-7">
               <div>
-                <p className={sectionLabel}>04 — The visual world</p>
-                <h2 className="mt-6 font-display text-4xl leading-none sm:text-6xl">
+                <p className={label}>04 — The visual world</p>
+                <h2 className="mt-5 font-display text-4xl leading-none sm:text-6xl">
                   Structure meets exploration.
                 </h2>
               </div>
-              <p className={`max-w-[48ch] ${bodyCopy}`}>
-                The visual identity draws from editorial design, visual culture and creative
-                processes. The work moves between clear hierarchy and tactile discovery.
-              </p>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-[1.4fr_0.6fr] sm:items-end">
               <ArcImage
                 src={arcBoardAsset}
                 alt="ARC Studio visual world and reference board"
-                className="aspect-[1.26/1]"
+                className="aspect-[1.18/1]"
               />
-              <div className="space-y-8 sm:pb-12">
-                <div className="grid grid-cols-2 gap-4 text-[11px] uppercase leading-[1.8] tracking-[0.15em]">
-                  <p>
-                    <strong className="font-medium">Structure</strong>
-                    <span className="mt-2 block text-muted-foreground">
-                      Clear hierarchy
-                      <br />
-                      Editorial layouts
-                      <br />
-                      Controlled typography
-                    </span>
-                  </p>
-                  <p>
-                    <strong className="font-medium">Exploration</strong>
-                    <span className="mt-2 block text-muted-foreground">
-                      Collage
-                      <br />
-                      Stop-motion
-                      <br />
-                      Analogue references
-                    </span>
+              <div className="grid gap-6 sm:grid-cols-2">
+                <div className="text-[11px] uppercase leading-[1.8] tracking-[0.15em]">
+                  <strong className="font-medium">Structure</strong>
+                  <p className="mt-2 text-muted-foreground">
+                    Clear hierarchy
+                    <br />
+                    Editorial layouts
+                    <br />
+                    Controlled typography
                   </p>
                 </div>
-                <ArcImage
-                  src={arcCouchAsset}
-                  alt="ARC Studio physical design process"
-                  captionText="The process stays visible"
-                />
+                <div className="text-[11px] uppercase leading-[1.8] tracking-[0.15em]">
+                  <strong className="font-medium">Exploration</strong>
+                  <p className="mt-2 text-muted-foreground">
+                    Collage
+                    <br />
+                    Stop-motion
+                    <br />
+                    Analogue references
+                  </p>
+                </div>
               </div>
-            </div>
-          </section>
+              <ArcImage
+                src={arcCouchAsset}
+                alt="ARC Studio physical design process"
+                captionText="The process stays visible"
+              />
+            </section>
 
-          <section>
-            <div className="mb-8 flex items-end justify-between gap-6">
+            <section className="space-y-7">
               <div>
-                <p className={sectionLabel}>05 — The identity</p>
-                <h2 className="mt-6 font-display text-5xl leading-[0.9] sm:text-7xl">
+                <p className={label}>05 — The identity</p>
+                <h2 className="mt-5 font-display text-4xl leading-none sm:text-6xl">
                   A system built around the ARC.
                 </h2>
               </div>
-              <p className="hidden max-w-[18ch] text-right text-[11px] uppercase leading-[1.8] tracking-[0.15em] text-muted-foreground sm:block">
-                Wordmark / icon / colour system / expressive type
-              </p>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-[1.1fr_0.9fr] sm:items-start">
               <ArcImage
                 src={arcLogoAsset}
                 alt="ARC Studio primary wordmark"
                 captionText="WORDMARK / primary identity"
                 contain
+                eager
                 className="bg-white"
               />
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-5">
                 <ArcImage
                   src={arcBrownSymbolAsset}
-                  alt="ARC Studio brown icon variation"
+                  alt="ARC Studio icon variation"
                   captionText="ICON"
                   contain
                   className="bg-white"
@@ -258,32 +255,29 @@ export const Route = createFileRoute("/work/arc-studio")({
                   className="bg-white"
                 />
               </div>
-            </div>
-            <div className="mt-8 grid gap-8 border-t border-foreground/15 pt-5 sm:grid-cols-[0.5fr_1.5fr]">
-              <p className="text-[11px] uppercase tracking-[0.16em]">
-                Expressive type / editorial composition
-              </p>
-              <p className={bodyCopy}>
+              <p className={`max-w-[48ch] ${copy}`}>
                 The logo combines a primary wordmark with a graphic icon based on a stylised ARC
                 form. Typography balances character and clarity, giving the identity a visual voice
                 without losing readability.
+                <br />
+                <br />
+                The arc bridges the gap between structure and exploration — a form that reflects the
+                studio’s ability to connect ideas and turn them into something tangible.
               </p>
-            </div>
-          </section>
+            </section>
 
-          <section className="grid gap-8 border-t border-foreground/15 pt-8 md:grid-cols-[0.7fr_1.3fr] md:items-end">
-            <div>
-              <p className={sectionLabel}>06 — From identity to digital</p>
-              <h2 className="mt-6 font-display text-4xl leading-none sm:text-6xl">
-                The website became the brand experience.
-              </h2>
-            </div>
-            <div>
-              <p className={`max-w-[52ch] ${bodyCopy}`}>
+            <section className="space-y-7">
+              <div>
+                <p className={label}>06 — From identity to digital</p>
+                <h2 className="mt-5 font-display text-4xl leading-none sm:text-6xl">
+                  The website became the brand experience.
+                </h2>
+              </div>
+              <p className={`max-w-[48ch] ${copy}`}>
                 The identity was translated directly into the digital experience rather than treated
                 as a separate application.
               </p>
-              <div className="mt-8 grid gap-5 border-t border-foreground/15 pt-5 text-[11px] uppercase tracking-[0.16em] sm:grid-cols-3">
+              <div className="grid gap-5 border-y border-foreground/15 py-5 text-[11px] uppercase tracking-[0.15em] sm:grid-cols-3">
                 <p>
                   <strong className="block font-medium">Create with us</strong>
                   <span className="mt-2 block text-muted-foreground">How to work with ARC</span>
@@ -297,109 +291,62 @@ export const Route = createFileRoute("/work/arc-studio")({
                   <span className="mt-2 block text-muted-foreground">People and thinking</span>
                 </p>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <section>
-            <div className="mb-8 grid gap-8 sm:grid-cols-[0.7fr_1.3fr] sm:items-end">
+            <section className="space-y-7">
               <div>
-                <p className={sectionLabel}>07 — The website</p>
-                <h2 className="mt-6 font-display text-4xl leading-none sm:text-6xl">
+                <p className={label}>07 — The website</p>
+                <h2 className="mt-5 font-display text-4xl leading-none sm:text-6xl">
                   A first impression with movement.
                 </h2>
               </div>
-              <p className={`max-w-[50ch] ${bodyCopy}`}>
-                The homepage combines large-scale imagery, animation, typography and short
-                information. The visual language is deliberately less static than a conventional
-                agency website.
+              <p className={`max-w-[48ch] ${copy}`}>
+                Large-scale imagery, animation, typography and short information make the homepage
+                less static than a conventional agency website.
               </p>
-            </div>
-            <figure>
-              <ArcWebVideo className="aspect-video" />
-              <figcaption className={caption}>ARC Studio — digital experience</figcaption>
-            </figure>
-            <div className="mt-8 grid gap-6 sm:grid-cols-[1.35fr_0.65fr] sm:items-start">
-              <ArcImage
-                src={arcScreenshotAsset}
-                alt="ARC Studio website screenshot"
-                captionText="Website / structure becomes image"
-              />
-              <ArcImage
-                src={arcFlowersAsset}
-                alt="ARC Studio website detail and visual interaction"
-                captionText="Detail / visual storytelling"
-              />
-            </div>
-          </section>
+              <figure>
+                <ArcVideo src={arcStopmotionAsset} className="aspect-video" />
+                <figcaption className={caption}>ARC Studio — digital experience</figcaption>
+              </figure>
+            </section>
 
-          <section className="grid gap-10 border-t border-foreground/15 pt-8 md:grid-cols-[0.75fr_1.25fr]">
-            <div>
-              <p className={sectionLabel}>08 — UX / testing</p>
-              <h2 className="mt-6 font-display text-4xl leading-none sm:text-6xl">
-                Creative doesn’t mean unclear.
-              </h2>
-              <p className={`mt-7 max-w-[34ch] ${bodyCopy}`}>
-                The visual expression could be experimental, but the underlying structure needed to
-                remain easy to navigate.
-              </p>
-            </div>
-            <div className="grid border-t border-foreground/15">
-              {[
-                [
-                  "01 — Clear hierarchy",
-                  "Information was structured so the visual expression did not compete with the content.",
-                ],
-                [
-                  "02 — Recognisable navigation",
-                  "Users could move between collaboration, work and information about the studio.",
-                ],
-                [
-                  "03 — Project presentation",
-                  "Cases communicate both the studio’s capabilities and its aesthetic position.",
-                ],
-                [
-                  "04 — Clear contact paths",
-                  "Users can move from discovering ARC to considering a collaboration.",
-                ],
-              ].map(([title, text]) => (
-                <div
-                  key={title}
-                  className="grid gap-3 border-b border-foreground/15 py-5 sm:grid-cols-[0.7fr_1.3fr]"
-                >
-                  <p className="text-[11px] uppercase tracking-[0.14em]">{title}</p>
-                  <p className={bodyCopy}>{text}</p>
-                </div>
-              ))}
-              <div className="mt-10 border-l border-foreground/25 pl-5">
-                <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-                  Think Aloud / testing
-                </p>
-                <p className="mt-5 font-display text-3xl leading-tight">
-                  Does the experience make sense to someone outside the process?
-                </p>
-                <p className={`mt-5 ${bodyCopy}`}>
-                  The participant understood ARC as a multidisciplinary creative studio. One
-                  concrete issue emerged during testing:
-                </p>
-                <p className="mt-6 font-display text-2xl leading-tight">
-                  THE LOGO LACKED SUFFICIENT CONTRAST AGAINST THE BEIGE BACKGROUND.
-                </p>
-                <p className={`mt-5 ${bodyCopy}`}>
-                  The finding gave us a concrete visual adjustment rather than a purely subjective
-                  reaction to the design.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section>
-            <div className="mb-8 grid gap-8 sm:grid-cols-[0.7fr_1.3fr] sm:items-end">
+            <section className="space-y-8 border-t border-foreground/15 pt-8">
               <div>
-                <p className={sectionLabel}>09 — The result</p>
-                <h2 className="mt-6 font-display text-5xl leading-[0.9] sm:text-7xl">
-                  A digital identity designed to feel as intentional as the work it represents.
+                <p className={label}>08 — UX / testing</p>
+                <h2 className="mt-5 font-display text-4xl leading-none sm:text-6xl">
+                  Creative doesn’t mean unclear.
                 </h2>
               </div>
+              <div className="grid border-t border-foreground/15">
+                {[
+                  [
+                    "01 — Clear hierarchy",
+                    "The visual expression did not compete with the content.",
+                  ],
+                  [
+                    "02 — Recognisable navigation",
+                    "Users could move between collaboration, work and information.",
+                  ],
+                ].map(([title, text]) => (
+                  <div
+                    key={title}
+                    className="grid gap-3 border-b border-foreground/15 py-5 sm:grid-cols-[0.7fr_1.3fr]"
+                  >
+                    <p className="text-[11px] uppercase tracking-[0.14em]">{title}</p>
+                    <p className={copy}>{text}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="space-y-7">
+              <div>
+                <p className={label}>09 — The result</p>
+                <h2 className="mt-5 max-w-[22ch] font-display text-4xl leading-tight sm:text-5xl">
+                  A digital identity as intentional as the work it represents.
+                </h2>
+              </div>
+              <ArcVideo className="aspect-video" />
               <div className="grid grid-cols-2 gap-x-5 gap-y-3 text-[11px] uppercase tracking-[0.15em] text-muted-foreground sm:grid-cols-3">
                 <span>Brand strategy</span>
                 <span>Visual identity</span>
@@ -407,36 +354,28 @@ export const Route = createFileRoute("/work/arc-studio")({
                 <span>Web design</span>
                 <span>Visual storytelling</span>
               </div>
-            </div>
-            <ArcWebVideo className="aspect-video" />
-            <p className={`mt-7 max-w-[58ch] ${bodyCopy}`}>
-              The result is a brand and digital platform where the strategic and visual sides of the
-              studio are designed to work together.
-            </p>
-          </section>
+            </section>
 
-          <section className="grid gap-10 border-t border-foreground/15 pt-8 md:grid-cols-[0.72fr_1.28fr]">
-            <div>
-              <p className={sectionLabel}>10 — Reflection</p>
-              <h2 className="mt-6 font-display text-4xl leading-none sm:text-6xl">
-                A strong aesthetic needs a strong structure underneath it.
-              </h2>
-            </div>
-            <div className={`max-w-[56ch] ${bodyCopy}`}>
-              <p>
-                Working on ARC reinforced the relationship between visual expression and strategy.
-              </p>
-              <p className="mt-5">
-                The project began from a very visual ambition, but the final experience depended on
-                decisions that were not immediately visible: positioning, audience, hierarchy,
-                navigation and testing.
-              </p>
-              <p className="mt-8 font-display text-xl leading-tight text-foreground">
-                A design can feel clear to its creator and still need to be questioned by someone
-                seeing it for the first time.
-              </p>
-            </div>
-          </section>
+            <section className="grid gap-8 border-t border-foreground/15 pt-8 sm:grid-cols-[0.75fr_1.25fr]">
+              <div>
+                <p className={label}>10 — Reflection</p>
+                <h2 className="mt-5 max-w-[24ch] font-display text-3xl leading-tight sm:text-4xl">
+                  A strong aesthetic needs a strong structure underneath it.
+                </h2>
+              </div>
+              <div className={copy}>
+                <p>
+                  Working on ARC reinforced how closely visual expression and strategy need to work
+                  together. The final experience depended on decisions that aren't immediately
+                  visible — positioning, audience, hierarchy and navigation.
+                </p>
+                <p className="mt-8 font-display text-xl leading-tight text-foreground">
+                  A design can feel clear to its creator and still need to be questioned by someone
+                  seeing it for the first time.
+                </p>
+              </div>
+            </section>
+          </div>
         </div>
       </CaseStudy>
     );
