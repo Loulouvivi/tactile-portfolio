@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 
 import { Reveal } from "@/components/Reveal";
 import { ProjectImage, ProjectMeta, type Project } from "@/components/ProjectCard";
@@ -162,12 +163,6 @@ function Index() {
               <Reveal className="collage-heading">
                 <h2 className="font-display text-3xl tracking-tight sm:text-5xl">Selected work</h2>
               </Reveal>
-              <Reveal delay={120} className="collage-count">
-                <span className="text-[0.78rem] uppercase tracking-[0.24em] text-muted-foreground">
-                  Selected / 04
-                </span>
-              </Reveal>
-
               <ProjectImage
                 project={p1}
                 ratio="aspect-[33/20]"
@@ -211,6 +206,17 @@ function Index() {
                 delay={120}
                 className="collage-p4-meta"
               />
+            </div>
+            <div className="mt-8 flex flex-col items-end text-right">
+              <Link
+                to="/archive"
+                className="text-[0.78rem] uppercase tracking-[0.24em] text-accent transition-colors hover:text-foreground"
+              >
+                Archive →
+              </Link>
+              <p className="mt-2 font-display text-sm italic text-muted-foreground">
+                More work, experiments &amp; visual studies.
+              </p>
             </div>
             </div>
           </section>
