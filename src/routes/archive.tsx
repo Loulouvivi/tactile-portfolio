@@ -1,3 +1,4 @@
+import { useCallback, useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import kubrix01Asset from "@/assets/kubrix-01.jpg";
 import kubrix02Asset from "@/assets/kubrix-02.jpg";
@@ -5,6 +6,53 @@ import kubrix03Asset from "@/assets/kubrix-03.jpg";
 import kubrix04Asset from "@/assets/kubrix-04.jpg";
 import kubrix05Asset from "@/assets/kubrix-05.jpg";
 import kubrix06Asset from "@/assets/kubrix-06.jpg";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+
+const kubrixImages = [
+  {
+    src: kubrix01Asset,
+    alt: "THE KUBRIX members in a soft-focus group portrait",
+    width: 6000,
+    height: 4000,
+  },
+  {
+    src: kubrix02Asset,
+    alt: "THE KUBRIX members posed together",
+    width: 4000,
+    height: 4000,
+  },
+  {
+    src: kubrix03Asset,
+    alt: "THE KUBRIX group portrait against a light backdrop",
+    width: 3936,
+    height: 2624,
+  },
+  {
+    src: kubrix04Asset,
+    alt: "THE KUBRIX members gathered closely for the cover shoot",
+    width: 5681,
+    height: 3787,
+  },
+  {
+    src: kubrix05Asset,
+    alt: "THE KUBRIX members lying together for a portrait",
+    width: 2060,
+    height: 3090,
+  },
+  {
+    src: kubrix06Asset,
+    alt: "Overhead portrait of THE KUBRIX arranged in a circle",
+    width: 2060,
+    height: 2060,
+  },
+] as const;
 
 export const Route = createFileRoute("/archive")({
   head: () => ({
@@ -45,58 +93,7 @@ function Archive() {
                   </p>
                 </header>
 
-                <div className="space-y-12 sm:space-y-20">
-                  <div className="grid grid-cols-2 items-start gap-4 sm:grid-cols-12 sm:gap-6">
-                    <ArchiveImage
-                      src={kubrix01Asset}
-                      alt="THE KUBRIX members in a soft-focus group portrait"
-                      width={6000}
-                      height={4000}
-                      className="col-span-2 sm:col-span-8"
-                    />
-                    <ArchiveImage
-                      src={kubrix02Asset}
-                      alt="THE KUBRIX members posed together"
-                      width={4000}
-                      height={4000}
-                      className="col-span-1 col-start-2 sm:col-span-4 sm:col-start-9 sm:mt-14"
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-2 items-start gap-4 sm:grid-cols-12 sm:gap-6">
-                    <ArchiveImage
-                      src={kubrix03Asset}
-                      alt="THE KUBRIX group portrait against a light backdrop"
-                      width={3936}
-                      height={2624}
-                      className="col-span-1 sm:col-span-5 sm:mt-10"
-                    />
-                    <ArchiveImage
-                      src={kubrix04Asset}
-                      alt="THE KUBRIX members gathered closely for the cover shoot"
-                      width={5681}
-                      height={3787}
-                      className="col-span-1 sm:col-span-6 sm:col-start-7"
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-2 items-start gap-4 sm:grid-cols-12 sm:gap-6">
-                    <ArchiveImage
-                      src={kubrix05Asset}
-                      alt="THE KUBRIX members lying together for a portrait"
-                      width={2060}
-                      height={3090}
-                      className="col-span-1 sm:col-span-4"
-                    />
-                    <ArchiveImage
-                      src={kubrix06Asset}
-                      alt="Overhead portrait of THE KUBRIX arranged in a circle"
-                      width={2060}
-                      height={2060}
-                      className="col-span-1 sm:col-span-3 sm:col-start-6 sm:mt-16"
-                    />
-                  </div>
-                </div>
+                <KubrixCarousel />
               </div>
             </section>
 
@@ -124,22 +121,73 @@ function Archive() {
   );
 }
 
-function ArchiveImage({
-  src,
-  alt,
-  width,
-  height,
-  className,
-}: {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  className: string;
-}) {
+function KubrixCarousel() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const handleSetApi = useCallback((carouselApi: CarouselApi) => {
+    if (carouselApi) {
+      setApi(carouselApi);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    const updateIndex = () => setCurrentIndex(api.selectedScrollSnap());
+    updateIndex();
+    api.on("select", updateIndex);
+
+    return () => {
+      api.off("select", updateIndex);
+    };
+  }, [api]);
+
   return (
-    <figure className={className}>
-      <img src={src} alt={alt} width={width} height={height} className="block h-auto w-full" />
-    </figure>
+    <div>
+      <Carousel
+        setApi={handleSetApi}
+        opts={{ loop: true, duration: 25 }}
+        aria-label="THE KUBRIX cover shoot images"
+      >
+        <CarouselContent className="ml-0">
+          {kubrixImages.map((image, index) => (
+            <CarouselItem
+              key={image.src}
+              className="pl-0"
+              aria-label={`${String(index + 1).padStart(2, "0")} of ${String(kubrixImages.length).padStart(2, "0")}`}
+            >
+              <figure>
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  className="block h-auto w-full"
+                />
+              </figure>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious
+          variant="ghost"
+          aria-label="Previous image"
+          className="left-2 top-1/2 h-9 w-9 -translate-y-1/2 rounded-full bg-background/70 text-foreground/75 shadow-none hover:bg-background/90 sm:left-4"
+        />
+        <CarouselNext
+          variant="ghost"
+          aria-label="Next image"
+          className="right-2 top-1/2 h-9 w-9 -translate-y-1/2 rounded-full bg-background/70 text-foreground/75 shadow-none hover:bg-background/90 sm:right-4"
+        />
+      </Carousel>
+      <p
+        aria-live="polite"
+        aria-atomic="true"
+        className="mt-3 text-right text-[10px] tabular-nums tracking-[0.18em] text-muted-foreground"
+      >
+        {String(currentIndex + 1).padStart(2, "0")} / {String(kubrixImages.length).padStart(2, "0")}
+      </p>
+    </div>
   );
 }
