@@ -489,241 +489,133 @@
   .collage-p4-meta { left: 42%; top: 77.5%; width: 20%; margin: 0; rotate: -0.55deg; }
 }
 
-/* Studio — a numbered philosophy sequence: hairline rules, short statements,
-   quiet copy and one physical print, all on the same paper sheet. */
+/* Studio — an image-led view into Louise's working practice. */
 .studio-section {
   position: relative;
   z-index: 1;
 }
 
 .studio-sequence {
-  max-width: 44rem;
+  display: grid;
+  grid-template-areas:
+    "heading"
+    "image"
+    "entries";
+  gap: 2.75rem;
+  max-width: 76rem;
   margin-inline: auto;
-  padding: 7rem 1.25rem 9rem;
+  padding: 6rem 1.25rem 7rem;
 }
 
-.studio-rule {
-  border: 0;
-  border-top: 1px solid color-mix(in oklab, var(--foreground) 24%, transparent);
-}
-
-.studio-lead {
-  padding-top: 1.1rem;
-  border-top: 1px solid color-mix(in oklab, var(--foreground) 15%, transparent);
+.studio-heading {
+  grid-area: heading;
 }
 
 .studio-eyebrow {
-  display: flex;
-  gap: 0.9rem;
   color: var(--muted-foreground);
-  font-size: 0.67rem;
-  letter-spacing: 0.28em;
+  font-size: 0.68rem;
+  line-height: 1.7;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-.studio-eyebrow span {
-  color: var(--accent);
-}
-
-.studio-lead .studio-copy {
-  max-width: 30ch;
-  margin-top: 2.4rem;
-}
-
 .studio-copy {
-  font-size: 0.93rem;
+  font-size: 0.9rem;
   line-height: 1.65;
 }
 
-.studio-statement-object {
-  width: 86%;
-  margin: 5.75rem 0 0 6%;
-}
-
 .studio-statement {
-  font-size: clamp(1.55rem, 7vw, 2.5rem);
-  line-height: 1;
+  margin-top: 1.25rem;
+  font-size: 2.5rem;
+  line-height: 0.98;
   letter-spacing: 0;
 }
 
+.studio-image-object {
+  grid-area: image;
+  margin: 0;
+  rotate: -0.35deg;
+}
+
+.studio-print {
+  padding: 0.3rem;
+  background: color-mix(in oklab, var(--card) 88%, transparent);
+  box-shadow: 0 18px 32px -26px color-mix(in oklab, var(--foreground) 65%, transparent);
+}
+
+.studio-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 55%;
+}
+
+.studio-image-caption {
+  padding: 0.65rem 0.35rem 0.3rem;
+  color: var(--muted-foreground);
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+}
+
+.studio-entries {
+  grid-area: entries;
+}
+
 .studio-entry {
-  max-width: 34rem;
-  margin-top: 6.75rem;
-  padding-top: 1rem;
-  border-top: 1px solid color-mix(in oklab, var(--foreground) 15%, transparent);
+  padding-top: 0.85rem;
+  border-top: 1px solid color-mix(in oklab, var(--foreground) 18%, transparent);
 }
 
-.studio-entry-process {
-  width: 93%;
-  margin-left: 2%;
-}
-
-.studio-entry-process .studio-entry-line {
-  margin-left: 14%;
-}
-
-.studio-entry-materials .studio-entry-head {
-  flex-direction: row-reverse;
-}
-
-.studio-entry-materials .studio-copy {
-  margin-left: 16%;
+.studio-entry + .studio-entry {
+  margin-top: 2.5rem;
 }
 
 .studio-entry-head {
   display: flex;
+  gap: 1rem;
   align-items: baseline;
-  justify-content: space-between;
-  font-size: 0.67rem;
-  letter-spacing: 0.26em;
+  color: var(--accent);
+  font-size: 0.68rem;
+  line-height: 1.3;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
 .studio-entry-head span {
   color: var(--muted-foreground);
-  letter-spacing: 0.2em;
-}
-
-.studio-entry-line {
-  margin-top: 2.4rem;
-  font-size: clamp(1.15rem, 4.3vw, 1.8rem);
-  line-height: 1.05;
-  letter-spacing: 0;
-}
-
-.studio-entry .studio-copy {
-  max-width: 32ch;
-  margin-top: 1.7rem;
-}
-
-.studio-image-object {
-  position: relative;
-  z-index: 2;
-  width: 58%;
-  margin: 4.25rem 0 -1.5rem 33%;
-  rotate: 0.45deg;
-}
-
-.studio-print {
-  padding: 0.2rem;
-  background: color-mix(in oklab, var(--card) 88%, transparent);
-  box-shadow: 0 15px 28px -25px color-mix(in oklab, var(--foreground) 65%, transparent);
-  rotate: -1.15deg;
-}
-
-.studio-index {
-  margin-top: 2.4rem;
-}
-
-.studio-entry-disciplines {
-  width: 89%;
-  margin-left: 5%;
-}
-
-.studio-discipline {
-  display: grid;
-  grid-template-columns: 2.2rem 1fr;
-  gap: 0.3rem 1rem;
-  padding: 0.95rem 0;
-  border-bottom: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
-}
-
-.studio-discipline-number {
-  grid-row: span 2;
-  padding-top: 0.18rem;
-  color: var(--muted-foreground);
-  font-size: 0.62rem;
-  letter-spacing: 0.2em;
-}
-
-.studio-discipline dt {
-  color: var(--accent);
-  font-size: 0.73rem;
-  line-height: 1.3;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-}
-
-.studio-discipline dd {
-  grid-column: 2;
-  color: var(--muted-foreground);
-  font-size: 0.8rem;
-  line-height: 1.5;
-}
-
-.studio-discipline:nth-child(2) {
-  padding-left: 5%;
-}
-
-.studio-discipline:nth-child(3) {
-  padding-right: 7%;
-}
-
-.studio-discipline:nth-child(4) {
-  padding-left: 9%;
+  letter-spacing: 0.16em;
 }
 
 @media (min-width: 40rem) {
   .studio-sequence {
-    max-width: 66rem;
+    grid-template-areas:
+      "image heading"
+      "image entries";
+    grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.85fr);
+    column-gap: clamp(3rem, 8vw, 7rem);
+    row-gap: 2.75rem;
+    align-items: start;
     padding: 10rem 2rem 12rem;
   }
 
-  .studio-lead {
-    max-width: 30rem;
-  }
-
-  .studio-copy {
-    font-size: 0.95rem;
-  }
-
-  .studio-statement-object {
-    width: 52%;
-    margin: 8.5rem 0 0 27%;
-  }
-
   .studio-statement {
-    font-size: clamp(2rem, 3.4vw, 3.1rem);
-  }
-
-  .studio-entry {
-    margin-top: 8.75rem;
-  }
-
-  .studio-entry-process {
-    width: 52%;
-    margin-left: 3%;
-  }
-
-  .studio-entry-process .studio-entry-line {
-    margin-left: 22%;
+    margin-top: 1.75rem;
+    font-size: 3.3rem;
   }
 
   .studio-image-object {
-    width: 27%;
-    margin: -6.75rem 0 -3.5rem 57%;
-    rotate: 0.9deg;
+    width: 100%;
+    rotate: -0.6deg;
   }
 
-  .studio-image-object .studio-print {
-    rotate: -1.6deg;
+  .studio-entry + .studio-entry {
+    margin-top: 3.5rem;
   }
 
-  .studio-entry-materials {
-    width: 47%;
-    margin-top: 6.25rem;
-    margin-left: 47%;
-  }
-
-  .studio-entry-materials .studio-copy {
-    margin-left: 22%;
-  }
-
-  .studio-entry-disciplines {
-    width: 43%;
-    max-width: 29rem;
-    margin-top: 11.5rem;
-    margin-left: 15%;
+  .studio-copy {
+    max-width: 36ch;
+    font-size: 0.95rem;
   }
 }
 

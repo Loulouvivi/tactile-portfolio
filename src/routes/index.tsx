@@ -5,7 +5,7 @@ import { Reveal } from "@/components/Reveal";
 import { ProjectImage, ProjectMeta, type Project } from "@/components/ProjectCard";
 import risoPrint from "@/assets/project-1.jpg";
 import processBts from "@/assets/IMG_7170_web.mp4?url";
-import portrait from "@/assets/portrait.jpg";
+import handsOn from "@/assets/hands-on.jpg";
 import foldedPaper from "@/assets/folded-paper-background.png";
 import amoodeMixmatchAsset from "@/assets/mix-match.png";
 import luluviviPosterAsset from "@/assets/LV poster A2 final (1).png";
@@ -82,13 +82,6 @@ const projects: Project[] = [
     transparent: true,
     slug: "glossier-glyptoteket",
   },
-];
-
-const services = [
-  { label: "Brand identity", detail: "Marks, type systems, guidelines" },
-  { label: "Motion", detail: "Titles, loops, broadcast packages" },
-  { label: "Print", detail: "Books, editorial, packaging" },
-  { label: "Spatial", detail: "Exhibitions, signage, installation" },
 ];
 
 function Index() {
@@ -229,79 +222,55 @@ function Index() {
           </section>
         <section id="studio" className="studio-section" aria-labelledby="studio-title">
           <div className="studio-sequence">
-            <Reveal className="studio-lead">
+            <Reveal className="studio-heading">
               <p className="studio-eyebrow">
-                <span aria-hidden="true">00</span> Studio — a working practice
+                Fashion · Styling · Photography · Art direction · Visual identity · Graphic &amp;
+                digital design
               </p>
-              <p className="studio-copy text-muted-foreground">
-                Every project begins on a table — sketches, proofs, samples, things to hold. The
-                screen work follows once the physical logic is right, which keeps the digital side
-                quiet, sturdy and easy to live with.
-              </p>
-            </Reveal>
-
-            <Reveal delay={60} className="studio-statement-object">
               <h2 id="studio-title" className="font-display studio-statement">
-                Paper first,
+                Fashion, image,
                 <br />
-                pixels second.
+                design.
               </h2>
             </Reveal>
 
-            <Reveal delay={100} className="studio-entry studio-entry-process">
-              <p className="studio-entry-head">
-                Process
-                <span aria-hidden="true">01</span>
-              </p>
-              <p className="font-display studio-entry-line">Slow looking, quick hands.</p>
-              <p className="studio-copy text-muted-foreground">
-                Everything passes across the table first — sketches, proofs, corrections — before
-                it earns the screen.
-              </p>
-            </Reveal>
-
-            <Reveal delay={140} className="studio-image-object">
+            <Reveal delay={80} className="studio-image-object">
               <figure className="studio-print">
                 <img
-                  src={portrait}
-                  alt="The designer seated at a paper-covered studio desk in daylight"
+                  src={handsOn}
+                  alt="Louise styling a lime-green garment on a fashion shoot"
                   loading="lazy"
-                  width={1000}
-                  height={1250}
-                  className="aspect-[4/5] w-full object-cover"
+                  width={1707}
+                  height={2560}
+                  className="studio-image"
                 />
+                <figcaption className="studio-image-caption">On set — working with clothing</figcaption>
               </figure>
             </Reveal>
 
-            <Reveal delay={160} className="studio-entry studio-entry-materials">
-              <p className="studio-entry-head">
-                Materials
-                <span aria-hidden="true">02</span>
-              </p>
-              <p className="font-display studio-entry-line">Ink, stock, daylight.</p>
-              <p className="studio-copy text-muted-foreground">
-                Paper is chosen the way others choose words — by weight, by grain, by how it ages
-                in the hand.
-              </p>
-            </Reveal>
+            <div className="studio-entries">
+              <Reveal delay={120} className="studio-entry studio-entry-process">
+                <p className="studio-entry-head">
+                  <span aria-hidden="true">01</span> Process
+                </p>
+                <p className="studio-copy text-muted-foreground">
+                  I look closely, collect references and work with clothing on set. Styling,
+                  photography, composition, colour and typography help me find a direction before
+                  I translate it into visual identity, graphic and digital design.
+                </p>
+              </Reveal>
 
-            <Reveal delay={200} className="studio-entry studio-entry-disciplines">
-              <p className="studio-entry-head">
-                Disciplines
-                <span aria-hidden="true">03</span>
-              </p>
-              <dl className="studio-index">
-                {services.map((service, index) => (
-                  <div key={service.label} className="studio-discipline">
-                    <span className="studio-discipline-number" aria-hidden="true">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <dt>{service.label}</dt>
-                    <dd>{service.detail}</dd>
-                  </div>
-                ))}
-              </dl>
-            </Reveal>
+              <Reveal delay={160} className="studio-entry studio-entry-materials">
+                <p className="studio-entry-head">
+                  <span aria-hidden="true">02</span> Materials
+                </p>
+                <p className="studio-copy text-muted-foreground">
+                  Clothing, texture, colour, images, type and objects all find their way into the
+                  work. I return to physical references throughout, letting what I have seen and
+                  handled shape what appears on screen.
+                </p>
+              </Reveal>
+            </div>
           </div>
         </section>
 
