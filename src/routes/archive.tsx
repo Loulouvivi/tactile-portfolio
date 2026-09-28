@@ -21,6 +21,22 @@ import myOwnMuse04Asset from "@/assets/my_own_muse_04.png";
 import myOwnMuse05Asset from "@/assets/my_own_muse_05.png";
 import myOwnMuse06Asset from "@/assets/my_own_muse_06.png";
 import myOwnMuse07Asset from "@/assets/my_own_muse_07.png";
+import portraitsAmaliesBabyAsset from "@/assets/portraits-Amalies baby.png";
+import portraitsBertelVigfusAsset from "@/assets/portraits-Bertel, Vigfus.jpg";
+import portraitsCalebAsset from "@/assets/portraits-Caleb.png";
+import portraitsDaisyPosterAsset from "@/assets/portraits-Daisy poster.png";
+import portraitsDrunkInFinlandAsset from "@/assets/portraits-Drunk in Finland.png";
+import portraitsJosefineOliverAsset from "@/assets/portraits-Josefine + Oliver.png";
+import portraitsLineartMollyAsset from "@/assets/portraits-Lineart Molly .png";
+import portraitsNiall25Asset from "@/assets/portraits-Niall 25.png";
+import portraitsNiniYogaAsset from "@/assets/portraits-Nini yoga.png";
+import portraitsThinkAsset from "@/assets/portraits-Think.png";
+import portraitsTildeAsset from "@/assets/portraits-Tilde.png";
+import portraitsUncookedWomenAsset from "@/assets/portraits-Uncooked women.png";
+import portraitsCoupleAsset from "@/assets/portraits-couple.png";
+import portraitsHolidayModeAsset from "@/assets/portraits-holiday mode.png";
+import portraitsLesParentsAnniversaryAsset from "@/assets/portraits-les parents - anniversary.png";
+import portraitsMnKissPosterAsset from "@/assets/portraits-m+n kiss poster a3.png";
 import {
   Carousel,
   CarouselContent,
@@ -124,6 +140,85 @@ const myOwnMuseImages = [
   { src: myOwnMuse07Asset, alt: "My Own Muse line art", width: 3305, height: 2337 },
 ] as const;
 
+const lineArtPortraitImages = [
+  {
+    src: portraitsAmaliesBabyAsset,
+    alt: "Line art portrait of Amalies baby",
+    width: 2874,
+    height: 2098,
+  },
+  {
+    src: portraitsBertelVigfusAsset,
+    alt: "Line art portrait of Bertel and Vigfus",
+    width: 3252,
+    height: 2607,
+  },
+  { src: portraitsCalebAsset, alt: "Line art portrait of Caleb", width: 2725, height: 2793 },
+  {
+    src: portraitsDaisyPosterAsset,
+    alt: "Daisy line art portrait poster",
+    width: 3183,
+    height: 2624,
+  },
+  {
+    src: portraitsDrunkInFinlandAsset,
+    alt: "Line art portrait titled Drunk in Finland",
+    width: 2204,
+    height: 3414,
+  },
+  {
+    src: portraitsJosefineOliverAsset,
+    alt: "Line art portrait of Josefine and Oliver",
+    width: 2150,
+    height: 2752,
+  },
+  { src: portraitsLineartMollyAsset, alt: "Line art portrait of Molly", width: 1191, height: 842 },
+  {
+    src: portraitsNiall25Asset,
+    alt: "Line art portrait for Niall's 25th birthday",
+    width: 2188,
+    height: 3130,
+  },
+  {
+    src: portraitsNiniYogaAsset,
+    alt: "Line art portrait of Nini doing yoga",
+    width: 1813,
+    height: 2149,
+  },
+  {
+    src: portraitsThinkAsset,
+    alt: "Line art illustration titled Think",
+    width: 1332,
+    height: 2256,
+  },
+  { src: portraitsTildeAsset, alt: "Line art portrait of Tilde", width: 895, height: 2355 },
+  {
+    src: portraitsUncookedWomenAsset,
+    alt: "Line art portrait titled Uncooked women",
+    width: 2298,
+    height: 2421,
+  },
+  { src: portraitsCoupleAsset, alt: "Line art portrait of a couple", width: 1306, height: 3228 },
+  {
+    src: portraitsHolidayModeAsset,
+    alt: "Line art illustration titled Holiday mode",
+    width: 2617,
+    height: 2681,
+  },
+  {
+    src: portraitsLesParentsAnniversaryAsset,
+    alt: "Line art portrait for an anniversary",
+    width: 2093,
+    height: 2538,
+  },
+  {
+    src: portraitsMnKissPosterAsset,
+    alt: "Line art portrait kiss poster",
+    width: 2992,
+    height: 3630,
+  },
+] as const;
+
 export const Route = createFileRoute("/archive")({
   head: () => ({
     meta: [
@@ -219,6 +314,16 @@ function Archive() {
                 </header>
 
                 <MyOwnMuseCarousel />
+              </div>
+              <div>
+                <header className="mb-8 border-b border-foreground/15 pb-5">
+                  <h3 className="text-[11px] uppercase tracking-[0.24em]">LINE ART PORTRAITS</h3>
+                  <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
+                    Illustration · Line Art
+                  </p>
+                </header>
+
+                <LineArtPortraitsCarousel />
               </div>
             </section>
 
@@ -446,6 +551,78 @@ function MyOwnMuseCarousel() {
       >
         {String(currentIndex + 1).padStart(2, "0")} /{" "}
         {String(myOwnMuseImages.length).padStart(2, "0")}
+      </p>
+    </div>
+  );
+}
+
+function LineArtPortraitsCarousel() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const handleSetApi = useCallback((carouselApi: CarouselApi) => {
+    if (carouselApi) {
+      setApi(carouselApi);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    const updateIndex = () => setCurrentIndex(api.selectedScrollSnap());
+    updateIndex();
+    api.on("select", updateIndex);
+
+    return () => {
+      api.off("select", updateIndex);
+    };
+  }, [api]);
+
+  return (
+    <div>
+      <Carousel
+        setApi={handleSetApi}
+        opts={{ loop: true, duration: 25 }}
+        aria-label="Line Art Portraits images"
+      >
+        <CarouselContent className="ml-0">
+          {lineArtPortraitImages.map((image, index) => (
+            <CarouselItem
+              key={image.src}
+              className={currentIndex === index ? "pl-0" : "h-0 overflow-hidden pl-0"}
+              aria-label={`${String(index + 1).padStart(2, "0")} of ${String(lineArtPortraitImages.length).padStart(2, "0")}`}
+            >
+              <figure>
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  className="block h-auto w-full"
+                />
+              </figure>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious
+          variant="ghost"
+          aria-label="Previous image"
+          className="left-2 top-1/2 h-9 w-9 -translate-y-1/2 rounded-full bg-background/70 text-foreground/75 shadow-none hover:bg-background/90 sm:left-4"
+        />
+        <CarouselNext
+          variant="ghost"
+          aria-label="Next image"
+          className="right-2 top-1/2 h-9 w-9 -translate-y-1/2 rounded-full bg-background/70 text-foreground/75 shadow-none hover:bg-background/90 sm:right-4"
+        />
+      </Carousel>
+      <p
+        aria-live="polite"
+        aria-atomic="true"
+        className="mt-3 text-right text-[10px] tabular-nums tracking-[0.18em] text-muted-foreground"
+      >
+        {String(currentIndex + 1).padStart(2, "0")} /{" "}
+        {String(lineArtPortraitImages.length).padStart(2, "0")}
       </p>
     </div>
   );
