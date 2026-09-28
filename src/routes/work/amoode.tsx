@@ -51,7 +51,7 @@ export const Route = createFileRoute("/work/amoode")({
 
           <div className="min-w-0 space-y-16 sm:space-y-24">
             <section className="pt-2">
-              <div className="grid gap-8 sm:grid-cols-[1.45fr_0.65fr] sm:items-end">
+              <div>
                 <div>
                   <p className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
                     01 — INTRO
@@ -68,10 +68,6 @@ export const Route = createFileRoute("/work/amoode")({
                     that could communicate more of the brand’s creative personality — across
                     webshop, social media and the wider brand experience.
                   </p>
-                </div>
-
-                <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground sm:text-right">
-                  <p className="normal-case tracking-[0.14em]">2025 · Group project</p>
                 </div>
               </div>
             </section>
@@ -121,19 +117,8 @@ export const Route = createFileRoute("/work/amoode")({
             </section>
 
             <section className="pt-8">
-              <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
-                <figure>
-                  <img
-                    src={moodboardAsset}
-                    alt="Amoode moodboard"
-                    className="block h-auto w-full object-contain"
-                  />
-                  <figcaption className="mt-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-                    MOODBOARD
-                  </figcaption>
-                </figure>
-
-                <div className="prose lg:pb-4">
+              <div className="space-y-8">
+                <div className="prose">
                   <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
                     03 — THE CONCEPT
                   </p>
@@ -150,28 +135,23 @@ export const Route = createFileRoute("/work/amoode")({
                     a recognisable voice across touchpoints.
                   </p>
                 </div>
+
+                <figure className="w-full min-w-0">
+                  <img
+                    src={moodboardAsset}
+                    alt="Amoode moodboard"
+                    className="block h-auto w-full max-w-none object-contain"
+                  />
+                  <figcaption className="mt-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                    MOODBOARD
+                  </figcaption>
+                </figure>
               </div>
             </section>
 
             <section className="pt-6">
-              <div className="grid gap-8 lg:grid-cols-[1.35fr_0.65fr] lg:items-start">
-                <figure>
-                  <video
-                    src={mixMatchVideo}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    controls={false}
-                    preload="auto"
-                    className="h-[620px] w-auto max-w-full bg-transparent"
-                  />
-                  <figcaption className="mt-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-                    Mix &amp; Match visual
-                  </figcaption>
-                </figure>
-
-                <div className="prose lg:pt-12">
+              <div className="space-y-8">
+                <div className="prose">
                   <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
                     04 — MIX &amp; MATCH
                   </p>
@@ -194,6 +174,22 @@ export const Route = createFileRoute("/work/amoode")({
                     Individual pieces → complete looks
                   </p>
                 </div>
+
+                <figure className="w-full min-w-0">
+                  <video
+                    src={mixMatchVideo}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    controls={false}
+                    preload="auto"
+                    className="block h-auto w-full max-w-none bg-transparent"
+                  />
+                  <figcaption className="mt-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                    Mix &amp; Match visual
+                  </figcaption>
+                </figure>
               </div>
             </section>
 
