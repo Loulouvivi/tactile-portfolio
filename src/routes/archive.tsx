@@ -14,6 +14,13 @@ import beautyShoot04Asset from "@/assets/beauty-shoot_04.jpg";
 import beautyShoot05Asset from "@/assets/bbeauty-shoot_05.jpg";
 import beautyShoot06Asset from "@/assets/beauty-shoot_06.jpg";
 import beautyShoot07Asset from "@/assets/beauty-shoot_07.jpg";
+import myOwnMuse01Asset from "@/assets/my_own_muse_01.png";
+import myOwnMuse02Asset from "@/assets/my_own_muse_02.png";
+import myOwnMuse03Asset from "@/assets/my_own_muse_03.png";
+import myOwnMuse04Asset from "@/assets/my_own_muse_04.png";
+import myOwnMuse05Asset from "@/assets/my_own_muse_05.png";
+import myOwnMuse06Asset from "@/assets/my_own_muse_06.png";
+import myOwnMuse07Asset from "@/assets/my_own_muse_07.png";
 import {
   Carousel,
   CarouselContent,
@@ -107,11 +114,21 @@ const beautyShootImages = [
   },
 ] as const;
 
+const myOwnMuseImages = [
+  { src: myOwnMuse01Asset, alt: "My Own Muse line art", width: 2880, height: 2186 },
+  { src: myOwnMuse02Asset, alt: "My Own Muse line art", width: 3369, height: 2373 },
+  { src: myOwnMuse03Asset, alt: "My Own Muse line art", width: 3423, height: 2297 },
+  { src: myOwnMuse04Asset, alt: "My Own Muse line art", width: 3242, height: 2373 },
+  { src: myOwnMuse05Asset, alt: "My Own Muse line art", width: 3423, height: 2356 },
+  { src: myOwnMuse06Asset, alt: "My Own Muse line art", width: 3424, height: 2338 },
+  { src: myOwnMuse07Asset, alt: "My Own Muse line art", width: 3305, height: 2337 },
+] as const;
+
 export const Route = createFileRoute("/archive")({
   head: () => ({
     meta: [
       { title: "Louise Riedmann — Archive" },
-      { name: "description", content: "Archive of styling, graphics and photography." },
+      { name: "description", content: "Archive of styling, illustrations and photography." },
     ],
   }),
   component: Archive,
@@ -190,11 +207,19 @@ function Archive() {
             </section>
 
             <section className="grid gap-8 sm:grid-cols-[0.72fr_1.28fr] sm:items-start">
-              <h2 className="font-display text-3xl leading-tight sm:text-4xl">02 — GRAPHICS</h2>
-              <div
-                aria-hidden="true"
-                className="aspect-[16/10] w-full border border-foreground/15"
-              />
+              <h2 className="font-display text-3xl leading-tight sm:text-4xl">
+                02 — ILLUSTRATIONS
+              </h2>
+              <div>
+                <header className="mb-8 border-b border-foreground/15 pb-5">
+                  <h3 className="text-[11px] uppercase tracking-[0.24em]">MY OWN MUSE</h3>
+                  <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
+                    Illustrator · Freelance — Line Art
+                  </p>
+                </header>
+
+                <MyOwnMuseCarousel />
+              </div>
             </section>
 
             <section className="grid gap-8 sm:grid-cols-[0.72fr_1.28fr] sm:items-start">
@@ -349,6 +374,78 @@ function BeautyShootCarousel() {
       >
         {String(currentIndex + 1).padStart(2, "0")} /{" "}
         {String(beautyShootImages.length).padStart(2, "0")}
+      </p>
+    </div>
+  );
+}
+
+function MyOwnMuseCarousel() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const handleSetApi = useCallback((carouselApi: CarouselApi) => {
+    if (carouselApi) {
+      setApi(carouselApi);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    const updateIndex = () => setCurrentIndex(api.selectedScrollSnap());
+    updateIndex();
+    api.on("select", updateIndex);
+
+    return () => {
+      api.off("select", updateIndex);
+    };
+  }, [api]);
+
+  return (
+    <div>
+      <Carousel
+        setApi={handleSetApi}
+        opts={{ loop: true, duration: 25 }}
+        aria-label="My Own Muse line art images"
+      >
+        <CarouselContent className="ml-0">
+          {myOwnMuseImages.map((image, index) => (
+            <CarouselItem
+              key={image.src}
+              className={currentIndex === index ? "pl-0" : "h-0 overflow-hidden pl-0"}
+              aria-label={`${String(index + 1).padStart(2, "0")} of ${String(myOwnMuseImages.length).padStart(2, "0")}`}
+            >
+              <figure>
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  className="block h-auto w-full"
+                />
+              </figure>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious
+          variant="ghost"
+          aria-label="Previous image"
+          className="left-2 top-1/2 h-9 w-9 -translate-y-1/2 rounded-full bg-background/70 text-foreground/75 shadow-none hover:bg-background/90 sm:left-4"
+        />
+        <CarouselNext
+          variant="ghost"
+          aria-label="Next image"
+          className="right-2 top-1/2 h-9 w-9 -translate-y-1/2 rounded-full bg-background/70 text-foreground/75 shadow-none hover:bg-background/90 sm:right-4"
+        />
+      </Carousel>
+      <p
+        aria-live="polite"
+        aria-atomic="true"
+        className="mt-3 text-right text-[10px] tabular-nums tracking-[0.18em] text-muted-foreground"
+      >
+        {String(currentIndex + 1).padStart(2, "0")} /{" "}
+        {String(myOwnMuseImages.length).padStart(2, "0")}
       </p>
     </div>
   );
