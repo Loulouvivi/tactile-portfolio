@@ -37,6 +37,9 @@ import portraitsCoupleAsset from "@/assets/portraits-couple.png";
 import portraitsHolidayModeAsset from "@/assets/portraits-holiday mode.png";
 import portraitsLesParentsAnniversaryAsset from "@/assets/portraits-les parents - anniversary.png";
 import portraitsMnKissPosterAsset from "@/assets/portraits-m+n kiss poster a3.png";
+import luluPrintFinalAsset from "@/assets/lulu-print_01.jpg";
+import luluPrintDevelopmentAsset from "@/assets/lulu-print_02.png";
+import luluPrintGarmentAsset from "@/assets/lulu-print_03.png";
 import {
   Carousel,
   CarouselContent,
@@ -219,6 +222,27 @@ const lineArtPortraitImages = [
   },
 ] as const;
 
+const luluPrintImages = [
+  {
+    src: luluPrintDevelopmentAsset,
+    alt: "Initial hand-drawn studies and sketches for the Lulu textile print",
+    width: 2025,
+    height: 1439,
+  },
+  {
+    src: luluPrintFinalAsset,
+    alt: "Finished colourful Lulu print developed for Maxjenny S/S17",
+    width: 8858,
+    height: 8858,
+  },
+  {
+    src: luluPrintGarmentAsset,
+    alt: "Finished Lulu print applied to a Maxjenny sports jacket",
+    width: 2880,
+    height: 1800,
+  },
+] as const;
+
 export const Route = createFileRoute("/archive")({
   head: () => ({
     meta: [
@@ -324,6 +348,18 @@ function Archive() {
                 </header>
 
                 <LineArtPortraitsCarousel />
+              </div>
+              <div>
+                <header className="mb-8 border-b border-foreground/15 pb-5">
+                  <h3 className="text-[11px] uppercase tracking-[0.24em]">
+                    MAXJENNY S/S17 — LULU PRINT
+                  </h3>
+                  <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
+                    Textile / Print Design · Illustration · Pattern Development
+                  </p>
+                </header>
+
+                <LuluPrintCarousel />
               </div>
             </section>
 
@@ -623,6 +659,78 @@ function LineArtPortraitsCarousel() {
       >
         {String(currentIndex + 1).padStart(2, "0")} /{" "}
         {String(lineArtPortraitImages.length).padStart(2, "0")}
+      </p>
+    </div>
+  );
+}
+
+function LuluPrintCarousel() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const handleSetApi = useCallback((carouselApi: CarouselApi) => {
+    if (carouselApi) {
+      setApi(carouselApi);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    const updateIndex = () => setCurrentIndex(api.selectedScrollSnap());
+    updateIndex();
+    api.on("select", updateIndex);
+
+    return () => {
+      api.off("select", updateIndex);
+    };
+  }, [api]);
+
+  return (
+    <div>
+      <Carousel
+        setApi={handleSetApi}
+        opts={{ loop: true, duration: 25 }}
+        aria-label="Maxjenny S/S17 Lulu print development images"
+      >
+        <CarouselContent className="ml-0">
+          {luluPrintImages.map((image, index) => (
+            <CarouselItem
+              key={image.src}
+              className={currentIndex === index ? "pl-0" : "h-0 overflow-hidden pl-0"}
+              aria-label={`${String(index + 1).padStart(2, "0")} of ${String(luluPrintImages.length).padStart(2, "0")}`}
+            >
+              <figure>
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  className="block h-auto w-full"
+                />
+              </figure>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious
+          variant="ghost"
+          aria-label="Previous image"
+          className="left-2 top-1/2 h-9 w-9 -translate-y-1/2 rounded-full bg-background/70 text-foreground/75 shadow-none hover:bg-background/90 sm:left-4"
+        />
+        <CarouselNext
+          variant="ghost"
+          aria-label="Next image"
+          className="right-2 top-1/2 h-9 w-9 -translate-y-1/2 rounded-full bg-background/70 text-foreground/75 shadow-none hover:bg-background/90 sm:right-4"
+        />
+      </Carousel>
+      <p
+        aria-live="polite"
+        aria-atomic="true"
+        className="mt-3 text-right text-[10px] tabular-nums tracking-[0.18em] text-muted-foreground"
+      >
+        {String(currentIndex + 1).padStart(2, "0")} /{" "}
+        {String(luluPrintImages.length).padStart(2, "0")}
       </p>
     </div>
   );
