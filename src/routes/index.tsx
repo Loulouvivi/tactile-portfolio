@@ -14,6 +14,7 @@ import arcVideoWebmAsset from "@/assets/arc-studio-stopmotion-web.mp4.asset.json
 import arcVideoAsset from "@/assets/ARC_Studio_stopmotion_compressed.mp4";
 import arcPosterAsset from "@/assets/arc-studio-poster.jpg.asset.json";
 import photoboothPortraitAsset from "@/assets/louise-photobooth.png";
+import louiseLogoAsset from "@/assets/Louise Riedmann icon.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -97,7 +98,13 @@ function Index() {
     <div className="min-h-screen">
       <header className="hero-header">
         <a href="#top" className="hero-brand font-display text-xl">
-          Louise Riedmann
+          <img
+            src={louiseLogoAsset}
+            alt="Louise Riedmann"
+            width={4491}
+            height={1093}
+            className="inline-block h-auto w-[176px] align-middle sm:w-[224px]"
+          />
         </a>
         <nav className="hero-nav text-[0.76rem] uppercase text-muted-foreground" aria-label="Primary navigation">
           <a href="#work" className="transition-colors hover:text-foreground">
