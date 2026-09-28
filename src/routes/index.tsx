@@ -1,5 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 import { Reveal } from "@/components/Reveal";
 import { ProjectImage, ProjectMeta, type Project } from "@/components/ProjectCard";
@@ -330,9 +337,26 @@ function Index() {
               <p className="contact-note">
                 Open to new projects &amp; collaborations.
               </p>
-              <a href="mailto:lou.riedmann@gmail.com" className="contact-email font-display">
-                lou.riedmann@gmail.com
-              </a>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button type="button" className="contact-email font-display">
+                    lou.riedmann@gmail.com
+                  </button>
+                </DialogTrigger>
+                <DialogContent
+                  className="contact-dialog-content"
+                  overlayClassName="contact-dialog-overlay"
+                >
+                  <DialogTitle className="contact-dialog-address">
+                    lou.riedmann@gmail.com
+                  </DialogTitle>
+                  <DialogClose asChild>
+                    <a className="contact-dialog-open" href="mailto:lou.riedmann@gmail.com">
+                      Open email
+                    </a>
+                  </DialogClose>
+                </DialogContent>
+              </Dialog>
             </Reveal>
           </div>
         </section>
