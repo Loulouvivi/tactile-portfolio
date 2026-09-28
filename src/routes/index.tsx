@@ -96,7 +96,7 @@ function Index() {
             alt="Louise Riedmann"
             width={4491}
             height={1093}
-            className="inline-block h-auto w-[176px] align-middle sm:w-[224px]"
+            className="inline-block h-auto w-[229px] align-middle sm:w-[291px]"
           />
         </a>
         <nav className="hero-nav text-[0.76rem] uppercase text-muted-foreground" aria-label="Primary navigation">
@@ -120,7 +120,6 @@ function Index() {
           <section className="hero-artboard" aria-labelledby="hero-title">
 
           <p className="hero-note hero-note-place">Multimedia designer — Copenhagen</p>
-          <p className="hero-note hero-note-index">Visual identity · Graphic design · Art direction · Digital</p>
 
           <h1 id="hero-title" className="hero-title font-display">
             <span className="hero-word hero-word-design">Design with</span>
@@ -151,9 +150,6 @@ function Index() {
           <p className="hero-copy hero-copy-secondary">
             I create concepts and visual worlds through design, styling, colour, typography and
             atmosphere, bringing together concept, aesthetics and storytelling.
-          </p>
-          <p className="hero-folio" aria-label="Portfolio folio 01">
-            Folio 01
           </p>
           </section>
 
@@ -251,7 +247,7 @@ function Index() {
             <div className="studio-entries">
               <Reveal delay={120} className="studio-entry studio-entry-process">
                 <p className="studio-entry-head">
-                  <span aria-hidden="true">01</span> Process
+                  <span aria-hidden="true"></span> Process
                 </p>
                 <p className="studio-copy text-muted-foreground">
                   I look closely, collect references and work with clothing on set. Styling,
@@ -262,7 +258,7 @@ function Index() {
 
               <Reveal delay={160} className="studio-entry studio-entry-materials">
                 <p className="studio-entry-head">
-                  <span aria-hidden="true">02</span> Materials
+                  <span aria-hidden="true"></span> Materials
                 </p>
                 <p className="studio-copy text-muted-foreground">
                   Clothing, texture, colour, images, type and objects all find their way into the
@@ -278,7 +274,7 @@ function Index() {
           <div className="about-sequence">
             <div className="about-marker">
               <p id="about-title" className="about-eyebrow">
-                <span aria-hidden="true">04</span> About
+                <span aria-hidden="true"></span> About
               </p>
             </div>
 
@@ -318,24 +314,24 @@ function Index() {
           <div className="contact-sequence">
             <Reveal className="contact-marker">
               <p className="contact-eyebrow">
-                <span aria-hidden="true">04</span> Contact — the last page
+                <span aria-hidden="true"></span> Contact
               </p>
             </Reveal>
 
             <Reveal delay={80} className="contact-statement-object">
               <h2 id="contact-title" className="font-display contact-statement">
-                Let's make
+                Have something
                 <br />
-                something <em className="italic text-accent">solid</em>
+                <em className="italic text-accent">in mind?</em>
               </h2>
             </Reveal>
 
             <Reveal delay={140} className="contact-email-object">
               <p className="contact-note">
-                Currently taking on two projects for winter 2026.
+                Open to new projects &amp; collaborations.
               </p>
-              <a href="mailto:hello@louiseriedmann.dk" className="contact-email font-display">
-                hello@louiseriedmann.dk
+              <a href="mailto:lou.riedmann@gmail.com" className="contact-email font-display">
+                lou.riedmann@gmail.com
               </a>
             </Reveal>
           </div>

@@ -243,7 +243,6 @@
 .hero-note,
 .hero-copy,
 .hero-print,
-.hero-folio,
 .hero-word {
   position: absolute;
   opacity: 0;
@@ -260,7 +259,6 @@
 }
 
 .hero-note-place { left: 6.5%; top: 16%; animation-delay: 0.38s; }
-.hero-note-index { left: 42%; bottom: 7%; animation-delay: 0.58s; }
 
 .hero-title {
   position: absolute;
@@ -327,16 +325,6 @@
   text-transform: uppercase;
 }
 
-.hero-folio {
-  left: 6.5%;
-  bottom: 3.5%;
-  color: var(--muted-foreground);
-  font-size: 0.56rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  animation-delay: 1.62s;
-}
-
 .hero-copy {
   z-index: 5;
   color: var(--muted-foreground);
@@ -380,7 +368,6 @@
   .hero-paper { object-position: 47% center; }
   .hero-note { font-size: 0.56rem; }
   .hero-note-place { left: 6%; top: 12%; width: 9rem; }
-  .hero-note-index { left: 6%; bottom: 3.5%; width: 12rem; }
   .hero-title { left: 6%; top: 24%; width: 83%; }
   .hero-word-design { font-size: clamp(3.15rem, 15.8vw, 4.4rem); }
   .hero-word-that {
@@ -411,7 +398,6 @@
     font-size: 0.6rem;
     line-height: 1.45;
   }
-  .hero-folio { display: none; }
 }
 
 /* One photographed sheet; all fibre, tone and creases live in the image. */
