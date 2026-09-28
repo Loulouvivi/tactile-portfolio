@@ -6,6 +6,7 @@ import kubrix03Asset from "@/assets/kubrix-03.jpg";
 import kubrix04Asset from "@/assets/kubrix-04.jpg";
 import kubrix05Asset from "@/assets/kubrix-05.jpg";
 import kubrix06Asset from "@/assets/kubrix-06.jpg";
+import vousDecidezVideo from "@/assets/stills vous décidez_video.mp4";
 import {
   Carousel,
   CarouselContent,
@@ -82,18 +83,43 @@ function Archive() {
           <div className="space-y-24 sm:space-y-32">
             <section className="grid gap-8 sm:grid-cols-[0.72fr_1.28fr] sm:items-start">
               <h2 className="font-display text-3xl leading-tight sm:text-4xl">01 — STYLING</h2>
-              <div>
-                <header className="mb-8 border-b border-foreground/15 pb-5">
-                  <h3 className="text-[11px] uppercase tracking-[0.24em]">THE KUBRIX</h3>
-                  <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
-                    2022
-                  </p>
-                  <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
-                    Stylist &amp; Art Director · Music group cover shoot
-                  </p>
-                </header>
+              <div className="space-y-16 sm:space-y-24">
+                <div>
+                  <header className="mb-8 border-b border-foreground/15 pb-5">
+                    <h3 className="text-[11px] uppercase tracking-[0.24em]">THE KUBRIX</h3>
+                    <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
+                      2022
+                    </p>
+                    <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
+                      Stylist &amp; Art Director · Music group cover shoot
+                    </p>
+                  </header>
 
-                <KubrixCarousel />
+                  <KubrixCarousel />
+                </div>
+
+                <div>
+                  <header className="mb-8 border-b border-foreground/15 pb-5">
+                    <h3 className="text-[11px] uppercase tracking-[0.24em]">VOUS DÉCIDEZ</h3>
+                    <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
+                      2022
+                    </p>
+                    <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
+                      Stylist · Campaign video
+                    </p>
+                  </header>
+
+                  <video
+                    src={vousDecidezVideo}
+                    aria-label="VOUS DÉCIDEZ campaign video"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    className="block h-auto w-full"
+                  />
+                </div>
               </div>
             </section>
 
@@ -106,9 +132,7 @@ function Archive() {
             </section>
 
             <section className="grid gap-8 sm:grid-cols-[0.72fr_1.28fr] sm:items-start">
-              <h2 className="font-display text-3xl leading-tight sm:text-4xl">
-                03 — PHOTOGRAPHY
-              </h2>
+              <h2 className="font-display text-3xl leading-tight sm:text-4xl">03 — PHOTOGRAPHY</h2>
               <div
                 aria-hidden="true"
                 className="aspect-[4/5] w-full border border-foreground/15 sm:w-[72%]"
@@ -155,7 +179,7 @@ function KubrixCarousel() {
           {kubrixImages.map((image, index) => (
             <CarouselItem
               key={image.src}
-              className="pl-0"
+              className={currentIndex === index ? "pl-0" : "h-0 overflow-hidden pl-0"}
               aria-label={`${String(index + 1).padStart(2, "0")} of ${String(kubrixImages.length).padStart(2, "0")}`}
             >
               <figure>
