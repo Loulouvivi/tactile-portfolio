@@ -74,6 +74,16 @@ import womanInGreenAsset from "@/assets/Woman in Green.jpg";
 import trafficSurfersAsset from "@/assets/Traffic Surfers, 2018.jpeg";
 import theWorldCupAsset from "@/assets/The World Cup, 2018.jpg";
 import yellowDanfoAsset from "@/assets/Yellow Danfo.jpg";
+import allSmilesAsset from "@/assets/All Smiles, 2014.jpeg";
+import cactusAsset from "@/assets/Cactus, 2013.jpg";
+import farmhouseKitchenAsset from "@/assets/Farmhouse Kitchen, 2013.jpg";
+import kenyanOutbackAsset from "@/assets/Kenyan Outback, 2013.jpg";
+import laundryDayAsset from "@/assets/Laundry Day, 2013.jpg";
+import roadtripAsset from "@/assets/Roadtrip, 2013.jpg";
+import tireAndStickGameAsset from "@/assets/Tire and Stick Game, 2014.jpg";
+import upCountryKenyaAsset from "@/assets/Up-Country Kenya.jpg";
+import viewPointAsset from "@/assets/View Point, 2013.jpeg";
+import chekiMzunguAsset from "@/assets/cheki mzungu.JPG";
 import {
   Carousel,
   CarouselContent,
@@ -508,6 +518,81 @@ const nigeriaImages: NigeriaImage[] = [
   },
 ];
 
+const kenyaImages: NigeriaImage[] = [
+  {
+    src: allSmilesAsset,
+    alt: "All Smiles, 2014 — opening photograph of the Kenya series",
+    caption: "All Smiles, 2014",
+    width: 1655,
+    height: 2386,
+  },
+  {
+    src: cactusAsset,
+    alt: "Cactus, 2013 photograph",
+    caption: "Cactus, 2013",
+    width: 1636,
+    height: 2247,
+  },
+  {
+    src: farmhouseKitchenAsset,
+    alt: "Farmhouse Kitchen, 2013 photograph",
+    caption: "Farmhouse Kitchen, 2013",
+    width: 3204,
+    height: 2372,
+    wide: true,
+  },
+  {
+    src: kenyanOutbackAsset,
+    alt: "Kenyan Outback, 2013 photograph",
+    caption: "Kenyan Outback, 2013",
+    width: 2033,
+    height: 3009,
+  },
+  {
+    src: laundryDayAsset,
+    alt: "Laundry Day, 2013 photograph",
+    caption: "Laundry Day, 2013",
+    width: 3264,
+    height: 2206,
+  },
+  {
+    src: roadtripAsset,
+    alt: "Roadtrip, 2013 photograph",
+    caption: "Roadtrip, 2013",
+    width: 3264,
+    height: 2448,
+  },
+  {
+    src: tireAndStickGameAsset,
+    alt: "Tire and Stick Game, 2014 photograph",
+    caption: "Tire and Stick Game, 2014",
+    width: 2448,
+    height: 3264,
+  },
+  {
+    src: upCountryKenyaAsset,
+    alt: "Up-Country Kenya photograph",
+    caption: "Up-Country Kenya",
+    width: 2527,
+    height: 2037,
+  },
+  {
+    src: viewPointAsset,
+    alt: "View Point, 2013 photograph",
+    caption: "View Point, 2013",
+    width: 3264,
+    height: 2448,
+    wide: true,
+  },
+  {
+    src: chekiMzunguAsset,
+    alt: "Cheki Mzungu — closing photograph of the Kenya series",
+    caption: "Cheki Mzungu",
+    width: 2504,
+    height: 1618,
+  },
+];
+
 export const Route = createFileRoute("/archive")({
   head: () => ({
     meta: [
@@ -651,6 +736,12 @@ function Archive() {
                   date="2017/2018"
                   medium="Photography"
                   images={nigeriaImages}
+                />
+                <PhotographyProject
+                  title="KENYA"
+                  date="2013/2014"
+                  medium="Photography"
+                  images={kenyaImages}
                 />
               </div>
             </section>
