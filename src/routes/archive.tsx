@@ -804,9 +804,32 @@ export const Route = createFileRoute("/archive")({
 });
 
 function Archive() {
+  const [activeSection, setActiveSection] = useState("styling");
+
+  useEffect(() => {
+    const sections = ["styling", "illustrations", "photography"]
+      .map((sectionId) => document.getElementById(sectionId))
+      .filter((section): section is HTMLElement => section !== null);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((first, second) => second.intersectionRatio - first.intersectionRatio)[0];
+
+        if (visibleSection) {
+          setActiveSection(visibleSection.target.id);
+        }
+      },
+      { rootMargin: "-20% 0px -60% 0px", threshold: [0, 0.1, 0.5] },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen">
-      <div className="homepage-paper-sheet">
+        <div className="homepage-paper-sheet" style={{ overflow: "visible" }}>
         <main className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
           <nav className="mb-12">
             <Link to="/" className="text-sm text-muted-foreground hover:text-foreground">
@@ -818,10 +841,37 @@ function Archive() {
             Archive
           </h1>
 
-          <div className="space-y-24 sm:space-y-32">
-            <section className="grid gap-8 sm:grid-cols-[0.72fr_1.28fr] sm:items-start">
-              <h2 className="font-display text-3xl leading-tight sm:text-4xl">01 — STYLING</h2>
-              <div className="space-y-16 sm:space-y-24">
+            <div className="grid gap-12 scroll-smooth sm:grid-cols-[0.72fr_1.28fr] sm:gap-8">
+              <nav aria-label="Archive sections" className="sm:sticky sm:top-12 sm:self-start">
+                <div className="flex flex-col items-start gap-3 text-sm">
+                  {[
+                    ["styling", "01 — STYLING"],
+                    ["illustrations", "02 — ILLUSTRATIONS"],
+                    ["photography", "03 — PHOTOGRAPHY"],
+                  ].map(([sectionId, label]) => (
+                    <a
+                      key={sectionId}
+                      href={`#${sectionId}`}
+                      aria-current={activeSection === sectionId ? "true" : undefined}
+                        onClick={(event) => {
+                          event.preventDefault();
+                          document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                      className={
+                        activeSection === sectionId
+                          ? "text-foreground"
+                          : "text-muted-foreground transition-colors hover:text-foreground"
+                      }
+                    >
+                      {label}
+                    </a>
+                  ))}
+                </div>
+              </nav>
+
+              <div className="space-y-24 sm:space-y-32">
+                <section id="styling" className="scroll-mt-12">
+                  <div className="space-y-16 sm:space-y-24">
                 <div>
                   <header className="mb-8 border-b border-foreground/15 pb-5">
                     <h3 className="text-[11px] uppercase tracking-[0.24em]">THE KUBRIX</h3>
@@ -872,14 +922,11 @@ function Archive() {
 
                   <BeautyShootCarousel />
                 </div>
-              </div>
-            </section>
+                </div>
+              </section>
 
-            <section className="grid gap-8 sm:grid-cols-[0.72fr_1.28fr] sm:items-start">
-              <h2 className="font-display text-3xl leading-tight sm:text-4xl">
-                02 — ILLUSTRATIONS
-              </h2>
-              <div className="space-y-16 sm:space-y-24">
+              <section id="illustrations" className="scroll-mt-12">
+                <div className="space-y-16 sm:space-y-24">
                 <div>
                   <header className="mb-8 border-b border-foreground/15 pb-5">
                     <h3 className="text-[11px] uppercase tracking-[0.24em]">MY OWN MUSE</h3>
@@ -925,12 +972,11 @@ function Archive() {
 
                   <VerasVintageCarousel />
                 </div>
-              </div>
-            </section>
+                </div>
+              </section>
 
-            <section className="grid gap-8 sm:grid-cols-[0.72fr_1.28fr] sm:items-start">
-              <h2 className="font-display text-3xl leading-tight sm:text-4xl">03 — PHOTOGRAPHY</h2>
-              <div className="space-y-24 sm:space-y-32">
+              <section id="photography" className="scroll-mt-12">
+                <div className="space-y-24 sm:space-y-32">
                 <PhotographyProject
                   title="NIGERIA"
                   date="2017/2018"
@@ -973,8 +1019,9 @@ function Archive() {
                     medium="Fashion Photography"
                     images={modFashionShootImages}
                   />
-              </div>
-            </section>
+                </div>
+              </section>
+            </div>
           </div>
         </main>
       </div>
