@@ -1,5 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Reveal } from "@/components/Reveal";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import kubrix01Asset from "@/assets/kubrix-01.jpg";
 import kubrix02Asset from "@/assets/kubrix-02.jpg";
 import kubrix03Asset from "@/assets/kubrix-03.jpg";
@@ -307,20 +311,23 @@ const verasVintageImages = [
   },
 ] as const;
 
-const nigeriaImages = [
-  {
-    src: strikeAPoseAsset,
-    alt: "Strike a Pose, 2018 — dominant opening photograph of the series",
-    caption: "Strike a Pose, 2018",
-    width: 917,
-    height: 1378,
-  },
+type NigeriaImage = {
+  src: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+  wide?: boolean;
+};
+
+const nigeriaImages: NigeriaImage[] = [
   {
     src: aftermathAsset,
-    alt: "Aftermath, 2018 photograph",
+    alt: "Aftermath, 2018 — dominant opening photograph of the series",
     caption: "Aftermath, 2018",
     width: 2991,
     height: 2444,
+    wide: true,
   },
   {
     src: cocaColaFlowerAsset,
@@ -328,27 +335,6 @@ const nigeriaImages = [
     caption: "Coca Cola Flower, 2018",
     width: 1950,
     height: 1462,
-  },
-  {
-    src: goldbergAsset,
-    alt: "Goldberg, 2018 photograph",
-    caption: "Goldberg, 2018",
-    width: 2145,
-    height: 3023,
-  },
-  {
-    src: horsemanAsset,
-    alt: "Horseman, 2018 photograph",
-    caption: "Horseman, 2018",
-    width: 1716,
-    height: 2448,
-  },
-  {
-    src: inCognitoAsset,
-    alt: "In Cognito, 2018 photograph",
-    caption: "In Cognito, 2018",
-    width: 975,
-    height: 1323,
   },
   {
     src: lagosLocalsAsset,
@@ -377,6 +363,7 @@ const nigeriaImages = [
     caption: "Lagos Street Art, 2018",
     width: 3264,
     height: 2448,
+    wide: true,
   },
   {
     src: lagosStreetHawkerAsset,
@@ -386,39 +373,11 @@ const nigeriaImages = [
     height: 1751,
   },
   {
-    src: lagosTrafficAsset,
-    alt: "Lagos Traffic photograph",
-    caption: "Lagos Traffic",
-    width: 3750,
-    height: 5250,
-  },
-  {
-    src: lekkiBeachAsset,
-    alt: "Lekki Beach, 2017 photograph",
-    caption: "Lekki Beach, 2017",
-    width: 2448,
-    height: 3264,
-  },
-  {
     src: lekkiMarketAsset,
     alt: "Lekki Market, 2018 photograph",
     caption: "Lekki Market, 2018",
     width: 2350,
     height: 2952,
-  },
-  {
-    src: manInPurpleAsset,
-    alt: "Man in Purple photograph",
-    caption: "Man in Purple",
-    width: 3750,
-    height: 5250,
-  },
-  {
-    src: nigerianFreshAsset,
-    alt: "Nigerian Fresh, 2018 photograph",
-    caption: "Nigerian Fresh, 2018",
-    width: 1477,
-    height: 2185,
   },
   {
     src: pleaseDontUrinateHereAsset,
@@ -428,6 +387,20 @@ const nigeriaImages = [
     height: 3264,
   },
   {
+    src: lagosTrafficAsset,
+    alt: "Lagos Traffic photograph",
+    caption: "Lagos Traffic",
+    width: 3750,
+    height: 5250,
+  },
+  {
+    src: manInPurpleAsset,
+    alt: "Man in Purple photograph",
+    caption: "Man in Purple",
+    width: 3750,
+    height: 5250,
+  },
+  {
     src: privateBusinessAsset,
     alt: "Private Business, 2017 photograph",
     caption: "Private Business, 2017",
@@ -435,11 +408,18 @@ const nigeriaImages = [
     height: 787,
   },
   {
-    src: proudlyAfricanAsset,
-    alt: "Proudly African, 2017 photograph",
-    caption: "Proudly African, 2017",
-    width: 2335,
-    height: 3115,
+    src: lekkiBeachAsset,
+    alt: "Lekki Beach, 2017 photograph",
+    caption: "Lekki Beach, 2017",
+    width: 2448,
+    height: 3264,
+  },
+  {
+    src: nigerianFreshAsset,
+    alt: "Nigerian Fresh, 2018 photograph",
+    caption: "Nigerian Fresh, 2018",
+    width: 1477,
+    height: 2185,
   },
   {
     src: schoolChildrenAsset,
@@ -449,11 +429,47 @@ const nigeriaImages = [
     height: 3064,
   },
   {
+    src: proudlyAfricanAsset,
+    alt: "Proudly African, 2017 photograph",
+    caption: "Proudly African, 2017",
+    width: 2335,
+    height: 3115,
+  },
+  {
+    src: strikeAPoseAsset,
+    alt: "Strike a Pose, 2018 photograph",
+    caption: "Strike a Pose, 2018",
+    width: 917,
+    height: 1378,
+  },
+  {
+    src: goldbergAsset,
+    alt: "Goldberg, 2018 photograph",
+    caption: "Goldberg, 2018",
+    width: 2145,
+    height: 3023,
+  },
+  {
+    src: horsemanAsset,
+    alt: "Horseman, 2018 photograph",
+    caption: "Horseman, 2018",
+    width: 1716,
+    height: 2448,
+  },
+  {
+    src: inCognitoAsset,
+    alt: "In Cognito, 2018 photograph",
+    caption: "In Cognito, 2018",
+    width: 975,
+    height: 1323,
+  },
+  {
     src: theWorldCupAsset,
     alt: "The World Cup, 2018 environmental photograph",
     caption: "The World Cup, 2018",
     width: 3136,
     height: 2352,
+    wide: true,
   },
   {
     src: trafficSurfersAsset,
@@ -483,7 +499,7 @@ const nigeriaImages = [
     width: 3750,
     height: 5250,
   },
-] as const;
+];
 
 export const Route = createFileRoute("/archive")({
   head: () => ({
@@ -622,8 +638,13 @@ function Archive() {
 
             <section className="grid gap-8 sm:grid-cols-[0.72fr_1.28fr] sm:items-start">
               <h2 className="font-display text-3xl leading-tight sm:text-4xl">03 — PHOTOGRAPHY</h2>
-              <div>
-                <NigeriaProject />
+              <div className="space-y-24 sm:space-y-32">
+                <PhotographyProject
+                  title="NIGERIA"
+                  date="2017/2018"
+                  medium="Photography"
+                  images={nigeriaImages}
+                />
               </div>
             </section>
           </div>
@@ -1066,71 +1087,144 @@ function VerasVintageCarousel() {
   );
 }
 
-const nigeriaLayoutPatterns = [
-  "sm:col-span-8 sm:col-start-1",
-  "sm:col-span-5 sm:col-start-8 sm:mt-16",
-  "sm:col-span-4 sm:col-start-2 sm:-mt-8",
-  "sm:col-span-6 sm:col-start-7 sm:mt-10",
-  "sm:col-span-9 sm:col-start-1 sm:mt-6",
-  "sm:col-span-5 sm:col-start-1 sm:mt-14",
-  "sm:col-span-6 sm:col-start-6",
+const nigeriaFlowWidths = [
+  "sm:w-[68%] sm:self-start",
+  "sm:w-[52%] sm:self-end",
+  "sm:w-[40%] sm:self-start",
+  "sm:w-[58%] sm:self-center",
+  "sm:w-[46%] sm:self-end",
+  "sm:w-[64%] sm:self-start",
 ];
 
-function nigeriaImageLayoutClassName(index: number, total: number) {
-  if (index === 0) {
-    return "sm:col-span-8 sm:col-start-1";
-  }
-  if (index === total - 1) {
-    return "sm:col-span-7 sm:col-start-5";
-  }
-  return nigeriaLayoutPatterns[index % nigeriaLayoutPatterns.length];
-}
+function PhotographyProject({
+  title,
+  date,
+  medium,
+  images,
+}: {
+  title: string;
+  date: string;
+  medium: string;
+  images: NigeriaImage[];
+}) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-function NigeriaProject() {
-  const [isOpen, setIsOpen] = useState(false);
+  const goToPrevious = useCallback(() => {
+    setOpenIndex((current) =>
+      current === null ? null : (current - 1 + images.length) % images.length,
+    );
+  }, [images.length]);
+
+  const goToNext = useCallback(() => {
+    setOpenIndex((current) => (current === null ? null : (current + 1) % images.length));
+  }, [images.length]);
+
+  useEffect(() => {
+    if (openIndex === null) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft") {
+        goToPrevious();
+      } else if (event.key === "ArrowRight") {
+        goToNext();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [openIndex, goToPrevious, goToNext]);
+
+  const activeImage = openIndex === null ? null : images[openIndex];
 
   return (
     <div>
-      <header className="mb-8 border-b border-foreground/15 pb-5">
-        <h3 className="text-[11px] uppercase tracking-[0.24em]">NIGERIA</h3>
-        <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
-          2017/2018
+      <header className="mb-8 flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-foreground/15 pb-4">
+        <h3 className="text-[11px] uppercase tracking-[0.24em]">{title}</h3>
+        <p className="font-display text-base italic leading-tight text-muted-foreground">
+          {date}
         </p>
-        <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
-          {isOpen ? "Photography" : `${nigeriaImages.length} photographs`}
-        </p>
+        <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">{medium}</p>
+        <p className="text-[11px] text-muted-foreground">{images.length} photographs</p>
       </header>
 
-      <button
-        type="button"
-        onClick={() => setIsOpen((previous) => !previous)}
-        aria-expanded={isOpen}
-        className="text-sm text-muted-foreground hover:text-foreground"
-      >
-        {isOpen ? "Close series" : "View series"}
-      </button>
-
-      {isOpen ? (
-        <div className="mt-16 grid grid-cols-1 gap-16 sm:grid-cols-12 sm:gap-x-6 sm:gap-y-24">
-          {nigeriaImages.map((image, index) => (
-            <figure
-              key={image.src}
-              className={nigeriaImageLayoutClassName(index, nigeriaImages.length)}
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                width={image.width}
-                height={image.height}
-                className="block h-auto w-full"
-              />
+      <div className="flex flex-col gap-16 sm:gap-24">
+        {images.map((image, index) => (
+          <Reveal
+            key={image.src}
+            delay={(index % 4) * 90}
+            className={
+              image.wide ? "w-full" : `w-full ${nigeriaFlowWidths[index % nigeriaFlowWidths.length]}`
+            }
+          >
+            <figure className="relative z-0 hover:z-20">
+              <button
+                type="button"
+                onClick={() => setOpenIndex(index)}
+                aria-label={`Open ${image.caption} in full view`}
+                className="block w-full cursor-pointer"
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  className="block h-auto w-full transition-transform duration-500 ease-out hover:scale-110"
+                />
+              </button>
               <figcaption className="mt-3 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
                 {image.caption}
               </figcaption>
             </figure>
-          ))}
-        </div>
-      ) : null}
+          </Reveal>
+        ))}
+      </div>
+
+      <Dialog
+        open={openIndex !== null}
+        onOpenChange={(next) => {
+          if (!next) {
+            setOpenIndex(null);
+          }
+        }}
+      >
+        <DialogContent
+          overlayClassName="bg-background/95"
+          className="flex items-center justify-center border-none bg-transparent p-0 shadow-none sm:rounded-none"
+        >
+          {activeImage ? (
+            <>
+              <DialogTitle className="sr-only">{activeImage.caption}</DialogTitle>
+              <img
+                src={activeImage.src}
+                alt={activeImage.alt}
+                className="block max-h-[85vh] max-w-[85vw] w-auto h-auto object-contain"
+              />
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                aria-label="Previous photograph"
+                onClick={goToPrevious}
+                className="fixed left-4 top-1/2 h-9 w-9 -translate-y-1/2 rounded-full bg-background/70 text-foreground/75 shadow-none hover:bg-background/90 sm:left-8"
+              >
+                <ArrowLeft className="h-4 w-4" />
+              </Button>
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                aria-label="Next photograph"
+                onClick={goToNext}
+                className="fixed right-4 top-1/2 h-9 w-9 -translate-y-1/2 rounded-full bg-background/70 text-foreground/75 shadow-none hover:bg-background/90 sm:right-8"
+              >
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </>
+          ) : null}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
