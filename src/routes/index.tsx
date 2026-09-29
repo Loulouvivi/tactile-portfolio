@@ -211,7 +211,7 @@ function Index() {
                 className="collage-p4-meta"
               />
             </div>
-            <div className="mt-8 flex -translate-x-[140px] flex-col items-end text-right">
+            <div className="mt-8 flex flex-col items-end text-right sm:-translate-x-[140px]">
               <Link
   to="/archive"
   className="group block w-full max-w-[520px]"
