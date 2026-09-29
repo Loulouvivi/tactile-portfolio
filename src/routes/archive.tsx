@@ -45,6 +45,31 @@ import verasVintage02Asset from "@/assets/veras_vintage02.png";
 import verasVintage03Asset from "@/assets/veras_vintage03.png";
 import verasVintage04Asset from "@/assets/veras_vintage04.png";
 import verasVintage05Asset from "@/assets/veras_vintage05.png";
+import strikeAPoseAsset from "@/assets/Strike a Pose, 2018.jpg";
+import aftermathAsset from "@/assets/Aftermath, 2018.jpg";
+import cocaColaFlowerAsset from "@/assets/Coca Cola Flower, 2018.jpeg";
+import goldbergAsset from "@/assets/Goldberg, 2018.jpg";
+import horsemanAsset from "@/assets/Horseman, 2018.jpg";
+import inCognitoAsset from "@/assets/In Cognito, 2018.jpg";
+import lagosLocalsAsset from "@/assets/Lagos Locals, 2017.jpg";
+import lagosReflectionAsset from "@/assets/Lagos Reflection, 2018.jpeg";
+import lagosSkylineAsset from "@/assets/Lagos Skyline, 2018.jpeg";
+import lagosStreetArtAsset from "@/assets/Lagos Street Art, 2018.jpeg";
+import lagosStreetHawkerAsset from "@/assets/Lagos Street Hawker, 2018.jpeg";
+import lagosTrafficAsset from "@/assets/Lagos Traffic.jpg";
+import lekkiBeachAsset from "@/assets/Lekki Beach, 2017.jpg";
+import lekkiMarketAsset from "@/assets/Lekki Market, 2018.jpg";
+import manInPurpleAsset from "@/assets/Man in Purple.jpg";
+import nigerianFreshAsset from "@/assets/Nigerian Fresh, 2018.jpg";
+import pleaseDontUrinateHereAsset from "@/assets/Please Don't Urinate Here, 2018.jpeg";
+import privateBusinessAsset from "@/assets/Private Business, 2017.jpg";
+import proudlyAfricanAsset from "@/assets/Proudly African, 2017.jpg";
+import schoolChildrenAsset from "@/assets/School Children.jpeg";
+import theKillerOfTheGameAsset from "@/assets/_The Killer of the Game_, 2018.jpg";
+import womanInGreenAsset from "@/assets/Woman in Green.jpg";
+import trafficSurfersAsset from "@/assets/Traffic Surfers, 2018.jpeg";
+import theWorldCupAsset from "@/assets/The World Cup, 2018.jpg";
+import yellowDanfoAsset from "@/assets/Yellow Danfo.jpg";
 import {
   Carousel,
   CarouselContent,
@@ -282,6 +307,184 @@ const verasVintageImages = [
   },
 ] as const;
 
+const nigeriaImages = [
+  {
+    src: strikeAPoseAsset,
+    alt: "Strike a Pose, 2018 — dominant opening photograph of the series",
+    caption: "Strike a Pose, 2018",
+    width: 917,
+    height: 1378,
+  },
+  {
+    src: aftermathAsset,
+    alt: "Aftermath, 2018 photograph",
+    caption: "Aftermath, 2018",
+    width: 2991,
+    height: 2444,
+  },
+  {
+    src: cocaColaFlowerAsset,
+    alt: "Coca Cola Flower, 2018 photograph",
+    caption: "Coca Cola Flower, 2018",
+    width: 1950,
+    height: 1462,
+  },
+  {
+    src: goldbergAsset,
+    alt: "Goldberg, 2018 photograph",
+    caption: "Goldberg, 2018",
+    width: 2145,
+    height: 3023,
+  },
+  {
+    src: horsemanAsset,
+    alt: "Horseman, 2018 photograph",
+    caption: "Horseman, 2018",
+    width: 1716,
+    height: 2448,
+  },
+  {
+    src: inCognitoAsset,
+    alt: "In Cognito, 2018 photograph",
+    caption: "In Cognito, 2018",
+    width: 975,
+    height: 1323,
+  },
+  {
+    src: lagosLocalsAsset,
+    alt: "Lagos Locals, 2017 photograph",
+    caption: "Lagos Locals, 2017",
+    width: 2440,
+    height: 1696,
+  },
+  {
+    src: lagosReflectionAsset,
+    alt: "Lagos Reflection, 2018 photograph",
+    caption: "Lagos Reflection, 2018",
+    width: 2782,
+    height: 2448,
+  },
+  {
+    src: lagosSkylineAsset,
+    alt: "Lagos Skyline, 2018 photograph",
+    caption: "Lagos Skyline, 2018",
+    width: 3264,
+    height: 2448,
+  },
+  {
+    src: lagosStreetArtAsset,
+    alt: "Lagos Street Art, 2018 photograph",
+    caption: "Lagos Street Art, 2018",
+    width: 3264,
+    height: 2448,
+  },
+  {
+    src: lagosStreetHawkerAsset,
+    alt: "Lagos Street Hawker, 2018 photograph",
+    caption: "Lagos Street Hawker, 2018",
+    width: 1183,
+    height: 1751,
+  },
+  {
+    src: lagosTrafficAsset,
+    alt: "Lagos Traffic photograph",
+    caption: "Lagos Traffic",
+    width: 3750,
+    height: 5250,
+  },
+  {
+    src: lekkiBeachAsset,
+    alt: "Lekki Beach, 2017 photograph",
+    caption: "Lekki Beach, 2017",
+    width: 2448,
+    height: 3264,
+  },
+  {
+    src: lekkiMarketAsset,
+    alt: "Lekki Market, 2018 photograph",
+    caption: "Lekki Market, 2018",
+    width: 2350,
+    height: 2952,
+  },
+  {
+    src: manInPurpleAsset,
+    alt: "Man in Purple photograph",
+    caption: "Man in Purple",
+    width: 3750,
+    height: 5250,
+  },
+  {
+    src: nigerianFreshAsset,
+    alt: "Nigerian Fresh, 2018 photograph",
+    caption: "Nigerian Fresh, 2018",
+    width: 1477,
+    height: 2185,
+  },
+  {
+    src: pleaseDontUrinateHereAsset,
+    alt: "Please Don't Urinate Here, 2018 photograph",
+    caption: "Please Don't Urinate Here, 2018",
+    width: 2448,
+    height: 3264,
+  },
+  {
+    src: privateBusinessAsset,
+    alt: "Private Business, 2017 photograph",
+    caption: "Private Business, 2017",
+    width: 1024,
+    height: 787,
+  },
+  {
+    src: proudlyAfricanAsset,
+    alt: "Proudly African, 2017 photograph",
+    caption: "Proudly African, 2017",
+    width: 2335,
+    height: 3115,
+  },
+  {
+    src: schoolChildrenAsset,
+    alt: "School Children photograph",
+    caption: "School Children",
+    width: 2298,
+    height: 3064,
+  },
+  {
+    src: theWorldCupAsset,
+    alt: "The World Cup, 2018 environmental photograph",
+    caption: "The World Cup, 2018",
+    width: 3136,
+    height: 2352,
+  },
+  {
+    src: trafficSurfersAsset,
+    alt: "Traffic Surfers, 2018 photograph",
+    caption: "Traffic Surfers, 2018",
+    width: 555,
+    height: 822,
+  },
+  {
+    src: womanInGreenAsset,
+    alt: "Woman in Green photograph",
+    caption: "Woman in Green",
+    width: 750,
+    height: 1334,
+  },
+  {
+    src: theKillerOfTheGameAsset,
+    alt: "The Killer of the Game, 2018 photograph",
+    caption: "The Killer of the Game, 2018",
+    width: 2400,
+    height: 3242,
+  },
+  {
+    src: yellowDanfoAsset,
+    alt: "Yellow Danfo — closing photograph of the series",
+    caption: "Yellow Danfo",
+    width: 3750,
+    height: 5250,
+  },
+] as const;
+
 export const Route = createFileRoute("/archive")({
   head: () => ({
     meta: [
@@ -419,10 +622,9 @@ function Archive() {
 
             <section className="grid gap-8 sm:grid-cols-[0.72fr_1.28fr] sm:items-start">
               <h2 className="font-display text-3xl leading-tight sm:text-4xl">03 — PHOTOGRAPHY</h2>
-              <div
-                aria-hidden="true"
-                className="aspect-[4/5] w-full border border-foreground/15 sm:w-[72%]"
-              />
+              <div>
+                <NigeriaProject />
+              </div>
             </section>
           </div>
         </main>
@@ -860,6 +1062,75 @@ function VerasVintageCarousel() {
         {String(currentIndex + 1).padStart(2, "0")} /{" "}
         {String(verasVintageImages.length).padStart(2, "0")}
       </p>
+    </div>
+  );
+}
+
+const nigeriaLayoutPatterns = [
+  "sm:col-span-8 sm:col-start-1",
+  "sm:col-span-5 sm:col-start-8 sm:mt-16",
+  "sm:col-span-4 sm:col-start-2 sm:-mt-8",
+  "sm:col-span-6 sm:col-start-7 sm:mt-10",
+  "sm:col-span-9 sm:col-start-1 sm:mt-6",
+  "sm:col-span-5 sm:col-start-1 sm:mt-14",
+  "sm:col-span-6 sm:col-start-6",
+];
+
+function nigeriaImageLayoutClassName(index: number, total: number) {
+  if (index === 0) {
+    return "sm:col-span-8 sm:col-start-1";
+  }
+  if (index === total - 1) {
+    return "sm:col-span-7 sm:col-start-5";
+  }
+  return nigeriaLayoutPatterns[index % nigeriaLayoutPatterns.length];
+}
+
+function NigeriaProject() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div>
+      <header className="mb-8 border-b border-foreground/15 pb-5">
+        <h3 className="text-[11px] uppercase tracking-[0.24em]">NIGERIA</h3>
+        <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
+          2017/2018
+        </p>
+        <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
+          {isOpen ? "Photography" : `${nigeriaImages.length} photographs`}
+        </p>
+      </header>
+
+      <button
+        type="button"
+        onClick={() => setIsOpen((previous) => !previous)}
+        aria-expanded={isOpen}
+        className="text-sm text-muted-foreground hover:text-foreground"
+      >
+        {isOpen ? "Close series" : "View series"}
+      </button>
+
+      {isOpen ? (
+        <div className="mt-16 grid grid-cols-1 gap-16 sm:grid-cols-12 sm:gap-x-6 sm:gap-y-24">
+          {nigeriaImages.map((image, index) => (
+            <figure
+              key={image.src}
+              className={nigeriaImageLayoutClassName(index, nigeriaImages.length)}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                className="block h-auto w-full"
+              />
+              <figcaption className="mt-3 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+                {image.caption}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }
