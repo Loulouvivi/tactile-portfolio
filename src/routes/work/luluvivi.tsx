@@ -6,6 +6,8 @@ import luluviviLogoCollageAsset from "@/assets/LuluVivi photocollage logo.png";
 import luluviviLineupAsset from "@/assets/LV line-up.png";
 import luluviviShootAsset from "@/assets/LV shoot.png";
 import luluviviVisualAsset from "@/assets/LV.png";
+import luluviviSectionFiveShootAsset from "@/assets/lv shoot.jpeg";
+import luluviviSectionFivePosterAsset from "@/assets/poster lv.png";
 import luluviviInstagramAsset from "@/assets/IG LV (1).jpg";
 
 const project = {
@@ -199,8 +201,18 @@ export const Route = createFileRoute("/work/luluvivi")({
               </div>
               <figure>
                 <img
-                  src={luluviviVisualAsset}
+                  src={luluviviSectionFiveShootAsset}
                   alt="LULUVIVI digital shop visual"
+                  className="block h-auto w-full object-contain"
+                />
+                <figcaption className="mt-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                  LULUVIVI / digital shop material
+                </figcaption>
+              </figure>
+              <figure>
+                <img
+                  src={luluviviSectionFivePosterAsset}
+                  alt="LULUVIVI digital shop poster"
                   className="block h-auto w-full object-contain"
                 />
                 <figcaption className="mt-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
