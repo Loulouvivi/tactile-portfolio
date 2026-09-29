@@ -97,6 +97,9 @@ import chinatownNycAsset from "@/assets/Chinatown NYC, 2017.jpg";
 import newYorkBlueAsset from "@/assets/New York Blue, 2017.jpeg";
 import newYorkMinuteAsset from "@/assets/New York Minute, 2017.jpg";
 import harlemInsightsAsset from "@/assets/nyc-Harlem Insights, 2017.jpeg";
+import germanyHolidayModeAsset from "@/assets/germany-Holiday Mode, 2018.jpg";
+import germanyNeonSwimAsset from "@/assets/germany-Neon Swim, 2018.jpg";
+import germanySummerSwanAsset from "@/assets/germany-Summer Swan, 2018.jpg";
 import {
   Carousel,
   CarouselContent,
@@ -707,6 +710,30 @@ const southAfricaImages: NigeriaImage[] = [
     },
   ];
 
+  const germanyImages: NigeriaImage[] = [
+    {
+      src: germanyHolidayModeAsset,
+      alt: "Holiday Mode, 2018 — opening photograph of the Germany series",
+      caption: "Holiday Mode, 2018",
+      width: 704,
+      height: 1042,
+    },
+    {
+      src: germanyNeonSwimAsset,
+      alt: "Neon Swim, 2018 photograph",
+      caption: "Neon Swim, 2018",
+      width: 2448,
+      height: 3264,
+    },
+    {
+      src: germanySummerSwanAsset,
+      alt: "Summer Swan, 2018 — closing photograph of the Germany series",
+      caption: "Summer Swan, 2018",
+      width: 2448,
+      height: 3264,
+    },
+  ];
+
 export const Route = createFileRoute("/archive")({
   head: () => ({
     meta: [
@@ -874,6 +901,12 @@ function Archive() {
                     date="2017"
                     medium="Photography"
                     images={newYorkImages}
+                  />
+                  <PhotographyProject
+                    title="GERMANY"
+                    date="2018"
+                    medium="Photography"
+                    images={germanyImages}
                   />
               </div>
             </section>
