@@ -212,10 +212,10 @@ function Index() {
               />
             </div>
             <div className="mt-8 flex flex-col items-end text-right sm:-translate-x-[140px]">
-              <Link
-  to="/archive"
-  className="group block w-full max-w-[520px]"
->
+  <Link
+    to="/archive"
+    className="group block w-full max-w-[520px] transition-transform duration-500 md:hover:scale-[1.02]"
+  >
   <img
     src={archiveCollage}
     alt="Archive – a collection of photography and visual studies"
