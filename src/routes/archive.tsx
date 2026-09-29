@@ -93,6 +93,10 @@ import southAfricanViewAsset from "@/assets/South African View, 2013.jpg";
 import italyNunsStreetStyleAsset from "@/assets/italy-Nun's Street Style, 2013.jpeg";
 import italyBergamoSkyAsset from "@/assets/italy-Bergamo Sky, 2013.jpg";
 import italyItalianClassAsset from "@/assets/italy-Italian Class, 2013.JPG";
+import chinatownNycAsset from "@/assets/Chinatown NYC, 2017.jpg";
+import newYorkBlueAsset from "@/assets/New York Blue, 2017.jpeg";
+import newYorkMinuteAsset from "@/assets/New York Minute, 2017.jpg";
+import harlemInsightsAsset from "@/assets/nyc-Harlem Insights, 2017.jpeg";
 import {
   Carousel,
   CarouselContent,
@@ -672,6 +676,37 @@ const southAfricaImages: NigeriaImage[] = [
     },
   ];
 
+  const newYorkImages: NigeriaImage[] = [
+    {
+      src: chinatownNycAsset,
+      alt: "Chinatown NYC, 2017 — opening photograph of the New York series",
+      caption: "Chinatown NYC, 2017",
+      width: 2048,
+      height: 1536,
+    },
+    {
+      src: newYorkBlueAsset,
+      alt: "New York Blue, 2017 photograph",
+      caption: "New York Blue, 2017",
+      width: 1919,
+      height: 1505,
+    },
+    {
+      src: newYorkMinuteAsset,
+      alt: "New York Minute, 2017 photograph",
+      caption: "New York Minute, 2017",
+      width: 2048,
+      height: 1536,
+    },
+    {
+      src: harlemInsightsAsset,
+      alt: "Harlem Insights, 2017 — closing photograph of the New York series",
+      caption: "Harlem Insights, 2017",
+      width: 976,
+      height: 1438,
+    },
+  ];
+
 export const Route = createFileRoute("/archive")({
   head: () => ({
     meta: [
@@ -833,6 +868,12 @@ function Archive() {
                     date="2013"
                     medium="Photography"
                     images={italyImages}
+                  />
+                  <PhotographyProject
+                    title="NEW YORK"
+                    date="2017"
+                    medium="Photography"
+                    images={newYorkImages}
                   />
               </div>
             </section>
