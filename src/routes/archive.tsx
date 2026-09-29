@@ -368,7 +368,7 @@ function Archive() {
               <h2 className="font-display text-3xl leading-tight sm:text-4xl">
                 02 — ILLUSTRATIONS
               </h2>
-              <div className="grid gap-x-8 gap-y-16 sm:grid-cols-2 sm:gap-y-24">
+              <div className="space-y-16 sm:space-y-24">
                 <div>
                   <header className="mb-8 border-b border-foreground/15 pb-5">
                     <h3 className="text-[11px] uppercase tracking-[0.24em]">MY OWN MUSE</h3>
