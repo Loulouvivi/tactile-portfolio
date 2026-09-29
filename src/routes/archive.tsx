@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import kubrix01Asset from "@/assets/kubrix-01.jpg";
@@ -60,6 +59,7 @@ import lagosReflectionAsset from "@/assets/Lagos Reflection, 2018.jpeg";
 import lagosSkylineAsset from "@/assets/Lagos Skyline, 2018.jpeg";
 import lagosStreetArtAsset from "@/assets/Lagos Street Art, 2018.jpeg";
 import lagosStreetHawkerAsset from "@/assets/Lagos Street Hawker, 2018.jpeg";
+import lagosYellowAsset from "@/assets/Lagos Yellow.jpeg";
 import lagosTrafficAsset from "@/assets/Lagos Traffic.jpg";
 import lekkiBeachAsset from "@/assets/Lekki Beach, 2017.jpg";
 import lekkiMarketAsset from "@/assets/Lekki Market, 2018.jpg";
@@ -371,6 +371,13 @@ const nigeriaImages: NigeriaImage[] = [
     caption: "Lagos Street Hawker, 2018",
     width: 1183,
     height: 1751,
+  },
+  {
+    src: lagosYellowAsset,
+    alt: "Lagos Yellow photograph",
+    caption: "Lagos Yellow",
+    width: 1418,
+    height: 1895,
   },
   {
     src: lekkiMarketAsset,
@@ -1139,8 +1146,8 @@ function PhotographyProject({
   const activeImage = openIndex === null ? null : images[openIndex];
 
   return (
-    <div>
-      <header className="mb-8 flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-foreground/15 pb-4">
+    <div className="group">
+      <header className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-foreground/15 pb-4">
         <h3 className="text-[11px] uppercase tracking-[0.24em]">{title}</h3>
         <p className="font-display text-base italic leading-tight text-muted-foreground">
           {date}
@@ -1149,36 +1156,41 @@ function PhotographyProject({
         <p className="text-[11px] text-muted-foreground">{images.length} photographs</p>
       </header>
 
-      <div className="flex flex-col gap-16 sm:gap-24">
-        {images.map((image, index) => (
-          <Reveal
-            key={image.src}
-            delay={(index % 4) * 90}
-            className={
-              image.wide ? "w-full" : `w-full ${nigeriaFlowWidths[index % nigeriaFlowWidths.length]}`
-            }
-          >
-            <figure className="relative z-0 hover:z-20">
-              <button
-                type="button"
-                onClick={() => setOpenIndex(index)}
-                aria-label={`Open ${image.caption} in full view`}
-                className="block w-full cursor-pointer"
+      <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-700 ease-out group-hover:grid-rows-[1fr]">
+        <div className="overflow-hidden group-hover:overflow-visible">
+          <div className="flex flex-col gap-16 pt-10 opacity-0 -translate-y-4 transition-[opacity,transform] duration-700 ease-out group-hover:translate-y-0 group-hover:opacity-100 sm:gap-24">
+            {images.map((image, index) => (
+              <div
+                key={image.src}
+                className={
+                  image.wide
+                    ? "w-full"
+                    : `w-full ${nigeriaFlowWidths[index % nigeriaFlowWidths.length]}`
+                }
               >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  width={image.width}
-                  height={image.height}
-                  className="block h-auto w-full transition-transform duration-500 ease-out hover:scale-110"
-                />
-              </button>
-              <figcaption className="mt-3 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-                {image.caption}
-              </figcaption>
-            </figure>
-          </Reveal>
-        ))}
+                <figure className="relative z-0 hover:z-20">
+                  <button
+                    type="button"
+                    onClick={() => setOpenIndex(index)}
+                    aria-label={`Open ${image.caption} in full view`}
+                    className="block w-full cursor-pointer"
+                  >
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      width={image.width}
+                      height={image.height}
+                      className="block h-auto w-full transition-transform duration-500 ease-out hover:scale-110"
+                    />
+                  </button>
+                  <figcaption className="mt-3 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+                    {image.caption}
+                  </figcaption>
+                </figure>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       <Dialog
