@@ -65,9 +65,6 @@ export const Route = createFileRoute("/work/luluvivi")({
 
           <div className="min-w-0 space-y-24 sm:space-y-32">
             <section className="space-y-6">
-              <p className="text-[10px] uppercase tracking-[0.24em] text-muted-foreground">
-                00 — Intro / hero
-              </p>
               <figure>
                 <img
                   src={luluviviPosterAsset}

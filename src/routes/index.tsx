@@ -22,6 +22,7 @@ import arcVideoAsset from "@/assets/ARC_Studio_stopmotion_compressed.mp4";
 import arcPosterAsset from "@/assets/arc-studio-poster.jpg.asset.json";
 import photoboothPortraitAsset from "@/assets/louise-photobooth.png";
 import louiseLogoAsset from "@/assets/Louise Riedmann icon.png";
+import archiveCollage from "@/assets/archive-collage.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -212,11 +213,21 @@ function Index() {
             </div>
             <div className="mt-8 flex -translate-x-[140px] flex-col items-end text-right">
               <Link
-                to="/archive"
-                className="text-[0.78rem] uppercase tracking-[0.24em] text-accent transition-colors hover:text-foreground"
-              >
-                Archive →
-              </Link>
+  to="/archive"
+  className="group block w-full max-w-[520px]"
+>
+  <img
+    src={archiveCollage}
+    alt="Archive – a collection of photography and visual studies"
+    className="block w-full h-auto"
+  />
+
+  <div className="mt-4">
+    <span className="text-[0.78rem] uppercase tracking-[0.24em] text-accent">
+      Archive →
+    </span>
+  </div>
+</Link>
               <p className="mt-2 font-display text-sm italic text-muted-foreground">
                 More work, experiments &amp; visual studies.
               </p>
