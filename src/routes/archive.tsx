@@ -100,6 +100,13 @@ import harlemInsightsAsset from "@/assets/nyc-Harlem Insights, 2017.jpeg";
 import germanyHolidayModeAsset from "@/assets/germany-Holiday Mode, 2018.jpg";
 import germanyNeonSwimAsset from "@/assets/germany-Neon Swim, 2018.jpg";
 import germanySummerSwanAsset from "@/assets/germany-Summer Swan, 2018.jpg";
+import modBoyToyAsset from "@/assets/mod-Boy Toy, 2015.jpg";
+import modFredPerryAsset from "@/assets/mod-Fred Perry, 2015.jpg";
+import modEyeContactAsset from "@/assets/mod-Eye Contact, 2015.jpg";
+import modShootAsset from "@/assets/mod-Shoot, 2015.jpg";
+import modShadowGamesAsset from "@/assets/mod-Shadow Games, 2015.jpg";
+import modTwiggyEyesAsset from "@/assets/mod-Twiggy Eyes, 2015.jpg";
+import modFashionAsset from "@/assets/mod-Fashion, 2015.jpg";
 import {
   Carousel,
   CarouselContent,
@@ -734,6 +741,58 @@ const southAfricaImages: NigeriaImage[] = [
     },
   ];
 
+  const modFashionShootImages: NigeriaImage[] = [
+    {
+      src: modBoyToyAsset,
+      alt: "Boy Toy, 2015 — opening photograph of the MOD Fashion Shoot series",
+      caption: "Boy Toy, 2015",
+      width: 3203,
+      height: 2024,
+    },
+    {
+      src: modFredPerryAsset,
+      alt: "Fred Perry, 2015 photograph",
+      caption: "Fred Perry, 2015",
+      width: 4912,
+      height: 3264,
+    },
+    {
+      src: modEyeContactAsset,
+      alt: "Eye Contact, 2015 photograph",
+      caption: "Eye Contact, 2015",
+      width: 4912,
+      height: 3264,
+    },
+    {
+      src: modShootAsset,
+      alt: "MOD Shoot, 2015 photograph",
+      caption: "MOD Shoot, 2015",
+      width: 4912,
+      height: 3264,
+    },
+    {
+      src: modShadowGamesAsset,
+      alt: "Shadow Games, 2015 photograph",
+      caption: "Shadow Games, 2015",
+      width: 4912,
+      height: 3264,
+    },
+    {
+      src: modTwiggyEyesAsset,
+      alt: "Twiggy Eyes, 2015 photograph",
+      caption: "Twiggy Eyes, 2015",
+      width: 3264,
+      height: 4284,
+    },
+    {
+      src: modFashionAsset,
+      alt: "MOD Fashion, 2015 — closing photograph of the MOD Fashion Shoot series",
+      caption: "MOD Fashion, 2015",
+      width: 3264,
+      height: 4912,
+    },
+  ];
+
 export const Route = createFileRoute("/archive")({
   head: () => ({
     meta: [
@@ -907,6 +966,12 @@ function Archive() {
                     date="2018"
                     medium="Photography"
                     images={germanyImages}
+                  />
+                  <PhotographyProject
+                    title="MOD FASHION SHOOT"
+                    date="2015"
+                    medium="Fashion Photography"
+                    images={modFashionShootImages}
                   />
               </div>
             </section>
