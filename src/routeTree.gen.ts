@@ -15,6 +15,7 @@ import { Route as WorkAmoodeRouteImport } from './routes/work/amoode'
 import { Route as WorkArcStudioRouteImport } from './routes/work/arc-studio'
 import { Route as WorkGlossierGlyptoteketRouteImport } from './routes/work/glossier-glyptoteket'
 import { Route as WorkLuluviviRouteImport } from './routes/work/luluvivi'
+import { Route as WorkVerasVintageRouteImport } from './routes/work/veras-vintage'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +47,11 @@ const WorkLuluviviRoute = WorkLuluviviRouteImport.update({
   path: '/work/luluvivi',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkVerasVintageRoute = WorkVerasVintageRouteImport.update({
+  id: '/work/veras-vintage',
+  path: '/work/veras-vintage',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/work/arc-studio': typeof WorkArcStudioRoute
   '/work/glossier-glyptoteket': typeof WorkGlossierGlyptoteketRoute
   '/work/luluvivi': typeof WorkLuluviviRoute
+  '/work/veras-vintage': typeof WorkVerasVintageRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/work/arc-studio': typeof WorkArcStudioRoute
   '/work/glossier-glyptoteket': typeof WorkGlossierGlyptoteketRoute
   '/work/luluvivi': typeof WorkLuluviviRoute
+  '/work/veras-vintage': typeof WorkVerasVintageRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +79,7 @@ export interface FileRoutesById {
   '/work/arc-studio': typeof WorkArcStudioRoute
   '/work/glossier-glyptoteket': typeof WorkGlossierGlyptoteketRoute
   '/work/luluvivi': typeof WorkLuluviviRoute
+  '/work/veras-vintage': typeof WorkVerasVintageRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +90,7 @@ export interface FileRouteTypes {
     | '/work/arc-studio'
     | '/work/glossier-glyptoteket'
     | '/work/luluvivi'
+    | '/work/veras-vintage'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +99,7 @@ export interface FileRouteTypes {
     | '/work/arc-studio'
     | '/work/glossier-glyptoteket'
     | '/work/luluvivi'
+    | '/work/veras-vintage'
   id:
     | '__root__'
     | '/'
@@ -97,6 +108,7 @@ export interface FileRouteTypes {
     | '/work/arc-studio'
     | '/work/glossier-glyptoteket'
     | '/work/luluvivi'
+    | '/work/veras-vintage'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -106,6 +118,7 @@ export interface RootRouteChildren {
   WorkArcStudioRoute: typeof WorkArcStudioRoute
   WorkGlossierGlyptoteketRoute: typeof WorkGlossierGlyptoteketRoute
   WorkLuluviviRoute: typeof WorkLuluviviRoute
+  WorkVerasVintageRoute: typeof WorkVerasVintageRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -152,6 +165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkLuluviviRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work/veras-vintage': {
+      id: '/work/veras-vintage'
+      path: '/work/veras-vintage'
+      fullPath: '/work/veras-vintage'
+      preLoaderRoute: typeof WorkVerasVintageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -162,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   WorkArcStudioRoute: WorkArcStudioRoute,
   WorkGlossierGlyptoteketRoute: WorkGlossierGlyptoteketRoute,
   WorkLuluviviRoute: WorkLuluviviRoute,
+  WorkVerasVintageRoute: WorkVerasVintageRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

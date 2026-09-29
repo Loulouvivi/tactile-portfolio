@@ -40,6 +40,11 @@ import portraitsMnKissPosterAsset from "@/assets/portraits-m+n kiss poster a3.pn
 import luluPrintFinalAsset from "@/assets/lulu-print_01.jpg";
 import luluPrintDevelopmentAsset from "@/assets/lulu-print_02.png";
 import luluPrintGarmentAsset from "@/assets/lulu-print_03.png";
+import verasVintage01Asset from "@/assets/veras_vintage01.png";
+import verasVintage02Asset from "@/assets/veras_vintage02.png";
+import verasVintage03Asset from "@/assets/veras_vintage03.png";
+import verasVintage04Asset from "@/assets/veras_vintage04.png";
+import verasVintage05Asset from "@/assets/veras_vintage05.png";
 import {
   Carousel,
   CarouselContent,
@@ -243,6 +248,40 @@ const luluPrintImages = [
   },
 ] as const;
 
+const verasVintageImages = [
+  {
+    src: verasVintage05Asset,
+    alt: "Collage of original Veras Vintage hand-drawn sketches and visual development",
+    title: "Design Process — Sketching",
+    description:
+      "I developed the illustrations through hand-drawn sketches, exploring characters, gestures, objects, interfaces and different compositions before developing the final illustrations.",
+  },
+  {
+    src: verasVintage01Asset,
+    alt: "Veras Vintage illustration of a girl selecting clothes in front of a wardrobe",
+    title: "Find clothes you want to hand in",
+    description: "A girl stands in front of a wardrobe while selecting clothes to hand in.",
+  },
+  {
+    src: verasVintage02Asset,
+    alt: "Veras Vintage illustration of hands using a laptop to register and pay",
+    title: "Register and pay",
+    description: "A laptop interface shows the registration process, with hands interacting with the computer.",
+  },
+  {
+    src: verasVintage03Asset,
+    alt: "Veras Vintage illustration of hands handing in clothes and receiving points",
+    title: "Hand in clothes and get points",
+    description: "Hands communicate the physical act of handing in clothes and receiving points.",
+  },
+  {
+    src: verasVintage04Asset,
+    alt: "Veras Vintage illustration of a girl outside the store carrying shopping bags",
+    title: "Shop for points",
+    description: "The same girl appears outside the Veras store, carrying shopping bags after using her points.",
+  },
+] as const;
+
 export const Route = createFileRoute("/archive")({
   head: () => ({
     meta: [
@@ -329,37 +368,52 @@ function Archive() {
               <h2 className="font-display text-3xl leading-tight sm:text-4xl">
                 02 — ILLUSTRATIONS
               </h2>
-              <div>
-                <header className="mb-8 border-b border-foreground/15 pb-5">
-                  <h3 className="text-[11px] uppercase tracking-[0.24em]">MY OWN MUSE</h3>
-                  <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
-                    Illustrator · Freelance — Line Art
-                  </p>
-                </header>
+              <div className="grid gap-x-8 gap-y-16 sm:grid-cols-2 sm:gap-y-24">
+                <div>
+                  <header className="mb-8 border-b border-foreground/15 pb-5">
+                    <h3 className="text-[11px] uppercase tracking-[0.24em]">MY OWN MUSE</h3>
+                    <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
+                      Illustrator · Freelance — Line Art
+                    </p>
+                  </header>
 
-                <MyOwnMuseCarousel />
-              </div>
-              <div>
-                <header className="mb-8 border-b border-foreground/15 pb-5">
-                  <h3 className="text-[11px] uppercase tracking-[0.24em]">LINE ART PORTRAITS</h3>
-                  <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
-                    Illustration · Line Art
-                  </p>
-                </header>
+                  <MyOwnMuseCarousel />
+                </div>
+                <div>
+                  <header className="mb-8 border-b border-foreground/15 pb-5">
+                    <h3 className="text-[11px] uppercase tracking-[0.24em]">LINE ART PORTRAITS</h3>
+                    <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
+                      Illustration · Line Art
+                    </p>
+                  </header>
 
-                <LineArtPortraitsCarousel />
-              </div>
-              <div>
-                <header className="mb-8 border-b border-foreground/15 pb-5">
-                  <h3 className="text-[11px] uppercase tracking-[0.24em]">
-                    MAXJENNY S/S17 — LULU PRINT
-                  </h3>
-                  <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
-                    Textile / Print Design · Illustration · Pattern Development
-                  </p>
-                </header>
+                  <LineArtPortraitsCarousel />
+                </div>
+                <div>
+                  <header className="mb-8 border-b border-foreground/15 pb-5">
+                    <h3 className="text-[11px] uppercase tracking-[0.24em]">
+                      MAXJENNY S/S17 — LULU PRINT
+                    </h3>
+                    <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
+                      Textile / Print Design · Illustration · Pattern Development
+                    </p>
+                  </header>
 
-                <LuluPrintCarousel />
+                  <LuluPrintCarousel />
+                </div>
+                <div>
+                  <header className="mb-8 border-b border-foreground/15 pb-5">
+                    <h3 className="text-[11px] uppercase tracking-[0.24em]">VERAS VINTAGE</h3>
+                    <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
+                      2022
+                    </p>
+                    <p className="mt-2 font-display text-xl italic leading-tight text-muted-foreground">
+                      Illustration · UX/UI · Digital Experience · Secondhand Fashion
+                    </p>
+                  </header>
+
+                  <VerasVintageCarousel />
+                </div>
               </div>
             </section>
 
@@ -731,6 +785,80 @@ function LuluPrintCarousel() {
       >
         {String(currentIndex + 1).padStart(2, "0")} /{" "}
         {String(luluPrintImages.length).padStart(2, "0")}
+      </p>
+    </div>
+  );
+}
+
+function VerasVintageCarousel() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const handleSetApi = useCallback((carouselApi: CarouselApi) => {
+    if (carouselApi) {
+      setApi(carouselApi);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    const updateIndex = () => setCurrentIndex(api.selectedScrollSnap());
+    updateIndex();
+    api.on("select", updateIndex);
+
+    return () => {
+      api.off("select", updateIndex);
+    };
+  }, [api]);
+
+  return (
+    <div>
+      <Carousel
+        setApi={handleSetApi}
+        opts={{ loop: true, duration: 25 }}
+        aria-label="Veras Vintage illustration images"
+      >
+        <CarouselContent className="ml-0">
+          {verasVintageImages.map((image, index) => (
+            <CarouselItem
+              key={image.src}
+              className={currentIndex === index ? "pl-0" : "h-0 overflow-hidden pl-0"}
+              aria-label={`${String(index + 1).padStart(2, "0")} of ${String(verasVintageImages.length).padStart(2, "0")}`}
+            >
+              <figure>
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="block h-auto w-full"
+                />
+                <figcaption className="mt-3">
+                  <p className="text-[11px] uppercase tracking-[0.24em]">{image.title}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{image.description}</p>
+                </figcaption>
+              </figure>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious
+          variant="ghost"
+          aria-label="Previous image"
+          className="left-2 top-1/2 h-9 w-9 -translate-y-1/2 rounded-full bg-background/70 text-foreground/75 shadow-none hover:bg-background/90 sm:left-4"
+        />
+        <CarouselNext
+          variant="ghost"
+          aria-label="Next image"
+          className="right-2 top-1/2 h-9 w-9 -translate-y-1/2 rounded-full bg-background/70 text-foreground/75 shadow-none hover:bg-background/90 sm:right-4"
+        />
+      </Carousel>
+      <p
+        aria-live="polite"
+        aria-atomic="true"
+        className="mt-3 text-right text-[10px] tabular-nums tracking-[0.18em] text-muted-foreground"
+      >
+        {String(currentIndex + 1).padStart(2, "0")} /{" "}
+        {String(verasVintageImages.length).padStart(2, "0")}
       </p>
     </div>
   );
