@@ -84,6 +84,12 @@ import tireAndStickGameAsset from "@/assets/Tire and Stick Game, 2014.jpg";
 import upCountryKenyaAsset from "@/assets/Up-Country Kenya.jpg";
 import viewPointAsset from "@/assets/View Point, 2013.jpeg";
 import chekiMzunguAsset from "@/assets/cheki mzungu.JPG";
+import crossroadsAsset from "@/assets/Crossroads, 2013.jpg";
+import drawingInTheSouthAfricanDirtAsset from "@/assets/Drawing in the South African Dirt, 2013.jpg";
+import katlehongStreetDanceAsset from "@/assets/Katlehong Street Dance, 2013.jpg";
+import lollipopViewAsset from "@/assets/Lollipop View, 2018.jpg";
+import scoutsHonorAsset from "@/assets/Scout's Honor, 2013.jpg";
+import southAfricanViewAsset from "@/assets/South African View, 2013.jpg";
 import {
   Carousel,
   CarouselContent,
@@ -593,6 +599,52 @@ const kenyaImages: NigeriaImage[] = [
   },
 ];
 
+const southAfricaImages: NigeriaImage[] = [
+  {
+    src: crossroadsAsset,
+    alt: "Crossroads, 2013 — opening photograph of the South Africa series",
+    caption: "Crossroads, 2013",
+    width: 3264,
+    height: 2448,
+    wide: true,
+  },
+  {
+    src: drawingInTheSouthAfricanDirtAsset,
+    alt: "Drawing in the South African Dirt, 2013 photograph",
+    caption: "Drawing in the South African Dirt, 2013",
+    width: 1456,
+    height: 1765,
+  },
+  {
+    src: katlehongStreetDanceAsset,
+    alt: "Katlehong Street Dance, 2013 photograph",
+    caption: "Katlehong Street Dance, 2013",
+    width: 1496,
+    height: 2520,
+  },
+  {
+    src: lollipopViewAsset,
+    alt: "Lollipop View, 2018 photograph",
+    caption: "Lollipop View, 2018",
+    width: 2448,
+    height: 3264,
+  },
+  {
+    src: scoutsHonorAsset,
+    alt: "Scout's Honor, 2013 photograph",
+    caption: "Scout's Honor, 2013",
+    width: 3112,
+    height: 2316,
+  },
+  {
+    src: southAfricanViewAsset,
+    alt: "South African View, 2013 — closing photograph of the South Africa series",
+    caption: "South African View, 2013",
+    width: 696,
+    height: 928,
+  },
+];
+
 export const Route = createFileRoute("/archive")({
   head: () => ({
     meta: [
@@ -742,6 +794,12 @@ function Archive() {
                   date="2013/2014"
                   medium="Photography"
                   images={kenyaImages}
+                />
+                <PhotographyProject
+                  title="SOUTH AFRICA"
+                  date="2013"
+                  medium="Photography"
+                  images={southAfricaImages}
                 />
               </div>
             </section>
