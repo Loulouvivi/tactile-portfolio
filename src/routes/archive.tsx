@@ -90,6 +90,9 @@ import katlehongStreetDanceAsset from "@/assets/Katlehong Street Dance, 2013.jpg
 import lollipopViewAsset from "@/assets/Lollipop View, 2018.jpg";
 import scoutsHonorAsset from "@/assets/Scout's Honor, 2013.jpg";
 import southAfricanViewAsset from "@/assets/South African View, 2013.jpg";
+import italyNunsStreetStyleAsset from "@/assets/italy-Nun's Street Style, 2013.jpeg";
+import italyBergamoSkyAsset from "@/assets/italy-Bergamo Sky, 2013.jpg";
+import italyItalianClassAsset from "@/assets/italy-Italian Class, 2013.JPG";
 import {
   Carousel,
   CarouselContent,
@@ -645,6 +648,30 @@ const southAfricaImages: NigeriaImage[] = [
   },
 ];
 
+  const italyImages: NigeriaImage[] = [
+    {
+      src: italyNunsStreetStyleAsset,
+      alt: "Nun's Street Style, 2013 — opening photograph of the Italy series",
+      caption: "Nun's Street Style, 2013",
+      width: 2113,
+      height: 2834,
+    },
+    {
+      src: italyBergamoSkyAsset,
+      alt: "Bergamo Sky, 2013 photograph",
+      caption: "Bergamo Sky, 2013",
+      width: 2448,
+      height: 3264,
+    },
+    {
+      src: italyItalianClassAsset,
+      alt: "Italian Class, 2013 — closing photograph of the Italy series",
+      caption: "Italian Class, 2013",
+      width: 768,
+      height: 1024,
+    },
+  ];
+
 export const Route = createFileRoute("/archive")({
   head: () => ({
     meta: [
@@ -801,6 +828,12 @@ function Archive() {
                   medium="Photography"
                   images={southAfricaImages}
                 />
+                  <PhotographyProject
+                    title="ITALY"
+                    date="2013"
+                    medium="Photography"
+                    images={italyImages}
+                  />
               </div>
             </section>
           </div>
